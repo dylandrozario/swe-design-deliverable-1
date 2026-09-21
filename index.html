@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Turma — Design Overview</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="page">
+<h1>Turma</h1>
+<p class="lede">The verified social platform for Boston College students: events, clubs and a campus marketplace in one app. One brand (BC maroon + gold), three interaction styles chosen for what each section does best.</p>
+<div class="tags"><span class="posh">Events → Posh</span><span class="li">Feed, Clubs, Profile → LinkedIn</span><span class="fb">Market → Marketplace</span><span>Mobile 390 + Desktop 1280</span></div>
+
+<div class="modes">
+  <div class="mode" style="background:#FBF1D6;border:1px solid #EBD79C">
+    <div class="h3" style="color:#6B4A00">Events · Posh-inspired</div>
+    <div class="h1" style="margin:8px 0">Nightlife energy.</div>
+    <p class="sm" style="color:#6B4A00">Poster-first flyers, date badge + price pill, friends-going faces, and a “View more” button into an infinite list with filters. Built to make you want to go.</p>
+    <a class="btn sm" href="04-events.html">See events</a>
+  </div>
+  <div class="mode" style="background:#fff;border:1px solid #DDD5CB">
+    <div class="h3">Home · Clubs · Profile · LinkedIn</div>
+    <div class="h1" style="margin:8px 0">Familiar and social.</div>
+    <p class="sm muted">Warm-gray canvas, white cards, post → react → comment loop, 3-column desktop, club “company pages”, verified checks, follow model.</p>
+    <a class="btn sm" href="02-home.html">See home</a>
+  </div>
+  <div class="mode" style="background:#E6F4EA;border:1px solid #BBDEC7">
+    <div class="h3" style="color:#1E6B3E">Market · Marketplace</div>
+    <div class="h1" style="margin:8px 0">Scan, tap, message.</div>
+    <p class="sm" style="color:#1E6B3E">Photo tiles with price first, category pills, left filter rail, “Message seller” as the one action, safe-meetup presets.</p>
+    <a class="btn sm" href="06-marketplace.html">See market</a>
+  </div>
+</div>
+
+<div class="sec-label">Color</div>
+<div class="swatches">
+  <div class="sw" style="background:#8A1F2F">Maroon #8A1F2F<br>brand, CTAs</div>
+  <div class="sw" style="background:#1B0A0E">Deep #1B0A0E<br>text, dark surfaces</div>
+  <div class="sw" style="background:#E2B13C;color:#1B0A0E">Gold #E2B13C<br>accent, highlights</div>
+  <div class="sw" style="background:#F3F0EB;color:#1C1517;border:1px solid #DDD5CB">Cream #F3F0EB<br>app canvas</div>
+  <div class="sw" style="background:#2B5FA8">Blue #2B5FA8<br>verified, links</div>
+  <div class="sw" style="background:#1E8E4E">Green #1E8E4E<br>free, safe, sold</div>
+</div>
+
+<div class="sec-label">Components</div>
+<div class="phones" style="justify-content:flex-start;gap:20px">
+  <div class="col" style="width:340px"><div class="h3">Buttons</div><div class="row wrap"><button class="btn">Primary</button><button class="btn sec">Secondary</button><button class="btn gold">Featured</button><button class="btn ghost">Ghost</button></div>
+    <div class="h3" style="margin-top:8px">Chips</div><div class="chips wrap" data-chips><span class="chip on">Tonight</span><span class="chip">This weekend</span><span class="chip free">Free</span></div>
+    <div class="h3" style="margin-top:8px">Trust</div><div class="row wrap"><span class="badge">Verified BC student <i class="vt" data-i="verified"></i></span><span class="badge ok"><i data-i="shield"></i>Safe meetup</span></div></div>
+  <div class="col" style="width:340px"><div class="h3">Type</div><div class="h1">Headline 24 / 800</div><div class="h2">Section 17 / 800</div><div>Body 14 / 400 · comfortable 1.45 line height</div><div class="sm muted">Caption 12.5 · muted</div><div class="h3">Mono label</div></div>
+  <div class="col" style="width:340px"><div class="h3">Rules</div><div class="sm">44px minimum touch targets · icon + label, never color alone · 4.5:1 text contrast · one primary action per screen · 8px spacing grid · gold focus ring</div></div>
+</div>
+
+<div class="sec-label">Screens</div>
+<div class="chips wrap" style="gap:10px">
+  <a class="chip" href="01-onboarding.html">01 Onboarding</a><a class="chip" href="02-home.html">02 Home</a><a class="chip" href="04-events.html">03 Events</a><a class="chip" href="05-clubs.html">04 Clubs</a><a class="chip" href="06-marketplace.html">05 Market</a><a class="chip" href="07-messaging.html">06 Messages</a><a class="chip" href="08-profile.html">07 Profile</a><a class="chip" href="09-notifications-settings.html">08 Alerts &amp; Settings</a><a class="chip" href="10-flows.html">09 Flows</a>
+</div>
+<div class="note"><b>Navigation</b>Desktop: left sidebar (Home, Events, Market, Clubs, Notifications, Profile, Create), search in the top bar, and a floating Messages dock bottom-right with All / Market / Clubs filters. Mobile: bottom bar (Home, Events, Create, Market, Clubs) with search, alerts and messages in the header.</div>
+</main><script src="app.js"></script></body></html>

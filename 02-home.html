@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>02 Home — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="page">
+<h1>Home</h1>
+<p class="lede">Answers “what’s on tonight?” in two seconds. A LinkedIn-style feed frame, with Posh-style flyers for events and Marketplace-style tiles for listings so each content type is recognisable at a glance.</p>
+<div class="tags"><span class="li">Feed + cards</span><span class="posh">Flyer carousel</span><span class="fb">Listing tiles</span><span>≤3 taps to RSVP, join or message</span></div>
+
+<div class="phones">
+<figure class="pw"><div class="phone" data-tab="home">
+  <div class="mhdr"><span class="av">JD</span><label class="row sp" style="background:var(--chip);border-radius:999px;padding:0 14px;min-height:40px;color:var(--muted)"><i data-i="search"></i>Search Turma</label><button class="iconbtn"><i data-i="chat"></i></button><button class="iconbtn"><i data-i="bell"></i><span class="dot"></span></button></div>
+  <div class="pbody">
+    <div class="row between"><div><div class="h2">Good evening, Jordan</div><div class="xs muted">Upper Campus · 3 things tonight</div></div></div>
+    <div class="chips" data-chips><span class="chip on">Tonight</span><span class="chip">Weekend</span><span class="chip free">Free</span><span class="chip"><i data-i="pin"></i>Near me</span></div>
+    <div class="strip">
+      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>7PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="xs">Music Club · 42 going</div></div></div></div>
+      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>8PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Mod social · sophomores</div><div class="xs">60 going · 5 friends</div></div></div></div>
+    </div>
+    <button class="btn block" data-toast="ht"><i data-i="ticket"></i>RSVP to Acoustic Night</button>
+    <div class="card"><div class="pad row"><span class="av c4">PC</span><div class="sp"><b class="sm">Photography Club</b> <i class="vt" data-i="verified"></i><div class="xs muted">Officer post · 3h</div></div></div><div class="pad sm" style="padding-top:0">Fall shoot signups are open, only <b>12 spots</b> left. Thursday 5pm on the O’Neill steps.</div><div class="pad" style="padding-top:0"><button class="btn sm sec">View event</button></div></div>
+    <div class="row between"><div class="h2">Near you in Market</div><a class="link sm" href="06-marketplace.html">See all</a></div>
+    <div class="tiles"><div class="tile"><div class="art g5" style="position:relative"><i data-i="book"></i></div><div class="pr">$35</div><div class="tt">Data Sci textbook</div><div class="lo">Walsh · 2m ago</div></div><div class="tile"><div class="art g2"><i data-i="fridge"></i></div><div class="pr">$40</div><div class="tt">Mini-fridge</div><div class="lo">Lower · 1h ago</div></div></div>
+    <div class="card pad" style="background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;border:0"><div class="h3" style="color:var(--gold)">Welcome Week</div><div class="sm">Involvement fair Saturday · Newton shuttle info · roommate mixers</div></div>
+  </div><div class="toast" id="ht" hidden><i data-i="check"></i>You’re in! Added to your calendar</div></div><figcaption>Home · mobile</figcaption></figure>
+
+<figure class="pw"><div class="phone" data-tab="home"><div class="mhdr"><span class="av">JD</span><div class="ttl sp">Home</div></div>
+  <div class="pbody" id="hs">
+    <div class="seg" data-tabs><button class="on" data-show="ok" data-for="hs">Loaded</button><button data-show="load" data-for="hs">Loading</button><button data-show="empty" data-for="hs">Empty</button><button data-show="err" data-for="hs">Error</button></div>
+    <div data-state="ok" class="stack"><div class="state ok"><i data-i="spark"></i>Picks ready: running + live music</div><div class="card pad sm">Your feed is personalised from your interests, clubs and friends.</div></div>
+    <div data-state="load" class="stack" hidden><div class="skel" style="height:220px"></div><div class="skel"></div><div class="skel"></div><div class="xs muted">Skeleton cards, 2 second max</div></div>
+    <div data-state="empty" class="stack" hidden><div class="card pad" style="text-align:center"><div class="av lg c4" style="margin:0 auto 10px"><i data-i="spark"></i></div><div class="h2">Nothing here yet</div><p class="sm muted">Add interests or browse Events to fill your feed.</p><a class="btn sm" href="04-events.html">Browse events</a></div></div>
+    <div data-state="err" class="stack" hidden><div class="state err"><i data-i="x"></i>Couldn’t load your feed. Check your connection.</div><button class="btn sec block">Retry</button></div>
+  </div></div><figcaption>Home · loading, empty, error states</figcaption></figure>
+</div>
+
+<div class="sec-label">Desktop · 1280</div>
+<div class="desk" data-tab="home" data-dock="open"><div class="dbody">
+  <div class="rail"><div class="card profcard"><div class="art g1"></div><div class="in"><span class="av lg" style="margin:0 auto">JD</span><div class="b" style="margin-top:6px">Jordan D. ’29 <i class="vt" data-i="verified"></i></div><div class="xs muted">Walsh Hall · Running, Live music, CS</div></div><div class="pad"><div class="stat">Events attended<b>14</b></div><div class="stat">Clubs<b>3</b></div></div></div></div>
+  <div class="col">
+    <div class="card composer"><span class="av">JD</span><div class="fake">Share something with BC…</div><button class="btn sm gold">Post</button></div>
+    <div class="row between"><div class="h2">Happening tonight</div><div class="chips" data-chips><span class="chip on">Tonight</span><span class="chip">Weekend</span><span class="chip free">Free</span></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="flyer wide"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>7PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="xs">42 going · 3 friends</div></div></div><div class="flyer wide"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>8PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Mod social · sophomores</div><div class="xs">60 going · 5 friends</div></div></div></div>
+    <div class="card post"><div class="head"><span class="av c3">RC</span><div class="who"><b>BC Running Club</b> <i class="vt" data-i="verified"></i><div class="xs muted">Club · 214 members · 1h</div></div><button class="link">+ Follow</button></div><div class="body">Saturday 9am Reservoir meetup. All paces welcome, first-timers get a free singlet.</div><div class="media"><div class="art g3"><i data-i="run"></i></div><span class="glass">98% match</span></div><div class="stats"><span class="faces"><span class="av s">JD</span><span class="av s c2">AK</span></span>54 reactions · 12 comments</div><div class="acts"><button data-like><i data-i="like"></i>Like <b>54</b></button><button><i data-i="chat"></i>Comment</button><button><i data-i="repeat"></i>Repost</button><button class="cta-b"><i data-i="plus"></i>Join</button></div></div>
+  </div>
+  <div class="rail"><div class="card pad stack"><div class="h2">Trending at BC</div><div class="sm">Game Day tailgate<div class="xs muted">1.2k going</div></div><div class="sm">Involvement Fair<div class="xs muted">640 interested</div></div><div class="sm">Move-out freebies<div class="xs muted">88 listings</div></div></div>
+    <div class="card pad stack"><div class="h2">Market near you</div><div class="tiles"><div class="tile"><div class="art g5"><i data-i="book"></i></div><div class="pr">$35</div></div><div class="tile"><div class="art g2"><i data-i="bike"></i></div><div class="pr">$90</div></div></div></div></div>
+</div></div>
+<div class="note"><b>Notes</b>Home hero rotates seasonally (Welcome Week, Game Day, Move-out). Desktop: left rail is identity + shortcuts, right rail is trends and market. Tablet 768: two columns, right rail drops below.</div>
+</main><script src="app.js"></script></body></html>

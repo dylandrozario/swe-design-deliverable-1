@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>04 Events — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="page">
+<h1>Events</h1>
+<p class="lede">Poster-first flyers on a light canvas: date badge, price pill, friends going. The overview shows what’s hot; “View more events” opens the full infinite-scroll list with filters on the left.</p>
+<div class="tags"><span class="posh">Posh-inspired flyers</span><span>View more → infinite scroll</span><span>Left-side filters</span><span>Sticky RSVP</span></div>
+
+<div class="phones">
+<figure class="pw"><div class="phone" data-tab="events">
+  <div class="mhdr"><div class="ttl sp">Events</div><button class="iconbtn"><i data-i="search"></i></button><button class="iconbtn"><i data-i="cal"></i></button></div>
+  <div class="pbody"><div class="seg" data-tabs><button class="on">List</button><button>Calendar</button><button>Map</button></div>
+    <div class="chips" data-chips><span class="chip on">Tonight</span><span class="chip">This weekend</span><span class="chip free">Free</span><span class="chip"><i data-i="pin"></i>Lower</span><span class="chip">Music</span></div>
+    <div class="flyer"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>OCT</small><b>17</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="row xs" style="opacity:.9"><i data-i="clock"></i>Fri 7–10pm · <i data-i="pin"></i>The Rat</div><div class="row" style="margin-top:8px"><span class="faces"><span class="av s">JD</span><span class="av s c2">AK</span><span class="av s c4">MK</span></span><span class="xs">3 friends + 39 going</span></div></div></div>
+    <div class="evrow"><div class="art g2"><i data-i="ball"></i></div><div class="sp stack" style="gap:2px"><div class="xs" style="color:var(--maroon);font-weight:800">SAT · 8PM</div><b>BC vs. Wake Forest watch party</b><div class="going"><i data-i="pin"></i>Mods · 120 going</div></div></div>
+    <div class="evrow"><div class="art g4"><i data-i="camera"></i></div><div class="sp stack" style="gap:2px"><div class="xs" style="color:var(--maroon);font-weight:800">THU · 5PM</div><b>Fall photo shoot signups</b><div class="going"><i data-i="pin"></i>O’Neill steps · 12 spots</div></div></div>
+    <a class="btn sec block" href="#ev-all">View more events<i data-i="arrow"></i></a>
+  </div></div><figcaption>List</figcaption></figure>
+
+<figure class="pw" id="ev-all"><div class="phone" data-tab="events">
+  <div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="ttl sp" style="font-size:18px">All events</div><button class="iconbtn" data-sheet="evf"><i data-i="filter"></i></button></div>
+  <div class="pbody"><div class="chips" data-chips><span class="chip on">This week</span><span class="chip free">Free</span><span class="chip">Music</span><span class="chip">Sports</span><span class="chip">Academic</span></div>
+    <div class="col" data-feed></div><div class="row xs muted" style="justify-content:center;padding:12px;min-height:44px">Loading more…</div></div>
+  <div class="scrim" id="evf-scrim" hidden data-sheet="evf"></div>
+  <div class="sheet" id="evf" hidden><div class="between row"><div class="h2">Filters</div><button class="link" data-sheet="evf">Close</button></div>
+    <div class="stack"><div class="h3">When</div><div class="chips wrap" data-chips><span class="chip on">Tonight</span><span class="chip">This week</span><span class="chip">Weekend</span></div></div>
+    <div class="stack"><div class="h3">Type</div><div class="chips wrap" data-chips><span class="chip on">Social</span><span class="chip">Music</span><span class="chip">Sports</span><span class="chip">Academic</span><span class="chip">Service</span></div></div>
+    <div class="stack"><div class="h3">Price</div><div class="chips wrap" data-chips><span class="chip on">Free</span><span class="chip">Paid</span></div></div>
+    <div class="row"><button class="btn ghost">Clear</button><button class="btn sp" data-sheet="evf">Show 24 events</button></div></div>
+</div><figcaption>View more · infinite scroll + filter sheet</figcaption></figure>
+
+<figure class="pw"><div class="phone" data-tab="events">
+  <div class="pbody" style="padding:0;gap:0"><div class="flyer" style="border-radius:0;aspect-ratio:1"><div class="art g1"><i data-i="music"></i></div><div class="top"><button class="iconbtn" style="background:rgba(255,255,255,.9)"><i data-i="back"></i></button><span class="row"><button class="iconbtn" style="background:rgba(255,255,255,.9)"><i data-i="share"></i></button><button class="iconbtn" style="background:rgba(255,255,255,.9)"><i data-i="heart"></i></button></span></div></div>
+    <div class="stack" style="padding:16px;gap:14px"><div><div class="h1">Acoustic Night at The Rat</div><div class="hostbar" style="margin-top:8px"><span class="av c2 s" style="width:30px;height:30px">MC</span><span class="sm">Hosted by <b>Music Club</b> <i class="vt" data-i="verified"></i></span></div></div>
+    <div class="kv"><span><i data-i="cal"></i>When</span><b>Fri Oct 17 · 7–10pm</b><span><i data-i="pin"></i>Where</span><b>The Rat, Lower</b><span><i data-i="ticket"></i>Price</span><b>Free · BC ID required</b></div>
+    <div class="going"><span class="faces"><span class="av s">JD</span><span class="av s c2">AK</span><span class="av s c4">+39</span></span>3 friends are going</div>
+    <div class="divider"></div><div class="h2">About</div><p class="sm muted" style="margin:0">Live acoustic sets from BC’s best. Shuttle from Newton at 7:30.</p>
+    <div class="h2">Comments</div><div class="sm"><b>Priya</b> <span class="muted">Do I need my BC ID?</span><br><b>Music Club</b> <span class="muted">Yes, bring your BC ID.</span></div></div>
+    <div class="cta" style="position:sticky;bottom:0;margin:auto 0 0"><button class="btn block" data-toast="evt"><i data-i="ticket"></i>I’m going</button></div>
+  </div><div class="toast" id="evt" hidden><i data-i="check"></i>You’re in. Added to your calendar</div></div><figcaption>Detail · sticky RSVP</figcaption></figure>
+
+<figure class="pw"><div class="phone" data-tab="events">
+  <div class="mhdr"><button class="iconbtn plain"><i data-i="x"></i></button><div class="ttl sp" style="font-size:17px">New event</div></div>
+  <div class="pbody"><div class="progress"><i class="on"></i><i class="on"></i><i></i></div>
+    <div class="art g6" style="height:150px;border-radius:16px;border:2px dashed var(--line)"><span class="row b" style="z-index:2"><i data-i="image"></i>Add a flyer</span></div>
+    <label class="f">Title<input value="Study break: pancakes at late night"></label>
+    <div class="stack"><div class="h3">Type</div><div class="chips" data-chips><span class="chip on">Social</span><span class="chip">Study</span><span class="chip">Sports</span><span class="chip">Meeting</span></div></div>
+    <label class="f">When<select><option>Tonight 9pm (suggested)</option><option>Tomorrow</option></select></label>
+    <label class="f">Where<select><option>O’Neill Library lobby</option><option>The Rat</option></select></label>
+    <div class="sp"></div><button class="btn block">Publish and invite my club</button></div></div><figcaption>Create · under 60s</figcaption></figure>
+</div>
+
+<div class="sec-label">Desktop · 1280 · click “View more events”</div>
+<div class="desk" id="evdesk" data-tab="events">
+  <div class="dbody two" data-state="browse">
+    <div class="rail"><div class="card pad"><div class="h3" style="margin-bottom:8px">October</div><div class="cal"><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b><span class="mute">29</span><span class="mute">30</span><span>1</span><span class="ev">2</span><span>3</span><span class="ev">4</span><span>5</span><span>13</span><span>14</span><span class="ev">15</span><span>16</span><span class="on">17</span><span class="ev">18</span><span>19</span></div></div>
+      <div class="card pad stack"><div class="h2">Your events</div><div class="item"><div class="date" style="background:var(--chip)"><small>FRI</small><b>17</b></div><div class="grow"><b class="sm">Acoustic Night</b><span class="xs muted">7pm · Going</span></div></div><button class="btn block sm"><i data-i="plus"></i>Post an event</button></div></div>
+    <div class="col"><div class="row between"><div class="h2">Happening this week</div><div class="chips" data-chips><span class="chip on">This week</span><span class="chip">Weekend</span><span class="chip free">Free</span></div></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><div class="flyer"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>OCT</small><b>17</b></div><span class="price free">Free</span></div><div class="bot"><div class="t" style="font-size:18px">Acoustic Night at The Rat</div><div class="xs">Music Club · 42 going</div></div></div><div class="flyer"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>OCT</small><b>18</b></div><span class="price">$5</span></div><div class="bot"><div class="t" style="font-size:18px">Watch party vs. Wake Forest</div><div class="xs">Mods · 120 going</div></div></div><div class="flyer"><div class="art g4"><i data-i="camera"></i></div><div class="top"><div class="date"><small>OCT</small><b>16</b></div><span class="price free">Free</span></div><div class="bot"><div class="t" style="font-size:18px">Fall photo shoot</div><div class="xs">Photography Club · 12 spots</div></div></div></div>
+      <button class="btn sec" style="align-self:center;margin:6px 0" data-show="all" data-for="evdesk">View more events<i data-i="arrow"></i></button>
+      <div class="card pad row" style="gap:16px"><div class="art g1" style="width:120px;height:120px;border-radius:14px"><i data-i="music"></i></div><div class="sp stack"><div class="h2">Acoustic Night at The Rat</div><div class="sm muted">Fri Oct 17 · 7–10pm · The Rat, Lower · Hosted by Music Club</div><div class="going"><span class="faces"><span class="av s">JD</span><span class="av s c2">AK</span></span>3 friends going</div></div><div class="stack"><button class="btn"><i data-i="ticket"></i>I’m going</button><button class="btn ghost sm">Add to calendar</button></div></div></div>
+  </div>
+  <div class="dbody two" data-state="all" hidden>
+    <div class="rail"><div class="card pad stack"><div class="between row"><div class="h2">Filters</div><button class="link sm">Clear all</button></div>
+      <div class="h3">When</div><span class="chk on">This week</span><span class="chk">This weekend</span><span class="chk">Next week</span>
+      <div class="h3">Type</div><span class="chk on">Social</span><span class="chk on">Music</span><span class="chk">Sports</span><span class="chk">Academic</span><span class="chk">Service</span>
+      <div class="h3">Price</div><span class="chk on">Free</span><span class="chk">Paid</span>
+      <div class="h3">Where</div><span class="chk">Upper</span><span class="chk on">Lower</span><span class="chk">Newton</span><span class="chk">Mods</span>
+      <div class="divider"></div><div class="row sm"><i data-i="bell"></i><span class="sp b">Alert me to new matches</span><button class="switch"></button></div></div></div>
+    <div class="col" style="max-width:640px;width:100%;margin:0 auto"><div class="row between"><button class="link" data-show="browse" data-for="evdesk" style="display:flex;align-items:center;gap:6px"><i data-i="back"></i>Back to overview</button><span class="sm muted">24 events match</span></div>
+      <div class="col" data-feed></div><div class="row xs muted" style="justify-content:center;padding:16px">Loading more events…</div></div>
+  </div>
+</div>
+<div class="note"><b>Notes</b>The overview stays scannable; “View more” swaps the center for an endless list (batches load as you near the bottom) and the left rail becomes filters. Full event → waitlist. Tablet 768: filters become a drawer.</div>
+</main><script src="app.js"></script></body></html>

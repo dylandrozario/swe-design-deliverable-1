@@ -4,24 +4,31 @@
 **Style:** LinkedIn feed frame, with Posh-style flyers for events and Marketplace tiles for listings. See [style-guide.md](style-guide.md). Active tab: **Home**.
 
 ## Screen 1 — Home feed
-**Header:** avatar (JD) · pill search field “Search Turma” · chat icon button · bell icon button (red unread dot).
+**Header:** avatar (JD, links to your profile) · pill search field “Search Turma” · chat icon button (→ Messages) · bell icon button (red unread dot, opens the notification sheet below — there’s no separate Alerts page anymore).
 
 **Body (scrolls):**
-1. **Greeting:** “Good evening, Jordan” (H2); “Upper Campus · 3 things tonight” (caption).
-2. **Filter chips:** Tonight (on), Weekend, Free, Near me (pin icon).
-3. **Flyer carousel** (horizontal strip, 250px cards, 4:4.6):
-   - Acoustic Night at The Rat — `g1`, date badge “TONIGHT 7PM”, white price pill “Free”, “Music Club · 42 going”.
-   - Mod social · sophomores — `g2`, “TONIGHT 8PM”, “60 going · 5 friends”.
-4. **Primary CTA:** `RSVP to Acoustic Night` (ticket icon, block). Tap → toast “You’re in! Added to your calendar”.
-5. **Club post card:** Photography Club avatar, name + verified, “Officer post · 3h”; text “Fall shoot signups are open, only **12 spots** left. Thursday 5pm on the O’Neill steps.”; `View event` (secondary, small).
-6. **Market row:** heading “Near you in Market” + “See all” link → Market. 2-column tiles: Data Sci textbook $35 (Walsh · 2m ago); Mini-fridge $40 (Lower · 1h ago).
-7. **Seasonal banner:** maroon gradient card, label “Welcome Week”, “Involvement fair Saturday · Newton shuttle info · roommate mixers”. Swaps seasonally (Game Day, Move-out).
+1. **Greeting:** “Good evening, Jordan” (H2); “CS ’29 · 3 things tonight” (caption).
+2. **Feed tabs** (`.tabs`): **All** (prioritises what’s tonight, on) · **Friends & following** (only people/clubs you follow) · **Suggested** (interest/club-matched discovery, mirrors the onboarding suggestion logic). Swaps the whole body below via the same show/hide pattern as the loading-state demo.
+3. **Time/price filter chips:** Tonight (on), Weekend, Free, Near me (pin icon).
+4. **Interest filter chips** (new row): Running, Live music (on), CS (on), Service, Sports — narrows the flyer strip and posts to matching tags.
+5. **Flyer carousel** (horizontal strip, 250px cards, 4:4.6) — unchanged content, shown in the **All** tab.
+6. **Primary CTA:** `RSVP to Acoustic Night` (ticket icon, block). Tap → toast “You’re in! Added to your calendar”.
+7. **Club post card**, **Market row**, **Seasonal banner** — unchanged, all inside the **All** tab.
+8. **Friends & following tab:** an info banner explaining the scope, a friend’s post, an event friends are going to, and a followed club update.
+9. **Suggested tab:** a match banner explaining the signal (interests/clubs), a suggested club with a match badge, a suggested event from a club you don’t follow yet.
 
-**Tab bar:** Home (active) · Events · Create · Market · Clubs.
+**Notification sheet** (bell icon): bottom sheet listing the same recent notifications as the desktop dropdown (event reminder, market message, club digest), each row a link straight to its source page, plus a “Notification settings” link. Replaces the old full-page Alerts screen.
+
+**Tab bar:** Home (active) · Events · Create · Market · Clubs. The **Create** button opens the create sheet (Post / Event / Listing / Club or group) — see [style-guide.md](style-guide.md#6-layout).
 
 ## Screen 2 — Feed states
-Header: avatar + “Home” title. Segmented control switches the state panel (for design review):
-- **Loaded:** green banner “Picks ready: running + live music” and explanatory card.
-- **Loading:** skeleton blocks (220px hero + two rows). Maximum 2s before content.
-- **Empty:** centered card with spark avatar, “Nothing here yet”, “Add interests or browse Events to fill your feed.”, `Browse events` button.
-- **Error:** red banner “Couldn’t load your feed. Check your connection.” + `Retry` (secondary, block).
+Unchanged: segmented control demos Loaded / Loading / Empty / Error for design review.
+
+## Screen 3 — New post
+Full-screen create flow (`data-nav="none"`, close (x) + “New post” + `Post` link in the header), reached from the Create sheet or the desktop composer:
+- **Post as** chips: Jordan (you, on), or any club/group you belong to — lets an officer post as their club instead of personally.
+- **Source or link** (optional) input — for sharing an article, form or outside link.
+- **Description** textarea — “What’s happening?”.
+- **Interest tags** and **Club tags** — separate multi-select chip rows; interest tags drive the interest filter and Suggested tab, club tags associate the post with a specific community.
+- **Event details (optional):** When, Where selects and a Capacity input — filled in only when the post is about a gathering; left blank for a plain update.
+- **Primary:** `Post` (also mirrored as a link in the header). Tap → toast “Posted to BC”.

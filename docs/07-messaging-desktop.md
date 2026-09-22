@@ -5,7 +5,7 @@
 ## Layout: `260px | 1fr`, no padding or gap, min-height 520
 
 ### Left pane: conversation list
-- H2 “Messaging”.
+- H2 “Messaging” · plus icon button → opens the **New chat** modal.
 - **Filter** (segmented, functional): **All** · Market · Clubs.
 - Thread rows (avatar, name, preview): Sarah K. — Mini-fridge $40 (selected row tint, unread dot) *(Market)*; Running Club — 14 new *(Club)*; Mike T. — Textbook $35 *(Market)*; Photography Club — Shoot signups open *(Club)*.
 
@@ -15,10 +15,14 @@
 - **Bubbles:** them “See you at 5. Should I bring a dolly?”; me “Yes please! I’ll meet you at the front desk.”
 - **Composer:** chips `Insert safe spot` (pin) and `Suggest another time`; text input + `Send` (send icon).
 
+## New chat modal
+Centered `.modal`: Direct message / Group chat segmented control, a “To” search field, a checkbox list of accepted connections, a group-name field (group chats only), and `Start chat`. Same fields and logic as the mobile New chat sheet.
+
 ## Message dock (all other desktop pages)
 Bottom-right pill “Messages” with unread badge; expands to a 340px panel with the same **All / Market / Clubs** filter and thread list. Each row links here.
 
 ## Behavior
 - Filters hide non-matching threads instantly in both the inbox and the dock.
 - Sold flow → rating prompt. Report and block available from the thread menu.
+- Only accepted connections appear as New chat candidates — a student can’t message someone who isn’t connected.
 - Tablet 768: the list overlays the thread.

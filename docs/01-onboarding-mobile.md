@@ -37,7 +37,7 @@ Shown when someone signs in with a Google account that isn’t `@bc.edu`.
 
 ## Screen 4 — Suggested clubs
 - Progress 4/5. H1 “Clubs picked for you”; subtext “Based on your major and interests. Follow to fill your feed.”
-- **Club card:** `g3` banner with run icon; “BC Running Club” + green badge “98% match”; “214 members · Sat 9am at the Reservoir”; `+ Follow` (secondary, small).
+- **Club card:** `g3` banner with run icon; “BC Running Club”; “214 members · Sat 9am at the Reservoir”; `+ Follow` (secondary, small).
 - **Club card:** Data Science Society — matched on CS major.
 - **Event card:** Acoustic Night at The Rat; “Tonight 7pm · 42 going · Free”; `RSVP` (secondary, small).
 - **Primary:** `Continue` → Screen 5. **Skip:** link “Skip, I’ll follow later from Clubs and Events”.

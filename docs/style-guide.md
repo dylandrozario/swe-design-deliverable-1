@@ -7,7 +7,7 @@ Design system for Turma, the verified social platform for Boston College student
 1. **One brand, three interaction styles.** BC maroon + gold everywhere; layout patterns borrowed per section (see §2).
 2. **One primary action per screen.** Usually a single maroon pill button (RSVP, Join, Message seller, Continue).
 3. **Trust is visible.** Verified check next to every name, campus safe-meetup spots, report/block in every thread.
-4. **Quiet by default.** Digests over pings, rate-limited club announcements, quiet hours.
+4. **Quiet by default.** Rate-limited club announcements and simple Off / Instant controls.
 5. **Never color alone.** Every status pairs color with an icon and/or text label.
 
 ## 2. Section modes
@@ -81,12 +81,12 @@ Bold is 700 (`.b`); names and prices are 700–800.
 ### Desktop frame
 1280 wide, radius 16. CSS grid: left sidebar (200px, full height) + right column (top bar over body).
 - **Left sidebar (`.snav`):** logo, then **Home, Calendar, Events, Market, Clubs, Profile**, and a maroon **Create** button that opens a small dropdown menu (Post, Event, Listing, Club or group). Active item: tinted row + maroon text/icon. Collapses to a 64px icon rail under 1000px. There is no separate Notifications item — see below.
-- **Top bar (`.dnav`):** search field (300px pill) on the left; on the right, a **notification bell** (opens a dropdown of recent items — event reminders, market messages, club digests — each row linking straight to the page it's about, not to a standalone feed), a **settings gear** (→ Settings), and the **profile picture** (→ your own Profile). Settings is reachable this way *or* via Profile's Privacy card, matching mobile's gear-on-Profile pattern.
+- **Top bar (`.dnav`):** search field (300px pill) on the left; on the right, a **notification bell** (opens a dropdown of recent items — event reminders, market messages, club updates — each row linking straight to the page it's about, not to a standalone feed), a **settings gear** (→ Settings), and the **profile picture** (→ your own Profile). Settings is reachable this way *or* via Profile's Privacy card, matching mobile's gear-on-Profile pattern.
 - **Body (`.dbody`):** three columns `220px | 1fr | 280px` (left rail, center, right rail). `.dbody.two` is `260px | 1fr`; `.dbody.one` is one column. Rails are sticky (top 64px). Under 1000px everything stacks to one column.
 - **Message dock (`.dock`):** fixed bottom-right of the frame (20px from right, 16px from bottom). Collapsed: pill “Messages” with unread badge. Expanded: 340px panel opening upward with header, close button, **All / Market / Clubs** filter, and thread list. Not shown on the Messages page. Body has 76px bottom padding so content is never covered by the collapsed pill.
 
 ### Notifications (no standalone page)
-There used to be a full “Alerts” page. It's gone: notifications are a `.ndrop` dropdown (desktop, off the top-bar bell) or a `.sheet` (mobile, off the Home header bell), always showing the same handful of recent items, each a direct link into the event, thread or club it concerns. The **Settings** page (09) now holds only notification *preferences* (digest/instant/off, quiet hours) plus Privacy, Verification and Blocked — not a feed of past notifications.
+There used to be a full “Alerts” page. It's gone: notifications are a `.ndrop` dropdown (desktop, off the top-bar bell) or a `.sheet` (mobile, off the Home header bell), always showing the same handful of recent items, each a direct link into the event, thread or club it concerns. The **Settings** page (09) now holds only notification *preferences* (Off / Instant) plus Privacy, Verification and Blocked — not a feed of past notifications.
 
 ## 7. Components
 

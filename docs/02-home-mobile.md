@@ -17,7 +17,7 @@
 8. **Friends & following tab:** an info banner explaining the scope, a friend’s post, an event friends are going to, and a followed club update.
 9. **Suggested tab:** a match banner explaining the signal (interests/clubs), a suggested club with a match badge, a suggested event from a club you don’t follow yet.
 
-**Notification sheet** (bell icon): bottom sheet listing the same recent notifications as the desktop dropdown (event reminder, market message, club digest), each row a link straight to its source page, plus a “Notification settings” link. Replaces the old full-page Alerts screen.
+**Notification sheet** (bell icon): bottom sheet listing the same recent notifications as the desktop dropdown (connection request, event RSVP, event reminder, market message, club update), each row a link straight to its source page, plus a “Notification settings” link. Replaces the old full-page Alerts screen.
 
 **Tab bar:** Home (active) · Events · Create · Market · Clubs. The **Create** button opens the create sheet (Post / Event / Listing / Club or group) — see [style-guide.md](style-guide.md#6-layout).
 

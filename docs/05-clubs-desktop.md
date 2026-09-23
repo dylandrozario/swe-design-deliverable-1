@@ -33,5 +33,5 @@ Centered `.modal` opened from the sidebar button: Type chips (Club/Group), Name,
 ## Behavior
 - Directory view (Browse clubs) shows a grid of club cards with join buttons and category filters.
 - Fair mode (swipeable club cards) is available for Involvement Fair.
-- Announcements are rate-limited and digest by default.
+- Announcements are rate-limited to 1/week.
 - Tablet 768: the upcoming strip stays horizontally scrollable; rails stack below.

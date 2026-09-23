@@ -63,8 +63,7 @@ const NOTIFS=[
   ['c3','ticket','Amara K. is going to Study break: pancakes','RSVP to your event · 30m ago','04-events.html#ev-detail',1],
   ['c4','ticket','Acoustic Night starts at 7pm','Event reminder · 2h ago','04-events.html#ev-detail',1],
   ['c5','SK','Sarah: “See you at O’Neill at 5”','Market message · 10m ago','07-messaging.html',1],
-  ['c3','RC','Running Club weekly digest','3 updates · Yesterday','05-clubs.html#club-page',0],
-  ['','heart','Price drop: Bike is now $80','Saved listing · 2d ago','06-marketplace.html#mkt-saved',0],
+  ['c3','RC','Running Club posted 3 updates','Club · Yesterday','05-clubs.html#club-page',0],
 ];
 const notifList=id=>`<div class="between row" style="padding:12px 14px 4px"><b class="h2">Notifications</b><button class="link sm" data-sheet="${id}">Close</button></div><div class="list">${NOTIFS.map(([c,av,t,m,h,u])=>`<a class="item" href="${h}">${/^[a-z]+$/.test(av)?`<span class="av ${c}"><i data-i="${av}"></i></span>`:`<span class="av ${c}">${av}</span>`}<div class="grow"><b class="sm">${t}</b><span class="xs muted">${m}</span></div>${u?'<span class="unread"></span>':''}</a>`).join('')}</div><a class="link sm" href="09-notifications-settings.html" style="display:block;text-align:center;padding:10px">Notification settings</a>`;
 

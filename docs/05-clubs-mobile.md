@@ -58,4 +58,4 @@ Tabs `data-tabs` + `data-show`/`data-for`; Join `data-toast="cj2"`; reaction pil
 ## Behavior
 - After joining, the first meeting is added to Home and the calendar.
 - Discussion and member chat unlock after join.
-- Announcements are rate-limited to 1/week and go to a digest by default.
+- Announcements are rate-limited to 1/week.

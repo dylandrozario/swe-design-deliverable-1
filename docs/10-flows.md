@@ -60,7 +60,7 @@ Empty state: no matches → clear filters. A student can also start their own cl
 1. Desktop navigation lives in a left sidebar (**Home, Calendar, Events, Market, Clubs, Profile**) plus a Create button (Post / Event / Listing / Club or group); messages float bottom-right, Instagram-style, with All / Market / Clubs filters; notifications are a bell dropdown and settings a gear icon next to the profile picture, not sidebar items.
 2. One sticky primary action per detail screen (RSVP, Join, Message seller) — Events and Market now also have a full web detail page on desktop, not just a mobile screen.
 3. Templates and presets replace typing (event templates, safe-spot list, price defaults).
-4. Digests and rate limits keep clubs from spamming.
+4. Rate limits keep clubs from spamming.
 5. Verified badge plus campus meetup spots build trust.
 6. The calendar unifies RSVPs and club meetings — it now has its own page and sidebar slot instead of being an unbuilt promise.
 7. Events “View more” opens an infinite list with filters, keeping the overview scannable.
@@ -68,7 +68,7 @@ Empty state: no matches → clear filters. A student can also start their own cl
 9. There is no standalone notifications feed page — each notification links straight to the event, thread or club it’s about.
 
 ## Risks and first tests
-- **Club spam** → 1 announcement per week, digest default.
+- **Club spam** → 1 announcement per week.
 - **Scams** → verified-only DMs, report and block, safe spots.
 - **Cold start** → seed Welcome Week and Game Day events; recruit 10 officer clubs.
 - **Unmoderated club/group creation** → review queue before public listing; TBD how quickly recognized-org officers vs. new students get approved.

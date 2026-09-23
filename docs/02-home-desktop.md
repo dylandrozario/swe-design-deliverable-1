@@ -1,6 +1,6 @@
 # 02 Home — Desktop (1280)
 
-**Style:** LinkedIn 3-column feed. Shell (sidebar, top bar, message dock) per [style-guide.md](style-guide.md#desktop-frame). Sidebar active item: **Home**. The message dock is shown **open** on this page. Top bar carries the notification bell dropdown, a settings gear and the profile-picture link — see the Notifications and Settings notes in the style guide.
+**Style:** 3-column feed using the shared post component (`.club-post`). Shell (sidebar, top bar, message dock) per [style-guide.md](style-guide.md#desktop-frame). Sidebar active item: **Home**. The message dock is shown **open** on this page. Top bar carries the notification bell dropdown, a settings gear and the profile-picture link — see the Notifications and Settings notes in the style guide.
 
 ## Layout: `220px | 1fr | 280px`
 
@@ -11,9 +11,9 @@
 1. **Composer card:** avatar · fake input “Share something with BC…” · `Post` (gold, small). Either control opens the **New post** modal (see Behavior).
 2. **Feed tabs** (`.tabs`): **All** (on) · **Friends & following** · **Suggested** — same three states as mobile.
 3. **Interest filter chips:** Running, Live music (on), CS (on), Service, Sports.
-4. **All tab:** section row “Happening tonight” with time/price chips; flyer pair (2 columns, 16:11); club post (BC Running Club, `+Follow`, actions Like/Comment/Repost/**Join**).
-5. **Friends & following tab:** info banner, a friend’s post, an event friends are going to.
-6. **Suggested tab:** match banner, a suggested club post with `+Follow`, a suggested event card.
+4. **All tab:** section row “Happening tonight” with time/price chips; flyer pair (2 columns, 16:11); club post (`.club-post`: BC Running Club + verified, “1h”, meta “Club · 214 members”, `+ Follow` in the head row, body, run art, heart 54 / comment 12 pills and a share icon — no Like/Comment/Repost bar).
+5. **Friends & following tab:** info banner, Mateo J.’s text-only `.club-post` (meta “Friend”), an event friends are going to.
+6. **Suggested tab:** explanatory banner, a suggested Photography Club `.club-post` with `+ Follow` and camera art, a suggested event card.
 
 ### Right rail (sticky)
 - **Trending at BC:** Game Day tailgate (1.2k going), Involvement Fair (640 interested), Move-out freebies (88 listings).

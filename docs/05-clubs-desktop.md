@@ -10,6 +10,7 @@
 - **Categories card:** chips Sports, Arts, Service, Academic.
 
 ### Center: club page (Data Science Society)
+Components (cover, About, ticket cards, `.club-post`, lock card) are defined in [style-guide.md](style-guide.md#club-page-components-club-page); posts here are the same component as on Home.
 Wrapped in `.col.club-page`. Landing shows **Posts**. Panels switch with `data-show`/`data-for="clubtabs-d"`. No stickers, match scores or “free to join” badges, and no About tab.
 
 1. **Header card:**

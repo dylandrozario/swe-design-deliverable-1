@@ -239,3 +239,8 @@ label.f input,label.f select,label.f textarea{font-weight:400}
 .club-page .btn.sm,.club-page .iconbtn,.club-page .chip.react{min-height:44px}.club-page .iconbtn{width:44px;min-width:44px}
 .club-page button.link{min-height:44px;display:inline-flex;align-items:center}
 .about-teaser summary .btn{background:var(--hover);border-color:var(--line)}
+
+/* club-post is the one post component (club page + Home feed): make it self-contained */
+.club-post{border-radius:20px}.club-post .cp-meta{margin-top:-6px}
+.cp-react .chip.react{min-height:44px}.cp-react .chip.liked{background:var(--gold-soft);color:var(--maroon);border-color:var(--gold)}
+.cp-react .iconbtn{width:44px;min-width:44px;min-height:44px}.club-post .btn.sm{min-height:44px}

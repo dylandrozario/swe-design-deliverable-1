@@ -26,3 +26,7 @@ A round of edits added: a Calendar page and sidebar slot (11); a settings gear +
 ## Requirements pass
 
 A later pass closed the gaps against the course requirements: a **Connections** view (requests received/sent/connected with accept, decline, cancel, remove) inside Messages; connections-only messaging, including “Connect to message” on Market listings; a required description on event creation; notifications and settings for connection requests, RSVPs to your events and new messages (in-app + email); optional interests and a non-bc.edu sign-in error in onboarding; the first-login vs returning-login routing on the flows page; and a locked profile view for people you’re not connected to.
+
+## Shared post component
+
+Home and club pages now use one post component, `.club-post` (avatar column, name + verified + time, body, optional rounded media, reaction pills, share). The old LinkedIn-style `.post` with Like / Comment / Repost is gone from the wireframes. Promo badges such as match scores were removed everywhere. See the “Post” and “Club page components” sections of the [style guide](style-guide.md).

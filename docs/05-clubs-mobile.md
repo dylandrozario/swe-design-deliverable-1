@@ -14,7 +14,7 @@
   - **Data Science Society** — `g2`, “310 members · 12 friends”, `+ Join` (secondary).
 
 ## Screen 2 — Club page (`id="club-page"`, BC Running Club)
-A hangout-style page, not a company profile: the club’s name sits on the cover, who’s in it comes next, About is tucked under the member count, and the main content is the club’s posts. No promo stickers, match scores or “free to join” badges. The `.club-page` class on the phone scopes the extra styling.
+A hangout-style page, not a company profile: the club’s name sits on the cover, who’s in it comes next, About is tucked under the member count, and the main content is the club’s posts. No promo stickers, match scores or “free to join” badges. The `.club-page` class on the phone scopes the extra styling. The post, cover, About, ticket-card and lock-card components are defined in [style-guide.md](style-guide.md#post-club-post--the-one-post-component); the same `.club-post` is used for posts on Home.
 
 - **Cover (`.club-cover.g3.pattern`, 150px):** green gradient with a faint dot pattern, a large translucent run icon, and a bottom scrim. A 56px club avatar “RC” (white ring) sits beside the name **BC Running Club** (H1, white) with a gold verified check and a small line “Sports · Chestnut Hill”.
 - **Members line:** four overlapping faces + “**214 members** · 2 friends”.

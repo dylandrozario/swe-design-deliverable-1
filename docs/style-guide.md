@@ -5,7 +5,7 @@ Design system for Turma, the verified social platform for Boston College student
 ## 1. Principles
 
 1. **One brand, three interaction styles.** BC maroon + gold everywhere; layout patterns borrowed per section (see §2).
-2. **One primary action per screen.** Usually a single maroon pill button (RSVP, Join, Message seller, Continue).
+2. **One primary action per screen.** Usually a single maroon pill button (RSVP, Follow, Message seller, Continue).
 3. **Trust is visible.** Verified check next to every name, campus safe-meetup spots, report/block in every thread.
 4. **Quiet by default.** Rate-limited club announcements and simple Off / Instant controls.
 5. **Never color alone.** Every status pairs color with an icon and/or text label.
@@ -142,10 +142,10 @@ Used for every post: Home feed (All, Friends & following, Suggested; mobile and 
 The club page is a hangout-style layout, not a company profile. Added classes are scoped so other pages are unaffected.
 - **Cover** (`.club-cover.gN.pattern`): 150px mobile / 170px desktop gradient with a faint dot pattern (`.pattern`), a large translucent icon watermark (`.wm`) and a bottom scrim. A 56px club avatar with a white ring sits beside the club name (H1, white) with a gold verified check and a one-line “Category · Place”. No stickers, badges or overlapping logo.
 - **Members line + About (`.club-meta`):** faces + “**214 members** · 2 friends”, then About directly underneath as a native `<details class="about-teaser">`: bio clamped to two lines and a **View more** button (small, fill `--hover`); opening shows the `.kv` details (Category, Privacy, Location, Meets, Contact, Dues), the officers (avatar, name, role, message icon button) and a Club files link, and the button reads **View less**. There is no About tab.
-- **Action row** (`.club-actions`): `Join` · `Message` · bell icon button, 44px. On mobile it is sticky at the top of the scroll area so Join stays pinned; on desktop it sits right-aligned in the header.
+- **Action row** (`.club-actions`): `Follow` · `Message` · bell icon button, 44px. On mobile it is sticky at the top of the scroll area so Follow stays pinned; on desktop it sits right-aligned in the header.
 - **Tabs:** underline tabs Posts (default) and Events, switched with `data-show`/`data-for`. When “View all →” switches the panel, CSS `:has()` moves the underline to match.
 - **Ticket card** (`.event-strip .card`, 270px, snap-scrolling `.strip`): maroon date block (`.tk-date`, month over day), dashed divider, then title, meta, “N going” and `RSVP`. Used for the Upcoming strip.
-- **Lock card** (`.lock-card`): gold-soft card with a gold lock circle, “The group chat is members only”, and `Join the club`. Shown to non-members instead of the chat.
+- **Lock card** (`.lock-card`): gold-soft card with a gold lock circle, “The group chat is members only”, and `Follow the club`. Shown to non-members instead of the chat.
 
 ### Listing tile (`.tile`) — Marketplace pattern
 Square art (radius 12) with heart save button top-right and optional badge bottom-left. Below: **price** (16 / 800), title (13.5), location · time (12, muted). Grids: 2 columns mobile, 3–4 desktop. Tiles are clickable through to the listing's detail page.
@@ -191,4 +191,4 @@ Inline SVG line icons, 24px grid, 1.9 stroke, round caps/joins, `currentColor`. 
 | < 480px | Phone frame fills the width |
 
 ## 12. Content voice
-Friendly and plain: “You’re in.” not “RSVP confirmed.” Errors say what happened and what to do (“That code didn’t match. Check your spam folder or resend.”). Use “Message seller”, “I’m going”, “Join”, “View more events”. Campus place names are real (O’Neill Library lobby, The Rat, Reservoir, Walsh, Mods).
+Friendly and plain: “You’re in.” not “RSVP confirmed.” Errors say what happened and what to do (“That code didn’t match. Check your spam folder or resend.”). Use “Message seller”, “I’m going”, “Follow”, “View more events”. Campus place names are real (O’Neill Library lobby, The Rat, Reservoir, Walsh, Mods).

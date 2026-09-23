@@ -6,8 +6,8 @@
 
 <div class="phones">
 <figure class="pw"><div class="phone" data-tab="market" data-theme="mkt">
-  <div class="mhdr"><div class="ttl sp">Marketplace</div><a class="iconbtn" href="#mkt-saved" aria-label="Saved listings"><i data-i="heart"></i></a><button class="iconbtn"><i data-i="search"></i></button></div>
-  <div class="pbody"><div class="chips" data-chips><span class="chip"><i data-i="pin"></i>Walsh</span><span class="chip on">Under $50</span><span class="chip">Textbooks</span><span class="chip">Furniture</span><span class="chip">Free</span></div>
+  <div class="mhdr"><div class="ttl sp">Marketplace</div><a class="iconbtn" href="#mkt-saved" aria-label="Saved listings"><i data-i="heart"></i></a><button class="iconbtn" data-sheet="mktFiltersM" aria-label="Filters"><i data-i="filter"></i></button><button class="iconbtn"><i data-i="search"></i></button></div>
+  <div class="pbody"><div class="row" style="gap:8px;align-items:center;flex-wrap:wrap"><button class="chip" data-sheet="mktFiltersM"><i data-i="filter"></i>Filters</button><span class="chips" data-chips style="flex:1"><span class="chip on">Under $50</span><span class="chip">Free</span></span></div>
     <div class="card pad row" style="background:var(--gold-soft);color:var(--gold-ink);border:0"><i data-i="moon"></i><div class="sp"><b class="sm">Move-out mode</b><div class="xs">Bulk listings + free curb alerts</div></div><button class="switch" aria-label="Move-out mode"></button></div>
     <div class="h2">Today’s picks</div>
     <div class="tiles">
@@ -18,7 +18,14 @@
       <a class="tile" href="#mkt-detail"><div class="art g6"><button class="save"><i data-i="heart"></i></button><i data-i="bag"></i></div><div class="pr">Free</div><div class="tt">Moving boxes</div><div class="lo">Mods · 5h ago</div></a>
       <a class="tile" href="#mkt-detail"><div class="art g1"><button class="save"><i data-i="heart"></i></button><i data-i="music"></i></div><div class="pr">$60</div><div class="tt">Acoustic guitar</div><div class="lo">Upper · 6h ago</div></a>
     </div>
-  </div></div><figcaption>Browse</figcaption></figure>
+    <div class="scrim" id="mktFiltersM-scrim" hidden data-sheet="mktFiltersM"></div>
+  <div class="sheet" id="mktFiltersM" hidden><div class="between row"><div class="h2">Filters</div><button class="link" data-sheet="mktFiltersM">Close</button></div>
+    <div class="stack"><div class="h3">Location</div><span class="chk on">Upper</span><span class="chk">Newton</span><span class="chk">Off-campus</span></div>
+    <div class="stack"><div class="h3">Price</div><div class="range"></div><div class="row between xs muted"><span>$0</span><span>$50</span></div></div>
+    <div class="stack"><div class="h3">Category</div><span class="chk on">Textbooks</span><span class="chk on">Furniture</span><span class="chk">Bikes</span></div>
+    <div class="row sm" style="align-items:center"><i data-i="moon"></i><span class="sp b">Move-out mode</span><button class="switch"></button></div>
+    <div class="row"><button class="btn ghost">Clear</button><button class="btn sp" data-sheet="mktFiltersM">Show results</button></div></div>
+</div></div><figcaption>Browse</figcaption></figure>
 
 <figure class="pw" id="mkt-saved"><div class="phone" data-tab="market" data-theme="mkt">
   <div class="mhdr"><a class="iconbtn plain" href="06-marketplace.html"><i data-i="back"></i></a><div class="ttl sp" style="font-size:18px">Saved</div></div>

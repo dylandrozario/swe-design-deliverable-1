@@ -4,8 +4,9 @@
 **Style:** Facebook Marketplace pattern on a white canvas (`data-theme="mkt"`). See [style-guide.md](style-guide.md#listing-tile-tile--marketplace-pattern). Active tab: **Market**.
 
 ## Screen 1 — Browse
-- **Header:** “Marketplace” title · heart icon button (→ Screen 2, Saved) · search icon button.
-- **Chips:** Walsh (pin), **Under $50 (on)**, Textbooks, Furniture, Free.
+- **Header:** “Marketplace” title · heart icon button (→ Screen 2, Saved) · filter icon button (opens the Filters sheet) · search icon button.
+- **Quick chips:** a `Filters` chip (opens the full sheet below) plus **Under $50 (on)** and Free inline.
+- **Filters sheet:** Location (Upper ✓, Newton, Off-campus), Price range ($0–$50), Category (Textbooks ✓, Furniture ✓, Bikes), Move-out mode switch, `Clear` + `Show results` — the same fields as the desktop filter rail, now reachable on mobile instead of a single condensed chip row.
 - **Move-out banner** (gold-soft): moon icon, “Move-out mode” / “Bulk listings + free curb alerts”, switch (off).
 - **H2:** “Today’s picks”. **2-column tile grid**, each tile a tappable link to the item detail page (Screen 3), with its own heart save button on top:
   - $35 Data Science textbook — Walsh · 2m ago.

@@ -10,15 +10,13 @@
   <div class="pbody">
     <div class="row between"><div><div class="h2">Good evening, Jordan</div><div class="xs muted">CS ’29 · 3 things tonight</div></div></div>
     <div class="tabs" data-tabs><button class="on" data-show="all" data-for="feed1">All</button><button data-show="friends" data-for="feed1">Friends &amp; following</button><button data-show="suggested" data-for="feed1">Suggested</button></div>
-    <div class="chips" data-chips><span class="chip on">Tonight</span><span class="chip">Weekend</span><span class="chip free">Free</span><span class="chip"><i data-i="pin"></i>Near me</span></div>
-    <div class="chips" data-chips><span class="chip"><i data-i="run"></i>Running</span><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Service</span><span class="chip">Sports</span></div>
+    <div class="row" style="gap:8px;align-items:center;flex-wrap:wrap"><button class="chip" data-sheet="homeFiltersM"><i data-i="filter"></i>Filters</button><span class="xs muted">Tonight · Live music · CS active</span></div>
     <div id="feed1">
     <div data-state="all" class="stack">
     <div class="strip">
-      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>7PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="xs">Music Club · 42 going</div></div></div></div>
-      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>8PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Mod social · sophomores</div><div class="xs">60 going · 5 friends</div></div></div></div>
+      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>7PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="row between" style="margin-top:6px;align-items:center"><div class="xs">Music Club · 42 going</div><button class="btn sm gold" data-toast="ht" aria-label="RSVP to Acoustic Night at The Rat" style="min-height:34px"><i data-i="ticket"></i>RSVP</button></div></div></div></div>
+      <div style="flex:0 0 250px"><div class="flyer" style="aspect-ratio:4/4.6"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>8PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Mod social · sophomores</div><div class="row between" style="margin-top:6px;align-items:center"><div class="xs">60 going · 5 friends</div><button class="btn sm gold" data-toast="ht2" aria-label="RSVP to Mod social" style="min-height:34px"><i data-i="ticket"></i>RSVP</button></div></div></div></div>
     </div>
-    <button class="btn block" data-toast="ht"><i data-i="ticket"></i>RSVP to Acoustic Night</button>
     <article class="card club-post"><span class="av c4">PC</span><div class="cp"><div class="row"><b class="sm">Photography Club</b><i class="vt" data-i="verified"></i><span class="xs muted sp">3h</span></div><div class="xs muted cp-meta">Club · 98 members · officer post</div><p>Fall shoot signups are open, only 12 spots left. Thursday 5pm on the O’Neill steps.</p><div class="cp-media art g4"><i data-i="camera"></i></div><button class="btn sm sec" style="align-self:flex-start">View event</button><div class="cp-react"><button class="chip react" data-like><i data-i="heart"></i><b>33</b></button><button class="chip react"><i data-i="chat"></i>8</button><span class="sp"></span><button class="iconbtn" aria-label="Share post"><i data-i="share"></i></button></div></div></article>
     <div class="row between"><div class="h2">Near you in Market</div><a class="link sm" href="06-marketplace.html">See all</a></div>
     <div class="tiles"><div class="tile"><div class="art g5" style="position:relative"><i data-i="book"></i></div><div class="pr">$35</div><div class="tt">Data Sci textbook</div><div class="lo">Walsh · 2m ago</div></div><div class="tile"><div class="art g2"><i data-i="fridge"></i></div><div class="pr">$40</div><div class="tt">Mini-fridge</div><div class="lo">Lower · 1h ago</div></div></div>
@@ -37,6 +35,14 @@
     </div>
     </div>
   </div><div class="toast" id="ht" hidden><i data-i="check"></i>You’re in! Added to your calendar</div>
+  <div class="toast" id="ht2" hidden><i data-i="check"></i>You’re in! Added to your calendar</div>
+  <div class="scrim" id="homeFiltersM-scrim" hidden data-sheet="homeFiltersM"></div>
+  <div class="sheet" id="homeFiltersM" hidden><div class="between row"><div class="h2">Filters</div><button class="link" data-sheet="homeFiltersM">Close</button></div>
+    <div class="stack"><div class="h3">When</div><div class="chips wrap" data-chips><span class="chip on">Tonight</span><span class="chip">This weekend</span></div></div>
+    <div class="stack"><div class="h3">Price</div><div class="chips wrap" data-chips><span class="chip free on">Free</span></div></div>
+    <div class="row sm" style="align-items:center"><i data-i="pin"></i><span class="sp b">Near me</span><button class="switch"></button></div>
+    <div class="stack"><div class="h3">Interests</div><div class="chips wrap" data-chips><span class="chip"><i data-i="run"></i>Running</span><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Service</span><span class="chip">Sports</span></div></div>
+    <div class="row"><button class="btn ghost">Clear</button><button class="btn sp" data-sheet="homeFiltersM">Show results</button></div></div>
   <div class="scrim" id="notifPanelM-scrim" hidden data-sheet="notifPanelM"></div>
   <div class="sheet" id="notifPanelM" hidden><div class="between row"><div class="h2">Notifications</div><button class="link" data-sheet="notifPanelM">Close</button></div><div class="stack">
     <a class="item card pad" href="07-messaging.html#conns-m"><span class="av c2"><i data-i="users"></i></span><div class="grow"><b class="sm">Dana L. sent you a connection request</b><div class="xs muted">Connections · 5m ago</div></div></a>
@@ -47,14 +53,15 @@
     <a class="link sm" href="09-notifications-settings.html" style="text-align:center">Notification settings</a>
   </div></div></div><figcaption>Home · mobile</figcaption></figure>
 
-<figure class="pw"><div class="phone" data-tab="home"><div class="mhdr"><a class="av" href="08-profile.html">JD</a><div class="ttl sp">Home</div></div>
+<figure class="pw"><div class="phone" data-tab="home"><div class="mhdr"><a class="av" href="08-profile.html">JD</a><div class="ttl sp">Feed states</div></div>
   <div class="pbody" id="hs">
+    <div class="state info" style="margin-bottom:2px"><i data-i="spark"></i>Reference only — shows how the Home feed communicates while loading, when it’s empty, or if something fails. Not a real screen.</div>
     <div class="seg" data-tabs><button class="on" data-show="ok" data-for="hs">Loaded</button><button data-show="load" data-for="hs">Loading</button><button data-show="empty" data-for="hs">Empty</button><button data-show="err" data-for="hs">Error</button></div>
     <div data-state="ok" class="stack"><div class="state ok"><i data-i="spark"></i>Picks ready: running + live music</div><div class="card pad sm">Your feed is personalised from your interests, clubs and friends.</div></div>
     <div data-state="load" class="stack" hidden><div class="skel" style="height:220px"></div><div class="skel"></div><div class="skel"></div><div class="xs muted">Skeleton cards, 2 second max</div></div>
     <div data-state="empty" class="stack" hidden><div class="card pad" style="text-align:center"><div class="av lg c4" style="margin:0 auto 10px"><i data-i="spark"></i></div><div class="h2">Nothing here yet</div><p class="sm muted">Add interests or browse Events to fill your feed.</p><a class="btn sm" href="04-events.html">Browse events</a></div></div>
     <div data-state="err" class="stack" hidden><div class="state err"><i data-i="x"></i>Couldn’t load your feed. Check your connection.</div><button class="btn sec block">Retry</button></div>
-  </div></div><figcaption>Home · loading, empty, error states</figcaption></figure>
+  </div></div><figcaption>Feed states reference — loading / empty / error (for engineering; not a real screen)</figcaption></figure>
 
 <figure class="pw" id="compose"><div class="phone" data-nav="none">
   <div class="mhdr"><button class="iconbtn plain"><i data-i="x"></i></button><div class="ttl sp" style="font-size:17px">New post</div><button class="link">Post</button></div>
@@ -64,6 +71,7 @@
     <div class="stack"><div class="h3">Interest tags</div><div class="chips wrap" data-chips><span class="chip on"><i data-i="run"></i>Running</span><span class="chip">Live music</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Service</span><span class="chip">Sports</span></div></div>
     <div class="stack"><div class="h3">Club tags</div><div class="chips wrap" data-chips><span class="chip on">BC Running Club</span><span class="chip">Data Science Society</span><span class="chip">Photography Club</span></div></div>
     <div class="divider"></div><div class="h3">If this is about an event or meetup (optional)</div>
+    <label class="f">Event title (optional)<input placeholder="e.g. Reservoir run"></label>
     <label class="f">When<select><option>No specific time</option><option>Tonight 7pm</option><option>Sat 9am</option></select></label>
     <label class="f">Where<select><option>No specific location</option><option>The Rat</option><option>Reservoir</option><option>O’Neill Library lobby</option></select></label>
     <label class="f">Capacity (optional)<input placeholder="Leave blank for no limit"></label>
@@ -77,10 +85,17 @@
   <div class="col">
     <div class="card composer" data-sheet="newPostModal"><span class="av">JD</span><div class="fake">Share something with BC…</div><button class="btn sm gold" data-sheet="newPostModal">Post</button></div>
     <div class="tabs" data-tabs><button class="on" data-show="all" data-for="feed2">All</button><button data-show="friends" data-for="feed2">Friends &amp; following</button><button data-show="suggested" data-for="feed2">Suggested</button></div>
-    <div class="chips" data-chips><span class="chip"><i data-i="run"></i>Running</span><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Service</span><span class="chip">Sports</span></div>
+    <div class="row" style="gap:10px;align-items:center"><div style="position:relative"><button class="btn sm ghost" data-sheet="homeFiltersD"><i data-i="filter"></i>Filters</button>
+      <div class="ndrop" id="homeFiltersD" hidden style="position:absolute;top:40px;left:0;right:auto;width:300px"><div class="stack" style="padding:14px">
+        <div class="between row"><div class="h2">Filters</div><button class="link sm" data-sheet="homeFiltersD">Close</button></div>
+        <div class="h3">When</div><div class="chips wrap" data-chips><span class="chip on">Tonight</span><span class="chip">Weekend</span></div>
+        <div class="h3">Price</div><div class="chips wrap" data-chips><span class="chip free on">Free</span></div>
+        <div class="h3">Interests</div><div class="chips wrap" data-chips><span class="chip"><i data-i="run"></i>Running</span><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Service</span><span class="chip">Sports</span></div>
+        <div class="row" style="margin-top:4px"><button class="btn ghost sm">Clear</button><button class="btn sm sp" data-sheet="homeFiltersD">Apply</button></div>
+      </div></div></div><span class="xs muted">Tonight · Live music · CS active</span></div>
     <div id="feed2">
     <div data-state="all" class="stack">
-    <div class="row between"><div class="h2">Happening tonight</div><div class="chips" data-chips><span class="chip on">Tonight</span><span class="chip">Weekend</span><span class="chip free">Free</span></div></div>
+    <div class="row between"><div class="h2">Happening tonight</div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="flyer wide"><div class="art g1"><i data-i="music"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>7PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Acoustic Night at The Rat</div><div class="xs">42 going · 3 friends</div></div></div><div class="flyer wide"><div class="art g2"><i data-i="ball"></i></div><div class="top"><div class="date"><small>TONIGHT</small><b>8PM</b></div><span class="price free">Free</span></div><div class="bot"><div class="t">Mod social · sophomores</div><div class="xs">60 going · 5 friends</div></div></div></div>
     <article class="card club-post"><span class="av c3">RC</span><div class="cp"><div class="row"><b class="sm">BC Running Club</b><i class="vt" data-i="verified"></i><span class="xs muted sp">1h</span><button class="btn sm sec">+ Follow</button></div><div class="xs muted cp-meta">Club · 214 members</div><p>Saturday 9am Reservoir meetup. All paces welcome, first-timers get a free singlet.</p><div class="cp-media art g3"><i data-i="run"></i></div><div class="cp-react"><button class="chip react" data-like><i data-i="heart"></i><b>54</b></button><button class="chip react"><i data-i="chat"></i>12</button><span class="sp"></span><button class="iconbtn" aria-label="Share post"><i data-i="share"></i></button></div></div></article>
     </div>
@@ -104,6 +119,7 @@
   <div class="stack"><div class="h3">Post as</div><div class="chips" data-chips><span class="chip on"><span class="av s">JD</span>Jordan (you)</span><span class="chip"><span class="av s c3">RC</span>Running Club</span><span class="chip"><span class="av s c4">PC</span>Photography Club</span></div></div>
   <label class="f">Source or link (optional)<input placeholder="Paste a link to share"></label>
   <label class="f">What’s happening?<textarea placeholder="Share an update, opportunity or plan with BC…"></textarea></label>
+  <label class="f">Event title (optional)<input placeholder="e.g. Reservoir run"></label>
   <div class="row"><label class="f sp">When (optional)<select><option>No specific time</option><option>Tonight 7pm</option></select></label><label class="f sp">Where (optional)<select><option>No specific location</option><option>The Rat</option></select></label></div>
   <div class="row"><label class="f sp">Capacity (optional)<input placeholder="No limit"></label></div>
   <div class="stack"><div class="h3">Interest tags</div><div class="chips wrap" data-chips><span class="chip on">Running</span><span class="chip on">CS</span><span class="chip">Live music</span><span class="chip">Service</span></div></div>

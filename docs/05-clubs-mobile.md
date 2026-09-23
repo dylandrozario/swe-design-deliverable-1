@@ -9,9 +9,9 @@
 - **`+ Create a club or group`** (ghost, block) — the general entry point non-officers use too; opens Screen 4.
 - **Section:** H2 “Clubs for you”, caption “Running + music”.
 - **Club cards** (banner 96px with icon, then details):
-  - **BC Running Club** — `g3`, verified check; faces + “214 members · 2 friends”; “Saturdays 9am at the Reservoir”; `Join` (primary, small, block, plus icon). Tap → toast “Joined. First meeting added to Home”.
-  - **Photography Club** — `g4`, “98 members · Thursdays”, `+ Join` (secondary).
-  - **Data Science Society** — `g2`, “310 members · 12 friends”, `+ Join` (secondary).
+  - **BC Running Club** — `g3`, verified check; faces + “214 members · 2 friends”; “Saturdays 9am at the Reservoir”; `Follow` (primary, small, block, plus icon). Tap → toast “Following. First meeting added to Home”.
+  - **Photography Club** — `g4`, “98 members · Thursdays”, `+ Follow` (secondary).
+  - **Data Science Society** — `g2`, “310 members · 12 friends”, `+ Follow` (secondary).
 
 ## Screen 2 — Club page (`id="club-page"`, BC Running Club)
 A hangout-style page, not a company profile: the club’s name sits on the cover, who’s in it comes next, About is tucked under the member count, and the main content is the club’s posts. No promo stickers, match scores or “free to join” badges. The `.club-page` class on the phone scopes the extra styling. The post, cover, About, ticket-card and lock-card components are defined in [style-guide.md](style-guide.md#post-club-post--the-one-post-component); the same `.club-post` is used for posts on Home.
@@ -23,7 +23,7 @@ A hangout-style page, not a company profile: the club’s name sits on the cover
   - **Officers · 3:** rows with avatar, name, role (Maya R. President, Dev P. Treasurer, Sam O. Social chair) and a message icon button.
   - `Club files` link.
   There is **no About tab**.
-- **Action row (`.club-actions`, sticky at the top of the scroll area):** `Join` (primary, flexible) · `Message` (secondary, flexible) · bell icon button (“Get club alerts”), all 44px. It stays pinned while the feed scrolls. Join → toast “Joined BC Running Club. First run added to your calendar”.
+- **Action row (`.club-actions`, sticky at the top of the scroll area):** `Follow` (primary, flexible) · `Message` (secondary, flexible) · bell icon button (“Get club alerts”), all 44px. It stays pinned while the feed scrolls. Follow → toast “Following BC Running Club. First run added to your calendar”.
 - **Tabs (underline, `data-tabs`):** **Posts** (on, default) · **Events**. Panels switch with `data-show`/`data-for="clubtabs"`.
 
 ### Posts tab (default)
@@ -31,13 +31,13 @@ A hangout-style page, not a company profile: the club’s name sits on the cover
 2. **Fresh from the club:** two officer posts (`.card.club-post`): avatar column on the left; right column has name + verified check, time, optional gold **Pinned** badge, text, a rounded 150px `.art` image (not full-bleed), and a row of **reaction pills** (heart with count, comment count) plus a share icon button. No Like/Comment/Repost bar.
    - BC Running Club, 1h, pinned — “Saturday long run is ON, rain or shine…”
    - Maya R. ’26, 1d — “Marathon Monday cheer squad signups are open…”
-3. **Members-only card (`.lock-card`, gold-soft):** lock circle, “The group chat is members only”, “Join to chat, post and see who’s coming to each run.”, `Join the club`.
+3. **Members-only card (`.lock-card`, gold-soft):** lock circle, “The group chat is members only”, “Follow to chat, post and see who’s coming to each run.”, `Follow the club`.
 
 ### Events tab
 H2 “Upcoming runs”; card of date-tile rows (Sat 18 Weekly meetup, Sat 25 Long run 8 miles, Apr 20 Marathon Monday cheer) each with going count and `RSVP`; `← Back to posts`.
 
 ### Interactions (existing handlers only)
-Tabs `data-tabs` + `data-show`/`data-for`; Join `data-toast="cj2"`; reaction pills `data-like` (heart count toggles, gold-soft “liked” state). The tab underline follows the visible panel even when switched from “View all →” (CSS `:has()`).
+Tabs `data-tabs` + `data-show`/`data-for`; Follow `data-toast="cj2"`; reaction pills `data-like` (heart count toggles, gold-soft “liked” state). The tab underline follows the visible panel even when switched from “View all →” (CSS `:has()`).
 
 ## Screen 3 — Officer dashboard
 - **Header:** back · “Officer dashboard”. Club identity row (RC avatar, “You’re an officer”).

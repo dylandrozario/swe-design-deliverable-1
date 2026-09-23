@@ -40,7 +40,7 @@ Taps: Home (0) → open (1) → RSVP (2) → add (3). States: going, full → wa
 |---|---|---|
 | 1 | Clubs | “For you” directory ([Clubs mobile](05-clubs-mobile.md)) |
 | 2 | Club page | Banner, members, upcoming events |
-| 3 | Join | One tap |
+| 3 | Follow | One tap |
 | 4 | Welcome | First meeting surfaced |
 | 5 | Home + calendar | Both updated |
 
@@ -58,7 +58,7 @@ Empty state: no matches → clear filters. A student can also start their own cl
 ## Key decisions
 0. Messaging is connections-only everywhere; Market sellers included (“Connect to message”). Notifications cover new connection requests, RSVPs to your events and new messages, in-app and by email.
 1. Desktop navigation lives in a left sidebar (**Home, Calendar, Events, Market, Clubs, Profile**) plus a Create button (Post / Event / Listing / Club or group); messages float bottom-right, Instagram-style, with All / Market / Clubs filters; notifications are a bell dropdown and settings a gear icon next to the profile picture, not sidebar items.
-2. One sticky primary action per detail screen (RSVP, Join, Message seller) — Events and Market now also have a full web detail page on desktop, not just a mobile screen.
+2. One sticky primary action per detail screen (RSVP, Follow, Message seller) — Events and Market now also have a full web detail page on desktop, not just a mobile screen.
 3. Templates and presets replace typing (event templates, safe-spot list, price defaults).
 4. Rate limits keep clubs from spamming.
 5. Verified badge plus campus meetup spots build trust.

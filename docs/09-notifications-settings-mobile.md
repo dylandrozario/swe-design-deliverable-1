@@ -8,12 +8,14 @@ The old full-page “Alerts” list has been removed. Tapping the bell in the Ho
 
 ## Screen — Settings
 - **Header:** back · “Settings”.
-- **Notifications** (label, then card of switch rows; each row = title + description + switch):
+- **Notify me about** (card of switch rows; the three things the app must notify on): **Connection requests** — when someone wants to connect, or accepts — on; **RSVPs to my events** — when someone RSVPs to an event you posted — on; **New messages** — direct messages from your connections — on.
+- **Delivery** (card): **In-app** — bell icon, always on (badge “Always on”); **Email** — sent to jdoe27@bc.edu — switch, on. Notifications go in-app and by email.
+- **Reminders and digests** (card of switch rows; each row = title + description + switch):
   - Event reminders — 2 hours before — on.
   - Club digest — Weekly summary — on.
-  - Marketplace messages — Push for new inquiries — on.
+  - Saved-price drops — when a listing you saved gets cheaper — on.
   - Quiet hours — 11pm to 8am — on.
-- **Privacy** (card of navigation rows, arrow at right): Bio & interests visible to — BC students only; Major & minor visible to — Everyone; Who can message me — Verified students.
+- **Privacy** (card of navigation rows, arrow at right): Bio & interests visible to — BC students only; Major & minor visible to — Everyone; Who can message me — Accepted connections only.
 - **`Report, block and safety`** (ghost, block, shield icon).
 - **`Save changes`** (primary, block). Tap → toast “Preferences saved”. Failure → “Couldn’t save. Retry.”
 

@@ -15,6 +15,16 @@
 - **Bubbles:** them “See you at 5. Should I bring a dolly?”; me “Yes please! I’ll meet you at the front desk.”
 - **Composer:** chips `Insert safe spot` (pin) and `Suggest another time`; text input + `Send` (send icon).
 
+## Connections view
+The left-pane header has a **Messages | Connections · 2** switch (`data-show`/`data-for="msgdesk"`). Choosing Connections swaps the whole frame to:
+- **Left pane:** the same switch, then a summary list: Requests (2 waiting, gold badge), Sent (1 pending), Connected (5 people).
+- **Right pane:** H2 “Connections” with a “Find people at BC” search on the right, then three cards:
+  - **Requests received · 2:** Dana L. ’28 and Theo B. ’29, each with reason line, `Accept` and `Decline`.
+  - **Sent · 1:** Nora W. ’27, “Pending · sent 2d ago”, `Cancel`.
+  - **Connected · 5:** Mateo J., Amara K., Priya S., Sarah K., Mike T., each with `Message` and a remove (x) button.
+  - Rule line: “Only accepted connections can message each other or see connection-only profile details.”
+- The Messages side also gains Mateo J. as a direct-message thread, and Sarah K.’s thread header shows “Connected since Oct 3”.
+
 ## New chat modal
 Centered `.modal`: Direct message / Group chat segmented control, a “To” search field, a checkbox list of accepted connections, a group-name field (group chats only), and `Start chat`. Same fields and logic as the mobile New chat sheet.
 

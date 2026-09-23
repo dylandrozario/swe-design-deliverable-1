@@ -28,7 +28,9 @@
 - **Safe-meetup callout:** shield icon, “Meet at **O’Neill Library lobby**, a well-lit campus spot. Your number stays private in chat.”
 - **Map:** 110px preview with pin.
 - **Footer links:** Report listing · Safety tips.
-- **Sticky CTA:** `Message seller` (chat icon, block). Tap → toast “Sent. Sarah usually replies in about an hour”.
+- **Sticky CTA** (`#mktcta`, with a Connected / Not connected switch for design review). Messaging is connections-only, so the primary action depends on whether you’re connected to the seller:
+  - **Connected:** `Message seller` (chat icon, block). Tap → toast “Sent. Sarah usually replies in about an hour”.
+  - **Not connected:** `Connect to message` (users icon, block) with a lock line “Messaging opens once Sarah accepts. Your question about the fridge goes with the request.” Tap → toast “Request sent. You can message Sarah once she accepts”. The seller gets a connection-request notification (in-app + email); accepting opens the thread.
 
 ## Screen 4 — Create listing (`id="mkt-create"`, photo first)
 - **Header:** close · “New listing” · “Draft saved”.

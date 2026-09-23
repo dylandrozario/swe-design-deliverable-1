@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>06 Market — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
 <main class="page">
 <h1>Market</h1>
-<p class="lede">Built like Facebook Marketplace: big photo tiles, price first, category pills, and a single “Message seller” button. Trust comes from verified BC sellers and campus safe-meetup spots.</p>
+<p class="lede">Built like Facebook Marketplace: big photo tiles, price first, category pills, and a single “Message seller” button (for sellers you’re connected with; otherwise it becomes “Connect to message”). Trust comes from verified BC sellers and campus safe-meetup spots.</p>
 <div class="tags"><span class="fb">Marketplace-style</span><span>Verified sellers</span><span>Safe meetup presets</span><span>Move-out mode</span><span>Web detail + create page</span></div>
 
 <div class="phones">
@@ -40,8 +40,11 @@
       <div class="mapbox" style="height:110px"><i data-i="pin" style="left:46%;top:30%"></i></div>
       <div class="xs muted row between"><button class="link" style="color:var(--muted)">Report listing</button><button class="link" style="color:var(--muted)">Safety tips</button></div>
     </div>
-    <div class="cta" style="position:sticky;bottom:0;margin:auto 0 0"><button class="btn block" data-toast="mt"><i data-i="chat"></i>Message seller</button></div>
-  </div><div class="toast" id="mt" hidden><i data-i="check"></i>Sent. Sarah usually replies in about an hour</div></div><figcaption>Listing detail</figcaption></figure>
+    <div class="cta" id="mktcta" style="position:sticky;bottom:0;margin:auto 0 0;flex-direction:column;align-items:stretch">
+      <div class="seg" data-tabs style="margin-bottom:2px"><button class="on" data-show="conn" data-for="mktcta">Connected</button><button data-show="noconn" data-for="mktcta">Not connected</button></div>
+      <div data-state="conn"><button class="btn block" data-toast="mt"><i data-i="chat"></i>Message seller</button></div>
+      <div data-state="noconn" class="stack" hidden><button class="btn block" data-toast="mt2"><i data-i="users"></i>Connect to message</button><div class="xs muted row"><i data-i="lock"></i>Messaging opens once Sarah accepts. Your question about the fridge goes with the request.</div></div></div>
+  </div><div class="toast" id="mt2" hidden><i data-i="check"></i>Request sent. You can message Sarah once she accepts</div><div class="toast" id="mt" hidden><i data-i="check"></i>Sent. Sarah usually replies in about an hour</div></div><figcaption>Listing detail</figcaption></figure>
 
 <figure class="pw" id="mkt-create"><div class="phone" data-tab="market" data-theme="mkt">
   <div class="mhdr"><button class="iconbtn plain"><i data-i="x"></i></button><div class="ttl sp" style="font-size:17px">New listing</div><span class="xs muted">Draft saved</span></div>
@@ -98,10 +101,12 @@
       <p class="sm" style="margin:4px 0">Works great, cold in 20 minutes. Selling because I’m graduating. Must go by Friday.</p>
       <div class="safe"><i data-i="shield"></i>Meet at <b>O’Neill Library lobby</b>, a well-lit campus spot. Your number stays private in chat.</div>
       <div class="mapbox" style="height:150px"><i data-i="pin" style="left:46%;top:30%"></i></div>
-      <div class="row"><button class="btn sp" data-toast="mtd"><i data-i="chat"></i>Message seller</button><button class="btn ghost"><i data-i="heart"></i>Save</button></div>
+      <div class="seg" data-tabs style="width:260px"><button class="on" data-show="conn" data-for="mktdeskcta">Connected</button><button data-show="noconn" data-for="mktdeskcta">Not connected</button></div>
+      <div id="mktdeskcta"><div data-state="conn" class="row"><button class="btn sp" data-toast="mtd"><i data-i="chat"></i>Message seller</button><button class="btn ghost"><i data-i="heart"></i>Save</button></div>
+      <div data-state="noconn" class="stack" hidden><div class="row"><button class="btn sp" data-toast="mtd2"><i data-i="users"></i>Connect to message</button><button class="btn ghost"><i data-i="heart"></i>Save</button></div><div class="xs muted row"><i data-i="lock"></i>Messaging opens once Sarah accepts. Your question goes with the request.</div></div></div>
       <div class="xs muted row between"><button class="link" style="color:var(--muted)">Report listing</button><button class="link" style="color:var(--muted)">Safety tips</button></div>
     </div>
-    <div class="toast" id="mtd" hidden><i data-i="check"></i>Sent. Sarah usually replies in about an hour</div>
+    <div class="toast" id="mtd2" hidden><i data-i="check"></i>Request sent. You can message Sarah once she accepts</div><div class="toast" id="mtd" hidden><i data-i="check"></i>Sent. Sarah usually replies in about an hour</div>
   </div>
   <div class="dbody two" data-state="create" hidden>
     <div class="rail"><button class="link" data-show="browse" data-for="mktdesk" style="display:flex;align-items:center;gap:6px"><i data-i="back"></i>Back to browse</button>
@@ -117,5 +122,5 @@
     <div class="toast" id="mlp" hidden><i data-i="check"></i>Listing posted</div>
   </div>
 </div>
-<div class="note"><b>Notes</b>Filters apply live and clicking any tile opens the full listing detail in place (web version of the mobile detail screen). The sidebar’s Saved link and the mobile heart icon both filter to saved-only; Create listing opens a full “web page” create flow rather than a small popup, since photos and a description need room. Sold flow asks for a rating. Tablet 768: 3-column grid and the filter rail becomes a drawer. Verified-only DMs, report and block live in every thread.</div>
+<div class="note"><b>Notes</b>Messaging is connections-only, so on a listing from someone you’re not connected to the primary action is “Connect to message”: it sends a connection request with your question attached and Messaging opens when they accept. The Connected / Not connected switch shows both states. Filters apply live and clicking any tile opens the full listing detail in place (web version of the mobile detail screen). The sidebar’s Saved link and the mobile heart icon both filter to saved-only; Create listing opens a full “web page” create flow rather than a small popup, since photos and a description need room. Sold flow asks for a rating. Tablet 768: 3-column grid and the filter rail becomes a drawer. Verified-only DMs, report and block live in every thread.</div>
 </main><script src="app.js"></script></body></html>

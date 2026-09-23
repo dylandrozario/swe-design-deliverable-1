@@ -2,6 +2,28 @@
 
 Three journeys that prove the product. Each is 5 steps or fewer, at most 3 taps from Home, with one primary action per screen. Applies to both mobile and desktop; screen specs are linked.
 
+## 0. Account — Sign in with Google → profile → Home
+| # | Step | Detail |
+|---|---|---|
+| 1 | Continue with Google | bc.edu accounts only ([Onboarding](01-onboarding-mobile.md)); any other account gets the blocked screen |
+| 2 | New or returning? | First login goes to profile setup; every later login goes straight to Home |
+| 3 | Year + major(s) | Required (second major and minor optional); Home stays locked until saved |
+| 4 | Photo, bio, interests | All optional and editable later from Profile |
+| 5 | Home | |
+
+Google supplies name, email and photo; class year and major cannot come from sign-in and are asked once.
+
+## 0b. Connections — Request → accept → message
+| # | Step | Detail |
+|---|---|---|
+| 1 | Send a request | From a profile, “People you may know”, or “Connect to message” on a listing ([Market](06-marketplace-mobile.md)) |
+| 2 | They’re notified | Bell dropdown/sheet and email |
+| 3 | Accept or decline | Connections → Requests ([Messages](07-messaging-mobile.md#screen-3--connections-idconns-m)) |
+| 4 | Unlocked | Message and connection-only profile details ([Profile](08-profile-mobile.md)) |
+| 5 | Message | Direct thread; Remove ends the connection and closes the DM |
+
+Cancel withdraws a sent request; Decline removes one silently.
+
 ## A. Events — Tonight → RSVP → calendar (returning student)
 | # | Step | Detail |
 |---|---|---|
@@ -34,6 +56,7 @@ Empty state: no matches → clear filters. A student can also start their own cl
 | 5 | Rate | Rating prompt |
 
 ## Key decisions
+0. Messaging is connections-only everywhere; Market sellers included (“Connect to message”). Notifications cover new connection requests, RSVPs to your events and new messages, in-app and by email.
 1. Desktop navigation lives in a left sidebar (**Home, Calendar, Events, Market, Clubs, Profile**) plus a Create button (Post / Event / Listing / Club or group); messages float bottom-right, Instagram-style, with All / Market / Clubs filters; notifications are a bell dropdown and settings a gear icon next to the profile picture, not sidebar items.
 2. One sticky primary action per detail screen (RSVP, Join, Message seller) — Events and Market now also have a full web detail page on desktop, not just a mobile screen.
 3. Templates and presets replace typing (event templates, safe-spot list, price defaults).

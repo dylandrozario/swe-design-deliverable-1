@@ -15,8 +15,9 @@
 5. **Following panel:** People (connections, `Remove`) and Clubs & groups (`Unfollow`) as two cards — clubs, groups and people all reachable from one tab.
 
 ### Right rail
-- **Privacy card:** “Bio & interests — BC only”; “Major & minor — Everyone”; “Direct messages — Verified”; link to the full Settings page.
-- **Viewing others** (gold-soft note): “Message, shared clubs and friends, report or block. Hidden fields stay hidden.”
+- **Privacy card:** “Bio & interests — BC only”; “Major & minor — Everyone”; “Direct messages — Connections”; link to the full Settings page.
+- **Someone you’re not connected to** (card): Dana L. ’28 — “Economics major · Class of 2028”; lock line “Bio, interests, clubs and RSVPs are hidden until you connect.”; `Connect` (primary, small) and a disabled `Message locked` button.
+- The People list under Following now shows 5 connections (Mateo, Amara, Priya, Sarah K., Mike T.).
 
 ## Edit profile modal
 Centered `.modal` opened from the `Edit profile` button: photo, Name, Class year + Major (side by side), Second major + Minor (side by side, optional), Bio, Interest chips, `Save changes`.

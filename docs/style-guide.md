@@ -147,6 +147,7 @@ Square art (radius 12) with heart save button top-right and optional badge botto
 - **Message bubble** (`.bubble`): them = chip fill, left; me = maroon fill, right. 18px radius with one 5px corner.
 - **Unread dot** (`.unread`): 10px accent dot.
 - **Skeleton** (`.skel`): shimmering block for loading.
+- **Connection row** (`.item.card.pad`): avatar, name + class year + verified check, one-line reason (mutual friends, shared club, “Pending · sent 2d ago”), then actions: `Accept` (primary, small) + `Decline` (ghost, small) for received requests, `Cancel` for sent, `+ Connect` (secondary) for suggestions, `Message` (secondary) + remove (x icon) for connected. Non-connected profiles show a gold lock card (“Connect to see more”) and a disabled Message button.
 - **Note** (`.note`): gold-soft callout with left gold rule (documentation only). `.note.open` switches to a red/maroon tint for a flagged, still-open design decision (e.g. club verification) rather than a settled one.
 
 ## 8. Icons

@@ -14,7 +14,7 @@ Full-height `g1` gradient, content bottom-left with 40px padding, white text:
 ### Right: step panel
 White card, 56px / 64px padding, vertical stack:
 1. Progress bar (3 of 5 filled — shown mid-flow, at the interests step).
-2. H1 (30px) “Pick your interests”; subtext “Step 3 of 5 · we’ll suggest clubs and people”.
+2. H1 (30px) “Pick a few interests (optional)”; subtext “Step 3 of 5 · we’ll suggest clubs and people”.
 3. Interest chips (wrap, 10px gap): Live music ✓, Running ✓, Data science, Service, Theatre, Ski.
 4. Live suggestion row (card): BC Running Club avatar, name, “Suggested · 214 members”, `Follow` (secondary, small). Updates as chips change.
 5. Footer row: `Back` (ghost) and `Continue` (primary, fills remaining width).
@@ -25,6 +25,9 @@ White card, 56px / 64px padding, vertical stack:
 - The right panel swaps content for each step (sign in, year/major, interests, suggested clubs, suggested people) using the mobile step content; the left panel stays.
 - Inline validation; back keeps answers.
 - Skipping suggested clubs or suggested people shows a “follow/connect later” empty state pointing to Clubs, Events, or the Following tab on Profile.
+
+- Non-BC Google accounts get the same blocked screen as mobile (error banner + “Try a different Google account”).
+- Interests are optional: Continue stays enabled and a `Skip for now` link is offered. Photo, bio and interests are all optional; only class year and major gate Home.
 
 ## Tablet (768)
 Single centered card; the brand panel becomes a top banner.

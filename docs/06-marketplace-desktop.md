@@ -29,6 +29,9 @@ Two-column layout: left rail has the photo and a compact seller card (`View prof
 ## Create (web version of the new-listing page)
 Left rail repeats the safe-spot requirement; center column (max 520px) has the photo dropzone, Title, Price + Category (side by side), Description, Meetup spot select and `Post listing` (toast “Listing posted”).
 
+## Messaging rule (connections only)
+The listing detail action row has a Connected / Not connected switch (design review). **Connected:** `Message seller` + `Save`. **Not connected:** `Connect to message` + `Save`, with a lock line “Messaging opens once Sarah accepts. Your question goes with the request.”; the click shows toast “Request sent. You can message Sarah once she accepts”. Nobody can message a seller they aren’t connected to.
+
 ## Behavior
 - Filters apply live; chips and checkboxes toggle in place.
 - Selecting a tile or the selected-listing card opens Detail in place of the browse grid.

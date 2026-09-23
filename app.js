@@ -59,6 +59,8 @@ const cur=location.pathname.split('/').pop()||'index.html';
 /* Notifications: each row links straight into the page it's about instead of a
    standalone alerts list. Shared by the desktop dropdown and the mobile sheet. */
 const NOTIFS=[
+  ['c2','users','Dana L. sent you a connection request','Connections · 5m ago','07-messaging.html#conns-m',1],
+  ['c3','ticket','Amara K. is going to Study break: pancakes','RSVP to your event · 30m ago','04-events.html#ev-detail',1],
   ['c4','ticket','Acoustic Night starts at 7pm','Event reminder · 2h ago','04-events.html#ev-detail',1],
   ['c5','SK','Sarah: “See you at O’Neill at 5”','Market message · 10m ago','07-messaging.html',1],
   ['c3','RC','Running Club weekly digest','3 updates · Yesterday','05-clubs.html#club-page',0],

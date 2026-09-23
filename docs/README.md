@@ -22,3 +22,11 @@ File numbers match the HTML wireframes; there is no 03 (the Discover page was re
 ## Revision notes (post-Delivery-1 pass)
 
 A round of edits added: a Calendar page and sidebar slot (11); a settings gear + profile-picture link in the desktop top bar and on Profile (mobile); a Following tab on Profile covering people, clubs and groups; general club/group creation (not just from the officer dashboard) with an explicit "create a group chat" toggle and a flagged-open verification-review process; Google OAuth sign-in replacing the email/code onboarding steps, with residence hall and campus area dropped and major/second major/minor added, plus a suggested-people onboarding step; Home feed tabs (All / Friends & following / Suggested) and an interest filter; a New post pop-up/page, a New chat pop-up, and web (desktop) detail pages for both Events and Market, plus a Market "Saved" view and a full desktop create-listing page. The standalone Alerts list page was removed in favor of a notification dropdown (desktop) / sheet (mobile) where every row links straight to what it's about. See each page's spec and [style-guide.md](style-guide.md) for the details.
+
+## Requirements pass
+
+A later pass closed the gaps against the course requirements: a **Connections** view (requests received/sent/connected with accept, decline, cancel, remove) inside Messages; connections-only messaging, including “Connect to message” on Market listings; a required description on event creation; notifications and settings for connection requests, RSVPs to your events and new messages (in-app + email); optional interests and a non-bc.edu sign-in error in onboarding; the first-login vs returning-login routing on the flows page; and a locked profile view for people you’re not connected to.
+
+## Shared post component
+
+Home and club pages now use one post component, `.club-post` (avatar column, name + verified + time, body, optional rounded media, reaction pills, share). The old LinkedIn-style `.post` with Like / Comment / Repost is gone from the wireframes. Promo badges such as match scores were removed everywhere. See the “Post” and “Club page components” sections of the [style guide](style-guide.md).

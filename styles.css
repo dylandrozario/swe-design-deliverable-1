@@ -209,3 +209,38 @@ label.f input,label.f select,label.f textarea{font-weight:400}
 
 /* event cards in the infinite feed */
 .evcard .flyer{border-radius:0;aspect-ratio:16/8}.evcard .flyer .art .ic{font-size:72px}
+
+/* ---------- club page (additive, scoped to .club-page) ---------- */
+.club-page .card{border-radius:20px}
+.pattern:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.2) 1.6px,transparent 2px) 0 0/20px 20px}
+.club-cover{position:relative;display:flex;align-items:flex-end;gap:12px;padding:16px;min-height:150px;color:#fff;background:var(--g);overflow:hidden}
+.club-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,20,12,.62));pointer-events:none}
+.club-cover>*{position:relative;z-index:2}.club-cover>.wm{position:absolute;z-index:1;right:-6px;top:-10px;width:130px;height:130px;opacity:.22}
+.club-cover .h1{font-size:26px}.club-cover .vt{color:var(--gold)}.club-cover .av{border:3px solid #fff}
+.club-meta{padding:14px;background:var(--card);display:flex;flex-direction:column;gap:12px}
+.about-teaser summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.about-teaser summary::-webkit-details-marker{display:none}
+.about-teaser .bio{margin:0;font-size:13.5px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.about-teaser[open] .bio{display:block}.about-teaser .c,.about-teaser[open] .o{display:none}.about-teaser[open] .c{display:inline}
+.about-teaser .more{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.club-actions{position:sticky;top:0;z-index:5;display:flex;gap:8px;align-items:center;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.event-strip{scroll-snap-type:x mandatory}
+.event-strip .card{flex:0 0 270px;display:flex;scroll-snap-align:start}
+.tk-date{width:64px;flex:none;background:var(--maroon);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}.tk-date small{font:800 10px var(--mono);letter-spacing:.08em}.tk-date b{font-size:24px}
+.tk-body{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1;min-width:0;border-left:2px dashed var(--line)}
+.club-post{display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:14px}
+.club-post .cp{display:flex;flex-direction:column;gap:8px;min-width:0}.club-post p{margin:0;font-size:14px}
+.cp-media{height:150px;border-radius:14px}.cp-media .ic{font-size:52px}
+.cp-react{display:flex;gap:8px;align-items:center}.club-page .chip.liked{background:var(--gold-soft);color:var(--maroon);border-color:var(--gold)}
+.lock-card{padding:16px;text-align:center;background:var(--gold-soft);display:flex;flex-direction:column;align-items:center;gap:8px}
+.lock-card .lk{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--deep);display:grid;place-items:center;font-size:20px}
+.club-page:has([data-state=events]:not([hidden])) .tabs button[data-show=events]{color:var(--accent);border-color:var(--accent)}
+.club-page:has([data-state=events]:not([hidden])) .tabs button[data-show=posts]{color:var(--muted);border-color:transparent}
+.club-page .btn.sm,.club-page .iconbtn,.club-page .chip.react{min-height:44px}.club-page .iconbtn{width:44px;min-width:44px}
+.club-page button.link{min-height:44px;display:inline-flex;align-items:center}
+.about-teaser summary .btn{background:var(--hover);border-color:var(--line)}
+
+/* club-post is the one post component (club page + Home feed): make it self-contained */
+.club-post{border-radius:20px}.club-post .cp-meta{margin-top:-6px}
+.cp-react .chip.react{min-height:44px}.cp-react .chip.liked{background:var(--gold-soft);color:var(--maroon);border-color:var(--gold)}
+.cp-react .iconbtn{width:44px;min-width:44px;min-height:44px}.club-post .btn.sm{min-height:44px}

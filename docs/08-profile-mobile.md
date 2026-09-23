@@ -28,9 +28,17 @@
 Market theme (white canvas). Active tab: **Market**.
 - **Header:** back · “Sarah K.” · more (⋯).
 - **Identity:** 72px avatar SK; “Sarah K. ’26” + verified; “Communication major · Photography Club”; “**4.9** · 12 sales”.
-- **Actions:** `Message` (primary, chat icon) and `Report` (ghost, shield icon).
+- **Connection state:** green “Connected” badge under the name. **Actions:** `Message` (primary, chat icon) and `Report` (ghost, shield icon).
 - **Listings:** H2 “Listings”; 3 tiles — Mini-fridge $40, Bike $90, Desk lamp $10 with “Sold” badge.
-- **Privacy note:** lock icon, “Sarah hides her bio from non-friends”.
+- **Note:** check icon, “Connected since Oct 3. You can see her bio and clubs.”
+
+## Screen 4 — Someone you’re not connected to (Dana L.)
+What a student sees on the profile of a verified BC student they haven’t connected with. Only what that student made public is shown.
+- **Header:** back · “Dana L.” · more (⋯; Report, Block).
+- **Identity:** 72px avatar DL; “Dana L. ’28” + verified; “Economics major · Class of 2028” (major and year are public by default); grey “Not connected” badge.
+- **Locked card:** gold lock circle, H2 “Connect to see more”, “Dana’s bio, interests, clubs and RSVPs are only visible to connections.”
+- **Actions:** `Connect` (primary, users icon, block) and a disabled ghost button “Message unlocks after Dana accepts”. Report / Block links below.
+- Your own People list now holds 5 connections (Mateo J., Amara K., Priya S., Sarah K., Mike T.), each with `Remove`; see [Messages](07-messaging-mobile.md#screen-3--connections-idconns-m) for requests.
 
 ## Behavior
 - Own profile: edit name, year, major/second major/minor, bio, interests, photo; per-field privacy (BC only / everyone / connections).

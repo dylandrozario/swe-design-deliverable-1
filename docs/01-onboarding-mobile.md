@@ -12,22 +12,32 @@ Progress: a 5-segment bar in the header of steps 2–5 (`.progress`), with a bac
 - **Footer:** “By continuing you agree to the Community Guidelines” (caption, centered).
 - **Interaction:** tapping the button shows toast “Verified jdoe27@bc.edu” — verification is instant because bc.edu domain restriction happens inside the OAuth consent screen itself, so there is no separate email-code step to design or build.
 
+## Screen 1b — Non-BC account (blocked)
+Shown when someone signs in with a Google account that isn’t `@bc.edu`.
+- Shorter hero (200px) with the same headline.
+- **Error banner** (`.state.err`, x icon): “That Google account isn’t a bc.edu address. You signed in as **alex.m@gmail.com**. Try again with your BC account.”
+- **Primary:** `Try a different Google account` (`.btn.google`, block).
+- **Helper:** shield line “Turma only opens for @bc.edu accounts. There’s no other way to sign up.”
+- No account is created and no profile data is stored for the rejected address.
+
 ## Screen 2 — Class year, major(s) and minor
 - Progress 2/5. H1 “Class year and major”; subtext “Required so we can verify and personalise your feed. Google already gave us your name and photo.” (per the critical requirements note: Google already has name/photo, so onboarding doesn’t re-ask for them.)
 - **Class year** chips (single select): 2026, 2027, 2028, **2029 (on)**, Grad.
 - **Major** select (required) — the one field the Critical Requirements call mandatory alongside class year.
 - **Second major** select (optional) and **Minor** select (optional), side by side — resolves the open “up to two majors / minors?” question by supporting a second major and a minor, both clearly labelled optional so nothing blocks a student with only one major.
 - Residence hall and campus area are **not** collected here — dropped from onboarding; hall/area added noise without changing what Home shows a freshman vs. a senior, and location-flavoured content (near-me listings, campus spot names) reads fine from major/year/interests alone.
-- **Primary:** `Continue`.
+- **Google photo row** (card): avatar, “Using your Google photo”, “Optional. Change or remove it anytime.”, `Change` (ghost, small). The profile picture is allowed but never required.
+- **Gate:** the subtext says “Home stays locked until they’re saved.” A first-time user cannot reach Home until class year and major are saved; returning users skip onboarding entirely and land on Home.
+- **Primary:** `Continue` (disabled until class year and major are set).
 
-## Screen 3 — Interests
-- Progress 3/5. H1 “Pick 3 or more interests”; subtext “We’ll tune Home, clubs and events to you.”
+## Screen 3 — Interests (optional)
+- Progress 3/5. H1 “Pick a few interests”; subtext “Optional. We’ll tune Home, clubs and events to you.”
 - **Chips (multi-select, wrap):** Live music ✓, Running ✓, CS ✓, Theatre, Service, Ski, Finance, Photography, Pre-med, Intramurals, Entrepreneurship. Music, running, code, camera and ball chips carry icons.
-- Counter “3 selected”; **Primary:** `Continue` (disabled below 3 selections).
+- Counter “3 selected”; **Primary:** `Continue` (always enabled, even with zero chosen) and a `Skip for now` link. Interest tags are allowed but not required.
 
 ## Screen 4 — Suggested clubs
 - Progress 4/5. H1 “Clubs picked for you”; subtext “Based on your major and interests. Follow to fill your feed.”
-- **Club card:** `g3` banner with run icon; “BC Running Club” + green badge “98% match”; “214 members · Sat 9am at the Reservoir”; `+ Follow` (secondary, small).
+- **Club card:** `g3` banner with run icon; “BC Running Club”; “214 members · Sat 9am at the Reservoir”; `+ Follow` (secondary, small).
 - **Club card:** Data Science Society — matched on CS major.
 - **Event card:** Acoustic Night at The Rat; “Tonight 7pm · 42 going · Free”; `RSVP` (secondary, small).
 - **Primary:** `Continue` → Screen 5. **Skip:** link “Skip, I’ll follow later from Clubs and Events”.

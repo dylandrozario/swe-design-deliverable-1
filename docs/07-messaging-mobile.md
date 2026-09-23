@@ -29,6 +29,22 @@ Bottom sheet opened from the plus icon:
 - **Quick replies (chips):** O’Neill lobby (pin, inserts safe spot), “Still available?”, “Lowest price?”.
 - **Input bar:** pill text field “Message” + send icon button.
 
+## Inbox additions (connections)
+- **Header:** a users icon button (with a red dot for pending requests) links to Connections, next to the New chat plus button.
+- **Requests banner** (gold-soft row at the top of the list, always visible regardless of filter): “Connection requests · 2 — Dana L. and Theo B. want to connect” with an arrow → Connections.
+- **New thread:** Mateo J. — “Running tomorrow before class?” (direct message; shows under All only).
+- **Thread header** now reads “Connected · usually replies in ~1h”, and the ⋯ menu offers Report and Block.
+
+## Screen 3 — Connections (`id="conns-m"`)
+Where a student manages connection requests. Reached from the inbox banner, the header users icon, or a notification.
+- **Header:** back · “Connections”.
+- **Tabs** (`data-show`/`data-for="conntabs"`): **Requests · 2** (on) · Sent · 1 · Connected · 5.
+- **Search:** pill field “Find people at BC”.
+- **Requests (received):** cards with avatar, name + class year + verified, one-line reason (Dana L. ’28 — Economics · 2 mutual friends; Theo B. ’29 — Running · also in BC Running Club) and `Accept` (primary, small) / `Decline` (ghost, small). Caption: “Decline removes the request without telling them.”
+- **Sent:** Nora W. ’27 — “Pending · sent 2d ago” with `Cancel`. Below, **People you may know**: Kai R. ’28 — “3 mutual clubs” with `+ Connect` (this is how a student sends a request).
+- **Connected (5):** Mateo J., Amara K., Priya S., Sarah K., Mike T., each with `Message` (secondary, small) and a remove (x) icon button.
+- **Rule line** (shield): “Only accepted connections can message each other or see connection-only profile details.”
+
 ## Behavior
 - Sold and rating prompts appear in-thread after a meetup.
 - Club chats are moderated and muted by default.

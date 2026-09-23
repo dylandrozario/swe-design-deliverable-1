@@ -1,7 +1,7 @@
 # 02 Home — Mobile (390 × 800)
 
 **Goal:** answer “what’s on tonight?” in two seconds. ≤ 3 taps to RSVP, join or message.
-**Style:** LinkedIn feed frame, with Posh-style flyers for events and Marketplace tiles for listings. See [style-guide.md](style-guide.md). Active tab: **Home**.
+**Style:** feed frame using the shared post component (`.club-post`), with Posh-style flyers for events and Marketplace tiles for listings. See [style-guide.md](style-guide.md). Active tab: **Home**.
 
 ## Screen 1 — Home feed
 **Header:** avatar (JD, links to your profile) · pill search field “Search Turma” · chat icon button (→ Messages) · bell icon button (red unread dot, opens the notification sheet below — there’s no separate Alerts page anymore).
@@ -13,11 +13,11 @@
 4. **Interest filter chips** (new row): Running, Live music (on), CS (on), Service, Sports — narrows the flyer strip and posts to matching tags.
 5. **Flyer carousel** (horizontal strip, 250px cards, 4:4.6) — unchanged content, shown in the **All** tab.
 6. **Primary CTA:** `RSVP to Acoustic Night` (ticket icon, block). Tap → toast “You’re in! Added to your calendar”.
-7. **Club post card**, **Market row**, **Seasonal banner** — unchanged, all inside the **All** tab.
-8. **Friends & following tab:** an info banner explaining the scope, a friend’s post, an event friends are going to, and a followed club update.
-9. **Suggested tab:** a match banner explaining the signal (interests/clubs), a suggested club with a match badge, a suggested event from a club you don’t follow yet.
+7. **Photography Club post** (`.club-post`: avatar, name + verified, “3h”, meta “Club · 98 members · officer post”, body, 150px camera art, `View event` button, then heart 33 / comment 8 pills and a share icon), then the **Market row** and **Seasonal banner** — all inside the **All** tab.
+8. **Friends & following tab:** an info banner explaining the scope, Mateo J.’s text-only `.club-post` (meta “Friend”, heart 8 / comment 3), an event friends are going to, and a followed club update.
+9. **Suggested tab:** a banner explaining the signal (interests/clubs), a suggested Photography Club `.club-post` with `+ Follow` in the head row and camera art (no match score), and a suggested event from a club you don’t follow yet.
 
-**Notification sheet** (bell icon): bottom sheet listing the same recent notifications as the desktop dropdown (event reminder, market message, club digest), each row a link straight to its source page, plus a “Notification settings” link. Replaces the old full-page Alerts screen.
+**Notification sheet** (bell icon): bottom sheet listing the same recent notifications as the desktop dropdown (connection request, event RSVP, event reminder, market message, club update), each row a link straight to its source page, plus a “Notification settings” link. Replaces the old full-page Alerts screen.
 
 **Tab bar:** Home (active) · Events · Create · Market · Clubs. The **Create** button opens the create sheet (Post / Event / Listing / Club or group) — see [style-guide.md](style-guide.md#6-layout).
 

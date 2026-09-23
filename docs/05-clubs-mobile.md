@@ -1,7 +1,7 @@
 # 05 Clubs — Mobile (390 × 800)
 
 **Goal:** a freshman finds a club and joins in one tap; any student — not only officers — can start a club or group; officers manage events and announcements.
-**Style:** LinkedIn company-page pattern (banner, logo, follow/join, tabs). See [style-guide.md](style-guide.md). Active tab: **Clubs**.
+**Style:** the directory uses the standard card pattern; the club page is a hangout-style layout (cover with the club name, About under the member count, posts-first). See [style-guide.md](style-guide.md). Active tab: **Clubs**.
 
 ## Screen 1 — Directory
 - **Header:** “Clubs” title · search icon button.
@@ -9,19 +9,35 @@
 - **`+ Create a club or group`** (ghost, block) — the general entry point non-officers use too; opens Screen 4.
 - **Section:** H2 “Clubs for you”, caption “Running + music”.
 - **Club cards** (banner 96px with icon, then details):
-  - **BC Running Club** — `g3`, verified check, green badge “98% match”; faces + “214 members · 2 friends”; “Saturdays 9am at the Reservoir”; `Join` (primary, small, block, plus icon). Tap → toast “Joined. First meeting added to Home”.
+  - **BC Running Club** — `g3`, verified check; faces + “214 members · 2 friends”; “Saturdays 9am at the Reservoir”; `Join` (primary, small, block, plus icon). Tap → toast “Joined. First meeting added to Home”.
   - **Photography Club** — `g4`, “98 members · Thursdays”, `+ Join` (secondary).
   - **Data Science Society** — `g2`, “310 members · 12 friends”, `+ Join` (secondary).
 
 ## Screen 2 — Club page (`id="club-page"`, BC Running Club)
-- **Hero:** 130px `g3` banner; 96px rounded-square logo “RC” overlapping the bottom-left edge.
-- **Identity:** H1 “BC Running Club” + verified; “Sports · Public club · Chestnut Hill · 214 members”.
-- **Actions:** `Join` (primary) and `Message` (secondary), equal width. Join toast: “Joined BC Running Club”.
-- **Tabs:** About (on) · Events · Posts · Members.
-- **About card:** “All paces welcome. Weekly runs, race trips and Marathon Monday cheering. Free to join.”
-- **Upcoming card:** rows with date tile + title + meta + `RSVP`: SAT 18 Weekly meetup (9am · Reservoir); APR 20 Marathon Monday cheer (Heartbreak Hill).
-- **Announcements card:** “No meetup during finals week. See you in spring.” Lock line: “Discussion is members only after you join”.
-- This is where a club-related notification (e.g. “Running Club weekly digest”) lands.
+A hangout-style page, not a company profile: the club’s name sits on the cover, who’s in it comes next, About is tucked under the member count, and the main content is the club’s posts. No promo stickers, match scores or “free to join” badges. The `.club-page` class on the phone scopes the extra styling.
+
+- **Cover (`.club-cover.g3.pattern`, 150px):** green gradient with a faint dot pattern, a large translucent run icon, and a bottom scrim. A 56px club avatar “RC” (white ring) sits beside the name **BC Running Club** (H1, white) with a gold verified check and a small line “Sports · Chestnut Hill”.
+- **Members line:** four overlapping faces + “**214 members** · 2 friends”.
+- **About (`<details class="about-teaser">`, directly under the members line):** bio clamped to two lines, then a **View more** button (small ghost). Opening it shows the rest in place and the button becomes **View less**:
+  - `.kv` grid: Category Sports · Privacy Public club · Location Chestnut Hill · Meets Sat 9am · Reservoir · Contact @bcrun · Dues Free (icon + label).
+  - **Officers · 3:** rows with avatar, name, role (Maya R. President, Dev P. Treasurer, Sam O. Social chair) and a message icon button.
+  - `Club files` link.
+  There is **no About tab**.
+- **Action row (`.club-actions`, sticky at the top of the scroll area):** `Join` (primary, flexible) · `Message` (secondary, flexible) · bell icon button (“Get club alerts”), all 44px. It stays pinned while the feed scrolls. Join → toast “Joined BC Running Club. First run added to your calendar”.
+- **Tabs (underline, `data-tabs`):** **Posts** (on, default) · **Events**. Panels switch with `data-show`/`data-for="clubtabs"`.
+
+### Posts tab (default)
+1. **Upcoming runs:** H2 + `View all →` (opens Events). Horizontal snap-scrolling `.strip.event-strip` of **ticket-style cards** (270px, radius 20): a maroon date block (SAT 18 / APR 20) then a dashed divider, title, meta, “N going” and `RSVP` (secondary, small). Weekly meetup (9am · Reservoir · 42 going); Marathon Monday cheer (Heartbreak Hill · 63 going).
+2. **Fresh from the club:** two officer posts (`.card.club-post`): avatar column on the left; right column has name + verified check, time, optional gold **Pinned** badge, text, a rounded 150px `.art` image (not full-bleed), and a row of **reaction pills** (heart with count, comment count) plus a share icon button. No Like/Comment/Repost bar.
+   - BC Running Club, 1h, pinned — “Saturday long run is ON, rain or shine…”
+   - Maya R. ’26, 1d — “Marathon Monday cheer squad signups are open…”
+3. **Members-only card (`.lock-card`, gold-soft):** lock circle, “The group chat is members only”, “Join to chat, post and see who’s coming to each run.”, `Join the club`.
+
+### Events tab
+H2 “Upcoming runs”; card of date-tile rows (Sat 18 Weekly meetup, Sat 25 Long run 8 miles, Apr 20 Marathon Monday cheer) each with going count and `RSVP`; `← Back to posts`.
+
+### Interactions (existing handlers only)
+Tabs `data-tabs` + `data-show`/`data-for`; Join `data-toast="cj2"`; reaction pills `data-like` (heart count toggles, gold-soft “liked” state). The tab underline follows the visible panel even when switched from “View all →” (CSS `:has()`).
 
 ## Screen 3 — Officer dashboard
 - **Header:** back · “Officer dashboard”. Club identity row (RC avatar, “You’re an officer”).

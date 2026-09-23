@@ -14,7 +14,7 @@ Design system for Turma, the verified social platform for Boston College student
 
 | Section | Inspired by | Pattern |
 |---|---|---|
-| Home, Clubs, Profile, Messages, Settings, Calendar | LinkedIn | Warm-gray canvas, white cards, feed posts with react/comment actions, company-style club pages, verified check, follow model, 3-column desktop |
+| Home, Clubs, Profile, Messages, Settings, Calendar | LinkedIn | Warm-gray canvas, white cards, feed posts with react/comment actions, a hangout-style club page (cover with the club name, About under the member count, ticket-style upcoming cards, reaction-pill posts), verified check, follow model, 3-column desktop |
 | Events | Posh | Poster-first flyers, date badge (top-left), price pill (top-right), title over dark scrim, friends-going faces, sticky RSVP |
 | Market | Facebook Marketplace | White canvas, square photo tiles with price first, category pills, left filter rail, “Message seller” as the one action |
 

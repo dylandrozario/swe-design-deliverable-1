@@ -1,47 +1,54 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>01 Onboarding — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
 <main class="page">
 <h1>Onboarding</h1>
-<p class="lede">Verified in under a minute. One decision per screen, pickers and chips instead of typing, progress always visible. Ends with personalised clubs and events so Home is never empty.</p>
-<div class="tags"><span class="li">LinkedIn-style profile setup</span><span>5 steps</span><span>bc.edu only</span></div>
+<p class="lede">Verified in under a minute with your BC Google account — no separate code or password to check. One decision per screen, pickers and chips instead of typing, progress always visible. Ends with personalised clubs and people so Home is never empty.</p>
+<div class="tags"><span class="li">LinkedIn-style profile setup</span><span>5 steps</span><span>bc.edu Google OAuth only</span></div>
 
 <div class="phones">
 <figure class="pw"><div class="phone" data-nav="none"><div class="pbody" style="padding:0;gap:0;justify-content:space-between">
-  <div class="art g1" style="height:240px;place-items:end start;padding:24px"><div><span class="glass">Boston College students only</span><div class="h1" style="color:#fff;font-size:32px;margin-top:12px;position:relative;z-index:2">Find your BC<br>in a minute.</div></div></div>
-  <div class="stack" style="padding:20px;gap:14px"><label class="f">BC email<input value="jdoe27@bc.edu"></label><div class="xs muted row"><i data-i="shield"></i>We only accept bc.edu addresses. No spam, ever.</div>
-  <button class="btn block" data-toast="t1">Send my code<i data-i="arrow"></i></button><div class="xs muted" style="text-align:center">By continuing you agree to the Community Guidelines</div></div>
-  <div class="toast" id="t1" hidden><i data-i="check"></i>Code sent to jdoe27@bc.edu</div></div></div><figcaption>1 · Welcome + email</figcaption></figure>
+  <div class="art g1" style="height:280px;place-items:end start;padding:24px"><div><span class="glass">Boston College students only</span><div class="h1" style="color:#fff;font-size:32px;margin-top:12px;position:relative;z-index:2">Find your BC<br>in a minute.</div></div></div>
+  <div class="stack" style="padding:20px;gap:14px">
+    <button class="btn google block" data-toast="t1"><i data-i="google"></i>Continue with your BC Google account</button>
+    <div class="xs muted row"><i data-i="shield"></i>Restricted to @bc.edu addresses. Signing in verifies you instantly — no code, no password, ever.</div>
+    <div class="xs muted" style="text-align:center">By continuing you agree to the Community Guidelines</div>
+  </div>
+  <div class="toast" id="t1" hidden><i data-i="check"></i>Verified jdoe27@bc.edu</div></div></div><figcaption>1 · Sign in with Google</figcaption></figure>
 
 <figure class="pw"><div class="phone" data-nav="none"><div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="progress sp"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
-  <div class="pbody" style="padding:20px;gap:16px"><div><div class="h1">Enter your code</div><p class="muted sm">We sent 6 digits to jdoe27@bc.edu</p></div>
-  <div class="row" style="justify-content:space-between"><input style="text-align:center;font-size:22px;font-weight:800;padding:0" value="4"><input style="text-align:center;font-size:22px;font-weight:800;padding:0" value="8"><input style="text-align:center;font-size:22px;font-weight:800;padding:0" value="1"><input style="text-align:center;padding:0"><input style="text-align:center;padding:0"><input style="text-align:center;padding:0"></div>
-  <div class="state err"><i data-i="x"></i>That code didn’t match. Check your spam folder or resend.</div>
-  <button class="link" style="align-self:flex-start">Resend code in 0:42</button><div class="sp"></div><button class="btn block">Verify</button></div></div><figcaption>2 · Verify code (error state)</figcaption></figure>
+  <div class="pbody" style="padding:20px;gap:16px"><div><div class="h1">Class year and major</div><p class="muted sm">Required so we can verify and personalise your feed. Google already gave us your name and photo.</p></div>
+  <div class="stack"><div class="h3">Class year</div><div class="chips wrap" data-chips><span class="chip">2026</span><span class="chip">2027</span><span class="chip">2028</span><span class="chip on">2029</span><span class="chip">Grad</span></div></div>
+  <label class="f">Major<select><option>Computer Science</option><option>Economics</option><option>Biology</option><option>Undeclared</option></select></label>
+  <div class="row"><label class="f sp">Second major (optional)<select><option>None</option><option>Economics</option><option>Mathematics</option><option>Studio Art</option></select></label><label class="f sp">Minor (optional)<select><option>None</option><option>Hispanic Studies</option><option>Philosophy</option><option>Data Science</option></select></label></div>
+  <div class="sp"></div><button class="btn block">Continue</button></div></div><figcaption>2 · Year + major(s) + minor</figcaption></figure>
 
 <figure class="pw"><div class="phone" data-nav="none"><div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="progress sp"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
-  <div class="pbody" style="padding:20px;gap:18px"><div><div class="h1">Where are you at BC?</div><p class="muted sm">Powers your local feed. Only visible to BC students.</p></div>
-  <div class="stack"><div class="h3">Class year</div><div class="chips wrap" data-chips><span class="chip">2026</span><span class="chip">2027</span><span class="chip">2028</span><span class="chip on">2029</span><span class="chip">Grad</span></div></div>
-  <div class="stack"><div class="h3">Campus area</div><div class="chips wrap" data-chips><span class="chip on">Upper</span><span class="chip">Lower</span><span class="chip">Newton</span><span class="chip">Off-campus</span></div></div>
-  <label class="f">Residence hall<select><option>Walsh Hall</option><option>Edmond’s Hall</option></select></label><div class="sp"></div><button class="btn block">Continue</button></div></div><figcaption>3 · Class year + area</figcaption></figure>
-
-<figure class="pw"><div class="phone" data-nav="none"><div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="progress sp"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
   <div class="pbody" style="padding:20px;gap:18px"><div><div class="h1">Pick 3 or more interests</div><p class="muted sm">We’ll tune Home, clubs and events to you.</p></div>
   <div class="chips wrap" data-chips style="gap:10px"><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="run"></i>Running</span><span class="chip on"><i data-i="code"></i>CS</span><span class="chip">Theatre</span><span class="chip">Service</span><span class="chip">Ski</span><span class="chip">Finance</span><span class="chip"><i data-i="camera"></i>Photography</span><span class="chip">Pre-med</span><span class="chip"><i data-i="ball"></i>Intramurals</span><span class="chip">Entrepreneurship</span></div>
-  <div class="sp"></div><div class="xs muted" style="text-align:center">3 selected</div><button class="btn block">See my BC</button></div></div><figcaption>4 · Interests</figcaption></figure>
+  <div class="sp"></div><div class="xs muted" style="text-align:center">3 selected</div><button class="btn block">Continue</button></div></div><figcaption>3 · Interests</figcaption></figure>
+
+<figure class="pw"><div class="phone" data-nav="none"><div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="progress sp"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+  <div class="pbody" style="padding:20px;gap:14px"><div><div class="h1">Clubs picked for you</div><p class="muted sm">Based on your major and interests. Follow to fill your feed.</p></div>
+  <div class="card"><div class="art g3 banner"><i data-i="run"></i></div><div class="pad stack"><div class="row"><b>BC Running Club</b><span class="badge ok">98% match</span></div><div class="xs muted">214 members · Sat 9am at the Reservoir</div><button class="btn sm sec" style="align-self:flex-start">+ Follow</button></div></div>
+  <div class="card"><div class="art g2 banner"><i data-i="code"></i></div><div class="pad stack"><b>Data Science Society</b><div class="xs muted">310 members · CS major match</div><button class="btn sm sec" style="align-self:flex-start">+ Follow</button></div></div>
+  <div class="card"><div class="art g1 banner"><i data-i="music"></i></div><div class="pad stack"><b>Acoustic Night at The Rat</b><div class="xs muted">Tonight 7pm · 42 going · Free</div><button class="btn sm sec" style="align-self:flex-start">RSVP</button></div></div>
+  <div class="sp"></div><button class="btn block">Continue</button><button class="link" style="text-align:center">Skip, I’ll follow later from Clubs and Events</button></div></div><figcaption>4 · Suggested clubs</figcaption></figure>
 
 <figure class="pw"><div class="phone" data-nav="none"><div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><div class="progress sp"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
-  <div class="pbody" style="padding:20px;gap:14px"><div><div class="h1">You’re in, Jordan.</div><p class="muted sm">Here’s what matches you. Follow to fill your feed.</p></div>
-  <div class="card"><div class="art g3 banner"><i data-i="run"></i></div><div class="pad stack"><div class="row"><b>BC Running Club</b><span class="badge ok">98% match</span></div><div class="xs muted">214 members · Sat 9am at the Reservoir</div><button class="btn sm sec" style="align-self:flex-start">+ Follow</button></div></div>
-  <div class="card"><div class="art g1 banner"><i data-i="music"></i></div><div class="pad stack"><b>Acoustic Night at The Rat</b><div class="xs muted">Tonight 7pm · 42 going · Free</div><button class="btn sm sec" style="align-self:flex-start">RSVP</button></div></div>
-  <div class="sp"></div><a class="btn gold block" href="02-home.html">Go to Home</a><button class="link" style="text-align:center">Skip, I’ll follow later from Clubs and Events</button></div></div><figcaption>5 · Suggested + done</figcaption></figure>
+  <div class="pbody" style="padding:20px;gap:14px"><div><div class="h1">You’re in, Jordan.</div><p class="muted sm">People at BC who match you. Connect to fill your feed with friends, not just strangers.</p></div>
+  <div class="chips" data-chips><span class="chip on">By year</span><span class="chip">By interest</span><span class="chip">By club</span></div>
+  <div class="card pad row"><span class="av c2">AK</span><div class="sp"><b>Amara K. ’29</b><div class="xs muted">CS major · Also in Data Science Society</div></div><button class="btn sm sec">+ Connect</button></div>
+  <div class="card pad row"><span class="av c3">MJ</span><div class="sp"><b>Mateo J. ’29</b><div class="xs muted">Running · 2 mutual clubs</div></div><button class="btn sm sec">+ Connect</button></div>
+  <div class="card pad row"><span class="av c5">PS</span><div class="sp"><b>Priya S. ’29</b><div class="xs muted">Undeclared · Live music, CS</div></div><button class="btn sm sec">+ Connect</button></div>
+  <div class="sp"></div><a class="btn gold block" href="02-home.html">Go to Home</a><button class="link" style="text-align:center">Skip, I’ll connect with people later</button></div></div><figcaption>5 · Suggested people + done</figcaption></figure>
 </div>
 
 <div class="sec-label">Desktop · 1280</div>
 <div class="desk" data-nav="none"><div class="dbody two" style="min-height:560px;padding:0;gap:0">
   <div class="art g1" style="min-height:560px;place-items:end start;padding:40px"><div style="position:relative;z-index:2;color:#fff"><span class="glass">Boston College students only</span><div style="font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:16px 0">Your campus,<br>all in one place.</div><div class="col" style="color:rgba(255,255,255,.9)"><span class="row"><i data-i="shield"></i>Every member is a verified BC student</span><span class="row"><i data-i="ticket"></i>Real RSVPs, real events</span><span class="row"><i data-i="bag"></i>Buy and sell with people you can trust</span></div></div></div>
-  <div style="padding:56px 64px;background:var(--card)" class="stack"><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="h1" style="font-size:30px;margin-top:8px">Pick your interests</div><p class="muted">Step 3 of 5 · we’ll suggest clubs and events</p>
+  <div style="padding:56px 64px;background:var(--card)" class="stack"><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="h1" style="font-size:30px;margin-top:8px">Pick your interests</div><p class="muted">Step 3 of 5 · we’ll suggest clubs and people</p>
     <div class="chips wrap" data-chips style="gap:10px;margin:8px 0"><span class="chip on"><i data-i="music"></i>Live music</span><span class="chip on"><i data-i="run"></i>Running</span><span class="chip">Data science</span><span class="chip">Service</span><span class="chip">Theatre</span><span class="chip">Ski</span></div>
     <div class="card pad row"><span class="av c3">RC</span><div class="sp"><b>BC Running Club</b><div class="xs muted">Suggested · 214 members</div></div><button class="btn sm sec">Follow</button></div>
     <div class="row" style="margin-top:12px"><button class="btn ghost">Back</button><button class="btn sp">Continue</button></div></div>
 </div></div>
-<div class="note"><b>Notes</b>Inline validation, back keeps answers, resend after 60s. Skipping follows shows a “Follow later from Clubs and Events” empty state. Tablet: single centered card, image panel becomes a top banner.</div>
+<div class="note"><b>Notes</b>Google OAuth verifies bc.edu membership the instant you sign in — no email code step, and nothing to type but your name once (Google already supplies it). Right panel swaps content per step; year/major has inline validation and back keeps answers. Suggested clubs are followed by a suggested-people step (filtered by year, interest and shared clubs) before Home. Skipping either shows a “follow or connect later” empty state pointing back to Clubs, Events or the Following tab on your profile. Tablet: single centered card, image panel becomes a top banner.</div>
 </main><script src="app.js"></script></body></html>

@@ -42,28 +42,56 @@ fridge:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 10h12M9 5v2
 bike:'<circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-8h5l3 8M10 8 9 5H7"/>',
 ball:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
 heartfill:'<path fill="currentColor" d="M12 20s-8-4.6-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.4 12 20 12 20z"/>',
-verified:'<path fill="currentColor" stroke="none" d="M12 2.5l2.4 1.8 3 .1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3 .1L12 21.5l-2.4-1.8-3-.1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3-.1z"/><path stroke="#fff" stroke-width="2.2" d="m8.5 12 2.5 2.5 4.5-5"/>'
+verified:'<path fill="currentColor" stroke="none" d="M12 2.5l2.4 1.8 3 .1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3 .1L12 21.5l-2.4-1.8-3-.1-.9-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8.9-2.9 3-.1z"/><path stroke="#fff" stroke-width="2.2" d="m8.5 12 2.5 2.5 4.5-5"/>',
+google:'<path fill="currentColor" stroke="none" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="currentColor" stroke="none" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="currentColor" stroke="none" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="currentColor" stroke="none" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.3 3-4.1 5.6-4.1z"/>'
 };
 const ic=n=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${P[n]||''}</svg>`;
 const icons=(r=document)=>r.querySelectorAll('i[data-i]').forEach(e=>{e.className=('ic '+e.className).trim();e.innerHTML=ic(e.dataset.i);e.removeAttribute('data-i');});
 const VT='<i class="vt" data-i="verified" title="Verified BC student"></i>';
 
-const NAV=[['home','Home','home','02-home.html'],['events','Events','cal','04-events.html'],['market','Market','bag','06-marketplace.html'],['clubs','Clubs','users','05-clubs.html'],['alerts','Notifications','bell','09-notifications-settings.html'],['profile','Profile','user','08-profile.html']];
-const HUB=[['index.html','Overview'],['01-onboarding.html','Onboarding'],['02-home.html','Home'],['04-events.html','Events'],['05-clubs.html','Clubs'],['06-marketplace.html','Market'],['07-messaging.html','Messages'],['08-profile.html','Profile'],['09-notifications-settings.html','Alerts & Settings'],['10-flows.html','Flows']];
+/* Sidebar + mobile tab bar destinations. Notifications and Settings are reached from the
+   bell dropdown / gear icon next to the profile picture instead of their own nav slot —
+   see the "Notifications" note in docs/style-guide.md. */
+const NAV=[['home','Home','home','02-home.html'],['calendar','Calendar','cal','11-calendar.html'],['events','Events','ticket','04-events.html'],['market','Market','bag','06-marketplace.html'],['clubs','Clubs','users','05-clubs.html'],['profile','Profile','user','08-profile.html']];
+const HUB=[['index.html','Overview'],['01-onboarding.html','Onboarding'],['02-home.html','Home'],['11-calendar.html','Calendar'],['04-events.html','Events'],['05-clubs.html','Clubs'],['06-marketplace.html','Market'],['07-messaging.html','Messages'],['08-profile.html','Profile'],['09-notifications-settings.html','Settings'],['10-flows.html','Flows']];
 const cur=location.pathname.split('/').pop()||'index.html';
+
+/* Notifications: each row links straight into the page it's about instead of a
+   standalone alerts list. Shared by the desktop dropdown and the mobile sheet. */
+const NOTIFS=[
+  ['c4','ticket','Acoustic Night starts at 7pm','Event reminder · 2h ago','04-events.html#ev-detail',1],
+  ['c5','SK','Sarah: “See you at O’Neill at 5”','Market message · 10m ago','07-messaging.html',1],
+  ['c3','RC','Running Club weekly digest','3 updates · Yesterday','05-clubs.html#club-page',0],
+  ['','heart','Price drop: Bike is now $80','Saved listing · 2d ago','06-marketplace.html#mkt-saved',0],
+];
+const notifList=id=>`<div class="between row" style="padding:12px 14px 4px"><b class="h2">Notifications</b><button class="link sm" data-sheet="${id}">Close</button></div><div class="list">${NOTIFS.map(([c,av,t,m,h,u])=>`<a class="item" href="${h}">${/^[a-z]+$/.test(av)?`<span class="av ${c}"><i data-i="${av}"></i></span>`:`<span class="av ${c}">${av}</span>`}<div class="grow"><b class="sm">${t}</b><span class="xs muted">${m}</span></div>${u?'<span class="unread"></span>':''}</a>`).join('')}</div><a class="link sm" href="09-notifications-settings.html" style="display:block;text-align:center;padding:10px">Notification settings</a>`;
+
+const CREATE_ITEMS=[
+  ['c2','chat','Post','Share an update with BC','02-home.html#compose'],
+  ['c4','ticket','Event','Publish in under 60s','04-events.html#ev-create'],
+  ['c5','bag','Listing','Photo first','06-marketplace.html#mkt-create'],
+  ['c3','users','Club or group','Public club or private group','05-clubs.html#club-create'],
+];
+const createList=()=>CREATE_ITEMS.map(([c,i,t,m,h])=>`<a class="item card pad" href="${h}"><span class="av ${c}"><i data-i="${i}"></i></span><div class="grow"><b>${t}</b><div class="xs muted">${m}</div></div></a>`).join('');
 
 function chrome(){
   document.body.insertAdjacentHTML('afterbegin',`<div class="hub"><a class="logo" href="index.html"><i>t</i>turma</a><nav>${HUB.map(([h,n])=>`<a href="${h}"${h===cur?' class="on"':''}>${n}</a>`).join('')}</nav></div>`);
+  let firstPhone=true;
   document.querySelectorAll('.phone').forEach(p=>{
     p.insertAdjacentHTML('afterbegin','<div class="sb"><span>9:41</span><span>5G ▮▮▮</span></div>');
     if(p.dataset.nav==='none')return;
     const t=p.dataset.tab,l=(k,n,i,h)=>`<a href="${h}" class="${t===k?'on':''}"><i data-i="${i}"></i>${n}</a>`;
-    p.insertAdjacentHTML('beforeend',`<nav class="tabbar">${l('home','Home','home','02-home.html')}${l('events','Events','cal','04-events.html')}<a class="plus" href="#"><span><i data-i="plus"></i></span></a>${l('market','Market','bag','06-marketplace.html')}${l('clubs','Clubs','users','05-clubs.html')}</nav>`);
+    const plusBtn=firstPhone?`<button type="button" class="plus" data-sheet="createSheet"><span><i data-i="plus"></i></span></button>`:`<a class="plus" href="#"><span><i data-i="plus"></i></span></a>`;
+    p.insertAdjacentHTML('beforeend',`<nav class="tabbar">${l('home','Home','home','02-home.html')}${l('events','Events','ticket','04-events.html')}${plusBtn}${l('market','Market','bag','06-marketplace.html')}${l('clubs','Clubs','users','05-clubs.html')}</nav>`);
+    if(firstPhone){
+      p.insertAdjacentHTML('beforeend',`<div class="scrim" id="createSheet-scrim" hidden data-sheet="createSheet"></div><div class="sheet" id="createSheet" hidden><div class="between row"><div class="h2">Create</div><button class="link" data-sheet="createSheet">Close</button></div><div class="stack">${createList()}</div></div>`);
+      firstPhone=false;
+    }
   });
   const THREADS=[['SK','c5','Sarah K.','Mini-fridge · “Can meet at O’Neill?”','market',1],['RC','c3','Running Club','Coach: “Sat 9am Reservoir”','club',14],['MT','c4','Mike T.','Textbook · “See you at Walsh”','market',0],['PC','c2','Photography Club','Shoot signups open','club',0]];
   document.querySelectorAll('.desk:not([data-nav=none])').forEach(d=>{
     const t=d.dataset.tab;
-    d.insertAdjacentHTML('afterbegin',`<aside class="snav"><a class="logo" href="index.html"><i>t</i><span>turma</span></a>${NAV.map(([k,n,i,h])=>`<a class="side-link${t===k?' on':''}" href="${h}"><i data-i="${i}"></i><span>${n}</span>${k==='alerts'?'<b class="badge">2</b>':''}</a>`).join('')}<a class="btn" href="#" style="margin-top:12px"><i data-i="plus"></i><span>Create</span></a></aside><div class="dnav"><label class="search"><i data-i="search"></i><input placeholder="Search events, clubs, listings" aria-label="Search"></label><span class="sp"></span><span class="av">JD</span></div>`);
+    d.insertAdjacentHTML('afterbegin',`<aside class="snav"><a class="logo" href="index.html"><i>t</i><span>turma</span></a>${NAV.map(([k,n,i,h])=>`<a class="side-link${t===k?' on':''}" href="${h}"><i data-i="${i}"></i><span>${n}</span></a>`).join('')}<button type="button" class="btn" data-sheet="createMenu" style="margin-top:12px"><i data-i="plus"></i><span>Create</span></button></aside><div class="dnav"><label class="search"><i data-i="search"></i><input placeholder="Search events, clubs, listings" aria-label="Search"></label><span class="sp"></span><button type="button" class="iconbtn" data-sheet="notifPanel" aria-label="Notifications"><i data-i="bell"></i><span class="dot"></span></button><a class="iconbtn" href="09-notifications-settings.html" aria-label="Settings"><i data-i="gear"></i></a><a class="av" href="08-profile.html" aria-label="Your profile">JD</a></div><div class="ndrop" id="notifPanel" hidden>${notifList('notifPanel')}</div><div class="ndrop menu" id="createMenu" hidden><div class="h3" style="padding:12px 14px 2px">Create</div><div class="stack" style="padding:6px 8px 10px">${CREATE_ITEMS.map(([c,i,t,m,h])=>`<a class="side-link" href="${h}"><i data-i="${i}"></i><span>${t}</span></a>`).join('')}</div></div>`);
     if(t==='msg')return;
     d.insertAdjacentHTML('beforeend',`<div class="dock" data-fscope><div class="dock-panel" ${d.dataset.dock==='open'?'':'hidden'}><div class="dh"><b class="sp h2">Messages</b><button class="iconbtn plain" data-dock aria-label="Close"><i data-i="x"></i></button></div><div class="seg" data-tabs><button class="on" data-f="all">All</button><button data-f="market">Market</button><button data-f="club">Clubs</button></div><div class="list">${THREADS.map(([a,c,n,m,k,u])=>`<a class="item" data-k="${k}" href="07-messaging.html"><span class="av ${c}">${a}</span><div class="grow"><b>${n}</b><span class="xs muted">${m}</span></div>${u?'<span class="unread"></span>':''}</a>`).join('')}</div></div><button class="dock-pill" data-dock><i data-i="chat"></i>Messages<span class="badge gold">3</span></button></div>`);
   });
@@ -101,7 +129,7 @@ document.addEventListener('click',e=>{
   const html=(p,n)=>`<article class="card evcard"><div class="flyer"><div class="art ${p[5]}"><i data-i="${p[6]}"></i></div><div class="top"><div class="date"><small>${p[2]}</small><b>${p[3]}</b></div><span class="price${p[7]==='Free'?' free':''}">${p[7]}</span></div></div>
   <div class="pad row"><div class="sp"><b>${p[0]}</b><div class="xs muted">${p[1]} · ${p[4]}</div><div class="going" style="margin-top:6px"><span class="faces"><span class="av s">JD</span><span class="av s c2">AK</span></span>${p[8]+n} going</div></div><button class="btn sm">I’m going</button></div></article>`;
   document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-feed]').forEach(feed=>{
-    const sent=feed.nextElementSibling,root=feed.closest('.pbody');let idx=0,batch=0,busy=false;
+    const sent=feed.nextElementSibling,root=feed.closest('.pbody')||feed.closest('.col');let idx=0,batch=0,busy=false;
     const more=()=>{if(busy||batch>=6)return;busy=true;setTimeout(()=>{let h='';for(let k=0;k<3;k++)h+=html(pool[(idx+k)%pool.length],idx+k);idx+=3;feed.insertAdjacentHTML('beforeend',h);icons(feed);
       if(++batch>=6)sent.innerHTML='You’re all caught up.';busy=false;},500);};
     more();

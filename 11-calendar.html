@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>11 Calendar — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="page">
+<h1>Calendar</h1>
+<p class="lede">Your personal calendar: every event you’ve RSVP’d to and every meeting from a club you belong to, combined in one agenda. New in the sidebar so it’s reachable from anywhere, not just buried inside Events.</p>
+<div class="tags"><span class="li">RSVPs + club meetings, combined</span><span>Sidebar destination</span><span>Sync out to Google/Apple</span></div>
+
+<div class="phones">
+<figure class="pw"><div class="phone" data-tab="calendar">
+  <div class="mhdr"><div class="ttl sp">My calendar</div><a class="iconbtn" href="04-events.html" aria-label="Browse events"><i data-i="search"></i></a></div>
+  <div class="pbody">
+    <div class="card pad"><div class="h3" style="margin-bottom:8px">October</div><div class="cal"><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b><span class="mute">29</span><span class="mute">30</span><span>1</span><span class="ev">2</span><span>3</span><span class="ev">4</span><span>5</span><span>13</span><span>14</span><span class="ev">15</span><span>16</span><span class="on">17</span><span class="ev">18</span><span>19</span><span>20</span><span class="ev">21</span><span class="ev">22</span></div></div>
+    <div class="chips" data-chips><span class="chip on">All</span><span class="chip">Events</span><span class="chip">Club meetings</span></div>
+    <div class="h3">This week</div>
+    <div class="item card pad"><div class="date" style="background:var(--chip)"><small>FRI</small><b>17</b></div><div class="grow"><b>Acoustic Night</b><span class="xs muted">7pm · The Rat</span></div><span class="badge ok">Going</span></div>
+    <div class="item card pad"><div class="date" style="background:var(--chip)"><small>SAT</small><b>18</b></div><div class="grow"><b>Running Club weekly meetup</b><span class="xs muted">9am · Reservoir</span></div><span class="badge gold">Club</span></div>
+    <div class="h3">Next week</div>
+    <div class="item card pad"><div class="date" style="background:var(--chip)"><small>MON</small><b>20</b></div><div class="grow"><b>Marathon Monday cheer</b><span class="xs muted">Heartbreak Hill</span></div><span class="badge ok">Going</span></div>
+    <div class="item card pad"><div class="date" style="background:var(--chip)"><small>WED</small><b>22</b></div><div class="grow"><b>Intro to Pandas workshop</b><span class="xs muted">6pm · Fulton 310</span></div><span class="badge gold">Club</span></div>
+    <button class="btn ghost block"><i data-i="cal"></i>Sync to Google or Apple Calendar</button>
+    <div class="card pad" style="text-align:center"><p class="sm muted" style="margin:0">Nothing on the calendar yet? RSVP to events or join clubs and they’ll show up here automatically.</p></div>
+  </div></div><figcaption>Calendar · agenda</figcaption></figure>
+</div>
+
+<div class="sec-label">Desktop · 1280</div>
+<div class="desk" data-tab="calendar"><div class="dbody two">
+  <div class="rail"><div class="card pad"><div class="h3" style="margin-bottom:8px">October</div><div class="cal"><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b><span class="mute">29</span><span class="mute">30</span><span>1</span><span class="ev">2</span><span>3</span><span class="ev">4</span><span>5</span><span>13</span><span>14</span><span class="ev">15</span><span>16</span><span class="on">17</span><span class="ev">18</span><span>19</span><span>20</span><span class="ev">21</span><span class="ev">22</span></div></div>
+    <button class="btn block"><i data-i="cal"></i>Sync to Google or Apple</button>
+    <div class="card pad stack"><div class="h3">Filter</div><div class="chips wrap" data-chips><span class="chip on">All</span><span class="chip">Events</span><span class="chip">Club meetings</span></div></div>
+    <a class="btn ghost block" href="04-events.html#ev-create"><i data-i="plus"></i>Post an event</a></div>
+  <div class="col">
+    <div class="h2">This week</div>
+    <div class="card pad stack">
+      <div class="item"><div class="date" style="background:var(--chip)"><small>FRI</small><b>17</b></div><div class="grow"><b>Acoustic Night</b><span class="xs muted">7pm · The Rat · hosted by Music Club</span></div><span class="badge ok">Going</span></div>
+      <div class="item"><div class="date" style="background:var(--chip)"><small>SAT</small><b>18</b></div><div class="grow"><b>Running Club weekly meetup</b><span class="xs muted">9am · Reservoir</span></div><span class="badge gold">Club</span></div>
+    </div>
+    <div class="h2">Next week</div>
+    <div class="card pad stack">
+      <div class="item"><div class="date" style="background:var(--chip)"><small>MON</small><b>20</b></div><div class="grow"><b>Marathon Monday cheer</b><span class="xs muted">Heartbreak Hill · Running Club</span></div><span class="badge ok">Going</span></div>
+      <div class="item"><div class="date" style="background:var(--chip)"><small>WED</small><b>22</b></div><div class="grow"><b>Intro to Pandas workshop</b><span class="xs muted">6pm · Fulton 310 · Data Science Society</span></div><span class="badge gold">Club</span></div>
+    </div>
+  </div>
+</div></div>
+<div class="note"><b>Notes</b>This is the “My calendar” step called out in the core flows doc — RSVPs and club meetings combined, now with a real page and a sidebar slot instead of just a promise. The date badge styling (green “Going” vs gold “Club”) mirrors the badges already used on Profile’s Upcoming tab and the Events sidebar’s “Your events” card, which both now deep-link here. Tablet 768: calendar becomes an agenda list, matching the Events page’s tablet behavior.</div>
+</main><script src="app.js"></script></body></html>

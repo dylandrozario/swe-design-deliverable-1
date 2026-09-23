@@ -1,17 +1,30 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>07 Messages — Turma</title><link rel="stylesheet" href="styles.css"></head><body>
 <main class="page">
 <h1>Messages</h1>
-<p class="lede">Verified-only inbox with a listing card pinned to every marketplace thread, a safety banner, and quick replies including a safe-spot insert.</p>
-<div class="tags"><span class="li">LinkedIn-style inbox</span><span class="fb">Marketplace thread context</span><span>Report + block in thread</span></div>
+<p class="lede">Verified-only inbox with a listing card pinned to every marketplace thread, a safety banner, and quick replies including a safe-spot insert. A pop-up starts a new DM or group chat with any accepted connection.</p>
+<div class="tags"><span class="li">LinkedIn-style inbox</span><span class="fb">Marketplace thread context</span><span>Report + block in thread</span><span>New chat pop-up</span></div>
 
 <div class="phones">
 <figure class="pw"><div class="phone" data-tab="home" data-fscope>
-  <div class="mhdr"><div class="ttl sp">Messages</div><button class="iconbtn"><i data-i="plus"></i></button></div>
+  <div class="mhdr"><div class="ttl sp">Messages</div><button class="iconbtn" data-sheet="newChatSheet" aria-label="New chat"><i data-i="plus"></i></button></div>
   <div class="tabs" data-tabs><button class="on" data-f="all">All</button><button data-f="market">Market · 2</button><button data-f="club">Clubs · 2</button></div>
   <div class="pbody" style="padding:0;gap:0"><div class="list card" style="border-radius:0;border-width:0 0 1px">
     <div class="item" data-k="market"><span class="av c5">SK</span><div class="grow"><b>Sarah K. <i class="vt" data-i="verified"></i></b><span class="xs muted">Mini-fridge · “Still available? Can meet at O’Neill?”</span></div><span class="unread"></span></div>
     <div class="item" data-k="club"><span class="av c3">RC</span><div class="grow"><b>Running Club chat</b><span class="xs muted">Coach: “Sat 9am Reservoir, rain or shine”</span></div><span class="badge gold">14</span></div>
-    <div class="item" data-k="market"><span class="av c4">MT</span><div class="grow"><b>Mike T. <i class="vt" data-i="verified"></i></b><span class="xs muted">Textbook · “Sounds good, see you at Walsh”</span></div></div><div class="item" data-k="club"><span class="av c2">PC</span><div class="grow"><b>Photography Club</b><span class="xs muted">Shoot signups open, 12 spots</span></div></div></div></div></div><figcaption>Inbox</figcaption></figure>
+    <div class="item" data-k="market"><span class="av c4">MT</span><div class="grow"><b>Mike T. <i class="vt" data-i="verified"></i></b><span class="xs muted">Textbook · “Sounds good, see you at Walsh”</span></div></div><div class="item" data-k="club"><span class="av c2">PC</span><div class="grow"><b>Photography Club</b><span class="xs muted">Shoot signups open, 12 spots</span></div></div></div></div>
+  <div class="scrim" id="newChatSheet-scrim" hidden data-sheet="newChatSheet"></div>
+  <div class="sheet" id="newChatSheet" hidden><div class="between row"><div class="h2">New chat</div><button class="link" data-sheet="newChatSheet">Close</button></div>
+    <div class="seg" data-tabs><button class="on">Direct message</button><button>Group chat</button></div>
+    <label class="f">To<input placeholder="Search your connections"></label>
+    <div class="stack"><div class="h3">Suggested connections</div>
+      <label class="row"><input type="checkbox" style="width:18px;min-height:18px" checked><span class="av s c3">MJ</span><span class="sp sm">Mateo J. ’29</span></label>
+      <label class="row"><input type="checkbox" style="width:18px;min-height:18px"><span class="av s c2">AK</span><span class="sp sm">Amara K. ’29</span></label>
+      <label class="row"><input type="checkbox" style="width:18px;min-height:18px"><span class="av s c5">PS</span><span class="sp sm">Priya S. ’29</span></label>
+    </div>
+    <label class="f">Group name (group chats only)<input placeholder="e.g. Reservoir crew"></label>
+    <div class="xs muted row"><i data-i="shield"></i>You can only message accepted connections — see <a class="link" href="08-profile.html#following">Following</a> to manage who that is.</div>
+    <button class="btn block" data-sheet="newChatSheet">Start chat</button></div>
+  </div><figcaption>Inbox</figcaption></figure>
 
 <figure class="pw"><div class="phone" data-tab="home">
   <div class="mhdr"><button class="iconbtn plain"><i data-i="back"></i></button><span class="av c5">SK</span><div class="sp"><b>Sarah K. <i class="vt" data-i="verified"></i></b><div class="xs muted">Usually replies in ~1h</div></div><button class="iconbtn plain"><i data-i="more"></i></button></div>
@@ -24,11 +37,25 @@
 
 <div class="sec-label">Desktop · 1280</div>
 <div class="desk" data-tab="msg" data-fscope><div class="dbody two" style="gap:0;padding:0;min-height:520px;align-items:stretch">
-  <div style="border-right:1px solid var(--line);background:var(--card)"><div class="pad h2">Messaging</div><div class="seg" data-tabs style="margin:0 14px 8px"><button class="on" data-f="all">All</button><button data-f="market">Market</button><button data-f="club">Clubs</button></div><div class="list"><div class="item" data-k="market" style="background:var(--hover)"><span class="av c5">SK</span><div class="grow"><b>Sarah K.</b><span class="xs muted">Mini-fridge $40</span></div><span class="unread"></span></div><div class="item" data-k="club"><span class="av c3">RC</span><div class="grow"><b>Running Club</b><span class="xs muted">14 new</span></div></div><div class="item" data-k="market"><span class="av c4">MT</span><div class="grow"><b>Mike T.</b><span class="xs muted">Textbook $35</span></div></div><div class="item" data-k="club"><span class="av c2">PC</span><div class="grow"><b>Photography Club</b><span class="xs muted">Shoot signups open</span></div></div></div></div>
+  <div style="border-right:1px solid var(--line);background:var(--card)"><div class="pad row between"><b class="h2">Messaging</b><button class="iconbtn" data-sheet="newChatModal" aria-label="New chat"><i data-i="plus"></i></button></div><div class="seg" data-tabs style="margin:0 14px 8px"><button class="on" data-f="all">All</button><button data-f="market">Market</button><button data-f="club">Clubs</button></div><div class="list"><div class="item" data-k="market" style="background:var(--hover)"><span class="av c5">SK</span><div class="grow"><b>Sarah K.</b><span class="xs muted">Mini-fridge $40</span></div><span class="unread"></span></div><div class="item" data-k="club"><span class="av c3">RC</span><div class="grow"><b>Running Club</b><span class="xs muted">14 new</span></div></div><div class="item" data-k="market"><span class="av c4">MT</span><div class="grow"><b>Mike T.</b><span class="xs muted">Textbook $35</span></div></div><div class="item" data-k="club"><span class="av c2">PC</span><div class="grow"><b>Photography Club</b><span class="xs muted">Shoot signups open</span></div></div></div></div>
   <div class="stack" style="padding:20px;gap:12px"><div class="row between"><b class="h2">Sarah K. <i class="vt" data-i="verified"></i></b><button class="btn gold sm"><i data-i="check"></i>Mark as sold</button></div>
     <div class="item card pad"><div class="art g2" style="width:64px;height:64px;border-radius:10px"><i data-i="fridge" style="font-size:26px"></i></div><div class="grow"><b>$40 · Mini-fridge</b><span class="xs muted">Available · meet at O’Neill lobby</span></div></div>
     <div class="bubble them">See you at 5. Should I bring a dolly?</div><div class="bubble me">Yes please! I’ll meet you at the front desk.</div>
     <div class="sp"></div><div class="chips"><span class="chip"><i data-i="pin"></i>Insert safe spot</span><span class="chip">Suggest another time</span></div><div class="row"><input placeholder="Write a message"><button class="btn"><i data-i="send"></i>Send</button></div></div>
+</div>
+<div class="modal-scrim" id="newChatModal" hidden><div class="modal">
+  <div class="between row"><div class="h2">New chat</div><button class="iconbtn plain" data-sheet="newChatModal" aria-label="Close"><i data-i="x"></i></button></div>
+  <div class="seg" data-tabs><button class="on">Direct message</button><button>Group chat</button></div>
+  <label class="f">To<input placeholder="Search your connections"></label>
+  <div class="stack"><div class="h3">Suggested connections</div>
+    <label class="row"><input type="checkbox" style="width:18px;min-height:18px" checked><span class="av s c3">MJ</span><span class="sp sm">Mateo J. ’29</span></label>
+    <label class="row"><input type="checkbox" style="width:18px;min-height:18px"><span class="av s c2">AK</span><span class="sp sm">Amara K. ’29</span></label>
+    <label class="row"><input type="checkbox" style="width:18px;min-height:18px"><span class="av s c5">PS</span><span class="sp sm">Priya S. ’29</span></label>
+  </div>
+  <label class="f">Group name (group chats only)<input placeholder="e.g. Reservoir crew"></label>
+  <div class="xs muted row"><i data-i="shield"></i>You can only message accepted connections.</div>
+  <button class="btn block" data-sheet="newChatModal">Start chat</button>
 </div></div>
-<div class="note"><b>Notes</b>Sold and rating prompts appear in-thread. Club chats are moderated and muted by default. Filters (All, Market, Clubs) work in the inbox and in the floating Messages dock on every desktop screen. Tablet 768: list overlays the thread.</div>
+</div>
+<div class="note"><b>Notes</b>The plus icon (mobile) and the New chat button (desktop) open the same pop-up: pick Direct message or Group chat, choose from accepted connections only, name the group if it’s a group. Sold and rating prompts appear in-thread. Club chats are moderated and muted by default. Filters (All, Market, Clubs) work in the inbox and in the floating Messages dock on every desktop screen. Tablet 768: list overlays the thread.</div>
 </main><script src="app.js"></script></body></html>

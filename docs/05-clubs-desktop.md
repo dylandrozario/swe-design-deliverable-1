@@ -16,7 +16,7 @@ Wrapped in `.col.club-page`. Landing shows **Posts**. Panels switch with `data-s
 1. **Header card:**
    - **Cover** (`.club-cover.g2.pattern`, 170px): blue gradient, dot pattern, large translucent code icon, scrim. 56px avatar “DS” beside the name **Data Science Society** (H1, white) + gold verified check and “Academic · Fulton Hall”.
    - **Info row** (left): faces + “**310 members** · 12 friends”, then the **About** `<details>` directly underneath: two-line bio and a **View more** button; opening reveals `.kv` details (Category, Privacy, Location, Meets Wed 6pm · Fulton 310, Contact @bcdatasci, Dues Free), **Officers · 3** (Priya N. President, Leo K. Events lead, Ana G. Treasurer, each with a message button) and a `Club files` link. **View less** collapses it.
-   - **Actions** (right of the info row): `Join` (primary) · `Message` (secondary) · bell icon button, all 44px.
+   - **Actions** (right of the info row): `Follow` (primary) · `Message` (secondary) · bell icon button, all 44px.
    - **Tabs:** **Posts** (on) · Events · 3.
 2. **Posts panel — single column:**
    - **Upcoming sessions:** H2 + `View all →` (opens Events). Three ticket-style `.event-strip` cards (maroon date block, dashed divider, title, meta, going count, `RSVP`): Oct 22 Intro to Pandas workshop, Oct 29 Kaggle build night, Nov 5 Guest talk: data at Fenway.
@@ -25,7 +25,7 @@ Wrapped in `.col.club-page`. Landing shows **Posts**. Panels switch with `data-s
 
 ### Right rail (sticky)
 - **Officer view card** (gold-soft): “Invite link · member list · RSVP export · announcements (1/week).” `Post event in 60s` (gold, small).
-- **Similar clubs card:** Photography Club (98 members) and Running Club (214 members), each with `Join`.
+- **Similar clubs card:** Photography Club (98 members) and Running Club (214 members), each with `Follow`.
 - **Members preview card:** six overlapping faces + “and 304 others”.
 
 ## Create a club or group (modal)

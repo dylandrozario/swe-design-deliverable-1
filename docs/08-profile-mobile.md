@@ -13,7 +13,7 @@
   - **RSVPs:** date-tile rows (FRI 17 Acoustic Night, SAT 18 Running meetup) + `Add all to Google or Apple Calendar` + a link to the full [Calendar](11-calendar-mobile.md) page.
   - **Clubs:** the three clubs you belong to, with your role (Officer/Member) and a `Leave` action, plus `Start another club or group`.
   - **Listings:** your active and sold marketplace listings with inquiry counts and `Mark sold`, plus `Post a listing`.
-  - **Following:** the answer to “where do I see who I follow?” — a **People** list (accepted connections, with `Remove`) and a **Clubs & groups** list (followed clubs, with `Unfollow`), covering all three of clubs, groups and people in one tab.
+  - **Following:** the answer to “where do I see who I follow?” — a **People** list (accepted connections, each with a chat-icon button straight into Messages plus `Remove`) and a **Clubs & groups** list (followed clubs, with `Unfollow`), covering all three of clubs, groups and people in one tab.
 
 ## Screen 2 — Edit profile (`id="edit-profile"`)
 - **Header:** close · “Edit profile” · `Save` link.

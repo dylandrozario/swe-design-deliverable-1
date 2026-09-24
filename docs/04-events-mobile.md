@@ -33,7 +33,8 @@
 ## Screen 4 — Create event (`id="ev-create"`, under 60s)
 - **Header:** close · “New event”. Progress 2/3.
 - **Flyer upload:** 150px dashed box “Add a flyer”.
-- **Fields:** Title (prefilled “Study break: pancakes at late night”); Type chips (Social on, Study, Sports, Meeting); When select (“Tonight 9pm (suggested)”); Where select (“O’Neill Library lobby”, “The Rat”); Capacity (optional, blank = no limit — supports the non-critical “capacity with waitlist” requirement).
+- **Fields:** Title (prefilled “Study break: pancakes at late night”); Type chips (Social on, Study, Sports, Meeting); When select (“Tonight 9pm (suggested)”); Where select (“O’Neill Library lobby”, “The Rat”); Price and Capacity side by side (both optional — blank price = free, blank capacity = no limit, supporting the non-critical “capacity with waitlist” requirement).
+- **Privacy:** Public / Invite-only chips, an “Invite-only event” switch (only invited people can see it and RSVP), and an `Invite people` button to add them.
 - **Short description** (required): 3-row textarea between Where and Capacity, prefilled “Free pancakes and a quiet-ish hangout between exams. Bring a friend.”
 - **Required-fields line** (lock icon): “Required: title, date and time, location, description. Posting as Music Club? Switch the host under your name.” — a student or a club/community account can create events; both need those four fields.
 - **Primary:** `Publish and invite my club`.

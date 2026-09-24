@@ -12,7 +12,7 @@
 2. **Upcoming panel:** rows with date tile, title, meta, green “Going” badge — FRI 17 Acoustic Night (7pm · The Rat); SAT 18 Running meetup (9am · Reservoir); link to the full [Calendar](11-calendar-desktop.md).
 3. **Clubs panel:** the three clubs you belong to with role and `Leave`.
 4. **Marketplace panel:** your active listings with inquiry counts and `Mark sold`.
-5. **Following panel:** People (connections, `Remove`) and Clubs & groups (`Unfollow`) as two cards — clubs, groups and people all reachable from one tab.
+5. **Following panel:** People (connections, each with a chat-icon button into Messages plus `Remove`) and Clubs & groups (`Unfollow`) as two cards — clubs, groups and people all reachable from one tab.
 
 ### Right rail
 - **Privacy card:** “Bio & interests — BC only”; “Major & minor — Everyone”; “Direct messages — Connections”; link to the full Settings page.

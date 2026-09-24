@@ -10,8 +10,8 @@
 ### Center column
 1. **Composer card:** avatar · fake input “Share something with BC…” · `Post` (gold, small). Either control opens the **New post** modal (see Behavior).
 2. **Feed tabs** (`.tabs`): **All** (on) · **Friends & following** · **Suggested** — same three states as mobile.
-3. **Interest filter chips:** Running, Live music (on), CS (on), Service, Sports.
-4. **All tab:** section row “Happening tonight” with time/price chips; flyer pair (2 columns, 16:11); club post (`.club-post`: BC Running Club + verified, “1h”, meta “Club · 214 members”, `+ Follow` in the head row, body, run art, heart 54 / comment 12 pills and a share icon — no Like/Comment/Repost bar).
+3. **Filters button:** opens a `.ndrop` dropdown with the same When / Price / Interests controls as mobile, plus a caption summarising active filters — replaces the loose interest-chip row and the “Happening tonight” header’s own time chips.
+4. **All tab:** section row “Happening tonight”; flyer pair (2 columns, 16:11), each with its own small RSVP button; club post (`.club-post`: BC Running Club + verified, “1h”, meta “Club · 214 members”, `+ Follow` in the head row, body, run art, heart 54 / comment 12 pills and a share icon — no Like/Comment/Repost bar).
 5. **Friends & following tab:** info banner, Mateo J.’s text-only `.club-post` (meta “Friend”), an event friends are going to.
 6. **Suggested tab:** explanatory banner, a suggested Photography Club `.club-post` with `+ Follow` and camera art, a suggested event card.
 

@@ -53,7 +53,7 @@ const VT='<i class="vt" data-i="verified" title="Verified BC student"></i>';
    bell dropdown / gear icon next to the profile picture instead of their own nav slot —
    see the "Notifications" note in docs/style-guide.md. */
 const NAV=[['home','Home','home','02-home.html'],['calendar','Calendar','cal','11-calendar.html'],['events','Events','ticket','04-events.html'],['market','Market','bag','06-marketplace.html'],['clubs','Clubs','users','05-clubs.html'],['profile','Profile','user','08-profile.html']];
-const HUB=[['index.html','Overview'],['01-onboarding.html','Onboarding'],['02-home.html','Home'],['11-calendar.html','Calendar'],['04-events.html','Events'],['05-clubs.html','Clubs'],['06-marketplace.html','Market'],['07-messaging.html','Messages'],['08-profile.html','Profile'],['09-notifications-settings.html','Settings'],['10-flows.html','Flows']];
+const HUB=[['index.html','Overview'],['slideshow.html','✨ Slideshow'],['01-onboarding.html','Onboarding'],['02-home.html','Home'],['11-calendar.html','Calendar'],['04-events.html','Events'],['05-clubs.html','Clubs'],['06-marketplace.html','Market'],['07-messaging.html','Messages'],['08-profile.html','Profile'],['09-notifications-settings.html','Settings'],['10-flows.html','Flows']];
 const cur=location.pathname.split('/').pop()||'index.html';
 
 /* Notifications: each row links straight into the page it's about instead of a

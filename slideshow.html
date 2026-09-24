@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turma — Interactive Design Showcase & Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bc-maroon: #8A1F2F;
+      --bc-maroon-dark: #5E1220;
+      --bc-maroon-glow: rgba(138, 31, 47, 0.4);
+      --bc-gold: #E2B13C;
+      --bc-gold-soft: #FBF1D6;
+      --bc-gold-ink: #6B4A00;
+      --bc-cream: #F3F0EB;
+      --dark-bg: #0C0A0D;
+      --dark-surface: #171319;
+      --dark-card: #201A23;
+      --dark-card-hover: #29222C;
+      --dark-border: rgba(255, 255, 255, 0.1);
+      --dark-border-subtle: rgba(255, 255, 255, 0.05);
+      --text-main: #F7F5F8;
+      --text-muted: #A89FA8;
+      --text-dim: #736B73;
+      --accent-blue: #3E80E0;
+      --accent-green: #27B368;
+      --accent-purple: #9D5BD2;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --shadow-glow: 0 0 40px var(--bc-maroon-glow);
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(138, 31, 47, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(226, 177, 60, 0.12) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--dark-bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.35); }
+
+    /* Top Global Header */
+    .top-deck-header {
+      height: 68px;
+      background: rgba(23, 19, 25, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--dark-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      gap: 16px;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-badge {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--bc-maroon), #b82b40);
+      border: 1px solid rgba(226, 177, 60, 0.4);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 22px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(138, 31, 47, 0.4);
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-badge-pill {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(226, 177, 60, 0.15);
+      color: var(--bc-gold);
+      border: 1px solid rgba(226, 177, 60, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Category Nav Chips */
+    .deck-category-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--dark-border-subtle);
+    }
+
+    .cat-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cat-btn:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .cat-btn.active {
+      background: var(--bc-maroon);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(138, 31, 47, 0.4);
+    }
+
+    /* Action Buttons in Header */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hdr-btn {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .hdr-btn:hover {
+      background: var(--dark-card-hover);
+      border-color: rgba(255,255,255,0.25);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .hdr-btn.gold-accent {
+      background: linear-gradient(135deg, rgba(226, 177, 60, 0.2), rgba(226, 177, 60, 0.08));
+      border-color: rgba(226, 177, 60, 0.4);
+      color: var(--bc-gold);
+    }
+
+    .hdr-btn.gold-accent:hover {
+      background: rgba(226, 177, 60, 0.28);
+      border-color: var(--bc-gold);
+      color: #fff;
+    }
+
+    /* Main Showcase Stage Layout */
+    .presentation-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Slide Bar & Progress Controls */
+    .slide-control-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-md);
+      padding: 12px 20px;
+      box-shadow: var(--shadow-subtle);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .slide-progress-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .slide-counter-badge {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bc-gold);
+      background: rgba(226, 177, 60, 0.12);
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(226, 177, 60, 0.25);
+    }
+
+    .slide-progress-track {
+      width: 160px;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--bc-maroon), var(--bc-gold));
+      width: 8%;
+      border-radius: 3px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide-nav-cluster {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-arrow-btn {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-arrow-btn:hover:not(:disabled) {
+      background: var(--bc-maroon);
+      border-color: var(--bc-maroon);
+      transform: scale(1.03);
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .key-shortcut {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.12);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* Device / View Mode Switcher */
+    .view-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(0,0,0,0.35);
+      padding: 3px;
+      border-radius: 8px;
+      border: 1px solid var(--dark-border-subtle);
+    }
+
+    .mode-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .mode-toggle-btn:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .mode-toggle-btn.active {
+      background: var(--dark-card-hover);
+      color: #fff;
+      border: 1px solid var(--dark-border);
+    }
+
+    /* Main Showcase Visual Stage (Top) */
+    .stage-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage-top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--dark-border-subtle);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .slide-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slide-num-pill {
+      background: var(--bc-maroon);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .slide-eyebrow {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stage-utility-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stage-link-btn {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--bc-gold);
+      background: rgba(226, 177, 60, 0.1);
+      border: 1px solid rgba(226, 177, 60, 0.25);
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .stage-link-btn:hover {
+      background: var(--bc-gold);
+      color: var(--dark-bg);
+    }
+
+    /* Live Interactive Frame Stage */
+    .frame-viewport-stage {
+      background: #000;
+      border-radius: var(--radius-md);
+      min-height: 520px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Mobile Phone Mockup */
+    .mobile-phone-frame {
+      width: 390px;
+      height: 560px;
+      background: #111;
+      border-radius: 38px;
+      box-shadow: 0 0 0 10px #242226, 0 20px 50px rgba(0,0,0,0.8), 0 0 40px var(--bc-maroon-glow);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .phone-camera-island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 20px;
+      background: #000;
+      border-radius: 10px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .phone-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: var(--bc-cream);
+    }
+
+    /* Desktop Browser Mockup */
+    .desktop-browser-frame {
+      width: 95%;
+      height: 94%;
+      background: #1B171E;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .browser-toolbar {
+      height: 38px;
+      background: #252029;
+      border-bottom: 1px solid var(--dark-border);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 12px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #FF5F56; }
+    .dot-yellow { background: #FFBD2E; }
+    .dot-green { background: #27C93F; }
+
+    .browser-url-pill {
+      flex: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      padding: 3px 12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .desktop-iframe {
+      width: 100%;
+      flex: 1;
+      border: none;
+      background: var(--bc-cream);
+    }
+
+    /* Full Direct Frame */
+    .full-interactive-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: var(--bc-cream);
+    }
+
+    /* Bottom Structured Explanatory Narrative Section ("Texts underneath that helps us understand it too") */
+    .narrative-underneath-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .narrative-header-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--dark-border-subtle);
+      padding-bottom: 20px;
+    }
+
+    .narrative-main-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .narrative-subtitle {
+      font-size: 15px;
+      color: var(--bc-gold);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .narrative-tags-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .spec-tag {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .spec-tag.tag-maroon {
+      background: rgba(138, 31, 47, 0.25);
+      border-color: rgba(138, 31, 47, 0.5);
+      color: #FF9EAB;
+    }
+
+    .spec-tag.tag-gold {
+      background: rgba(226, 177, 60, 0.15);
+      border-color: rgba(226, 177, 60, 0.4);
+      color: var(--bc-gold);
+    }
+
+    .spec-tag.tag-blue {
+      background: rgba(62, 128, 224, 0.15);
+      border-color: rgba(62, 128, 224, 0.4);
+      color: #8EBAFF;
+    }
+
+    .spec-tag.tag-green {
+      background: rgba(39, 179, 104, 0.15);
+      border-color: rgba(39, 179, 104, 0.4);
+      color: #79E8A9;
+    }
+
+    /* Structured Breakdown Grid Underneath */
+    .narrative-details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .detail-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--bc-maroon);
+    }
+
+    .detail-card.card-gold::before { background: var(--bc-gold); }
+    .detail-card.card-blue::before { background: var(--accent-blue); }
+    .detail-card.card-green::before { background: var(--accent-green); }
+    .detail-card.card-purple::before { background: var(--accent-purple); }
+
+    .detail-heading {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .detail-body {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .detail-body ul {
+      padding-left: 18px;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .detail-body li {
+      color: var(--text-muted);
+    }
+
+    .detail-body strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Presenter Talking Points Box */
+    .presenter-callout-box {
+      background: linear-gradient(135deg, rgba(138, 31, 47, 0.2), rgba(226, 177, 60, 0.1));
+      border: 1px solid rgba(226, 177, 60, 0.3);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .presenter-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--bc-gold);
+      color: var(--bc-gold-ink);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .presenter-text {
+      flex: 1;
+    }
+
+    .presenter-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bc-gold);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .presenter-speech {
+      font-size: 13.5px;
+      color: #EFECE6;
+      line-height: 1.55;
+    }
+
+    /* Bottom Slide Thumbnails Strip */
+    .thumbnails-drawer {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      overflow-x: auto;
+      display: flex;
+      gap: 12px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .thumb-card {
+      flex: 0 0 170px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border-subtle);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+    }
+
+    .thumb-card:hover {
+      background: var(--dark-card-hover);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .thumb-card.active {
+      background: rgba(138, 31, 47, 0.35);
+      border-color: var(--bc-gold);
+      box-shadow: 0 4px 14px rgba(138, 31, 47, 0.4);
+    }
+
+    .thumb-num {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--bc-gold);
+    }
+
+    .thumb-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .thumb-category {
+      font-size: 10.5px;
+      color: var(--text-dim);
+    }
+
+    /* Modal for Quick Jump */
+    .jump-modal-scrim {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .jump-modal-scrim.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .jump-modal-content {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .jump-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--dark-border);
+      padding-bottom: 12px;
+    }
+
+    .jump-modal-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .jump-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .jump-item-btn {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .jump-item-btn:hover {
+      background: var(--bc-maroon);
+      border-color: var(--bc-gold);
+    }
+
+    /* Keyboard Help Tooltip */
+    .keyboard-help-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      padding: 8px;
+      flex-wrap: wrap;
+    }
+
+    .key-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 2px 6px;
+      color: var(--text-main);
+      margin-right: 4px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .top-deck-header { height: auto; padding: 12px 16px; flex-direction: column; align-items: stretch; gap: 10px; }
+      .deck-category-nav { overflow-x: auto; }
+      .presentation-container { padding: 12px; }
+      .frame-viewport-stage { height: 480px; }
+      .mobile-phone-frame { width: 320px; height: 440px; }
+      .narrative-header-grid { grid-template-columns: 1fr; }
+      .narrative-tags-cluster { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Global Deck Header -->
+  <header class="top-deck-header">
+    <a href="index.html" class="brand-cluster" title="Return to Overview">
+      <div class="brand-logo-badge">T</div>
+      <div class="brand-text-block">
+        <div class="brand-title">
+          Turma Showcase Deck
+          <span class="brand-badge-pill">BC Deliverable</span>
+        </div>
+        <div class="brand-sub">Boston College Student Platform · Design Review Presentation</div>
+      </div>
+    </a>
+
+    <!-- Category Nav Filter -->
+    <nav class="deck-category-nav" id="categoryNav">
+      <button class="cat-btn active" data-cat="all">All Slides</button>
+      <button class="cat-btn" data-cat="foundation">Foundation</button>
+      <button class="cat-btn" data-cat="core">Core Feeds</button>
+      <button class="cat-btn" data-cat="features">Social & Market</button>
+      <button class="cat-btn" data-cat="flows">Safety & Flows</button>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="hdr-btn" id="openJumpModalBtn" title="Show all slides matrix (Key: T)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Slides (13)
+      </button>
+      <button class="hdr-btn" id="toggleAutoPlayBtn" title="Play automatic slideshow">
+        <svg id="playIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span id="playText">Auto-Play</span>
+      </button>
+      <button class="hdr-btn gold-accent" id="fullscreenBtn" title="Toggle Fullscreen (Key: F)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        Fullscreen
+      </button>
+    </div>
+  </header>
+
+  <!-- Presentation Stage Container -->
+  <main class="presentation-container">
+
+    <!-- Slide Control & Progress Bar -->
+    <div class="slide-control-bar">
+      <div class="slide-progress-info">
+        <div class="slide-counter-badge" id="slideCounterBadge">SLIDE 01 / 13</div>
+        <div class="slide-progress-track">
+          <div class="slide-progress-fill" id="slideProgressFill"></div>
+        </div>
+        <span class="spec-tag tag-gold" id="slideCategoryTag">FOUNDATION</span>
+      </div>
+
+      <!-- Device Frame Switcher -->
+      <div class="view-mode-toggle" id="viewModeToggle">
+        <button class="mode-toggle-btn active" data-mode="mobile" title="Mobile 390px iPhone View">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Mobile (390px)
+        </button>
+        <button class="mode-toggle-btn" data-mode="desktop" title="Desktop 1280px Wireframe View">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Desktop (1280px)
+        </button>
+        <button class="mode-toggle-btn" data-mode="direct" title="Full Interactive Direct View">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          Interactive
+        </button>
+      </div>
+
+      <!-- Nav Arrows -->
+      <div class="slide-nav-cluster">
+        <button class="nav-arrow-btn" id="prevSlideBtn" title="Previous slide (Left Arrow)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Prev <span class="key-shortcut">←</span>
+        </button>
+        <button class="nav-arrow-btn" id="nextSlideBtn" title="Next slide (Right Arrow or Spacebar)">
+          Next <span class="key-shortcut">→</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Visual Stage (Top Frame) -->
+    <section class="stage-card">
+      <div class="stage-top-meta">
+        <div class="slide-badge-title">
+          <span class="slide-num-pill" id="stageSlideNum">01 OF 13</span>
+          <h2 class="slide-eyebrow" id="stageSlideEyebrow">Turma — Design Overview & Vision</h2>
+        </div>
+        <div class="stage-utility-links">
+          <span class="spec-tag" id="stageResolutionBadge">Live Interactive Prototype</span>
+          <a class="stage-link-btn" id="stageOpenExternalBtn" href="index.html" target="_blank" title="Open this screen in a new standalone tab">
+            Open Standalone
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Viewport Stage -->
+      <div class="frame-viewport-stage" id="frameViewportStage">
+        <!-- Live container injected via JS -->
+      </div>
+    </section>
+
+    <!-- Detailed Narrative & Explanatory Texts Underneath -->
+    <article class="narrative-underneath-card">
+      <div class="narrative-header-grid">
+        <div>
+          <h1 class="narrative-main-title" id="narrativeTitle">Turma: The Verified Boston College Student Platform</h1>
+          <div class="narrative-subtitle" id="narrativeSubtitle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span id="narrativeModelText">3 Interaction Paradigms: Posh (Events) · LinkedIn (Feed & Clubs) · Facebook Marketplace (Market)</span>
+          </div>
+        </div>
+        <div class="narrative-tags-cluster" id="narrativeTagsCluster">
+          <span class="spec-tag tag-maroon">Maroon #8A1F2F</span>
+          <span class="spec-tag tag-gold">Gold #E2B13C</span>
+          <span class="spec-tag tag-blue">BC Verified</span>
+          <span class="spec-tag tag-green">WCAG 4.5:1</span>
+        </div>
+      </div>
+
+      <!-- Structured Explanatory Breakdown Columns -->
+      <div class="narrative-details-grid" id="narrativeDetailsGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Presenter Notes Callout -->
+      <div class="presenter-callout-box" id="presenterCalloutBox">
+        <div class="presenter-icon">🎙️</div>
+        <div class="presenter-text">
+          <div class="presenter-title">Presenter Speaking Points & Design Evaluation</div>
+          <div class="presenter-speech" id="presenterSpeechText">
+            "Welcome everyone. Today we are presenting Turma — an all-in-one verified campus social hub tailored specifically for Boston College students. Rather than forcing one generic layout across different student needs, Turma harmonizes three battle-tested interaction models: Posh-style high-energy flyers for nightlife, LinkedIn-style structured feeds for clubs and announcements, and Facebook Marketplace-style listings with built-in safe campus meetup zones."
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Bottom Thumbnails Strip -->
+    <div class="thumbnails-drawer" id="thumbnailsDrawer">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Keyboard Help Bar -->
+    <footer class="keyboard-help-bar">
+      <span><span class="key-badge">←</span><span class="key-badge">→</span> Navigate Slides</span>
+      <span><span class="key-badge">Space</span> Next</span>
+      <span><span class="key-badge">F</span> Fullscreen</span>
+      <span><span class="key-badge">T</span> All Slides Grid</span>
+      <span><span class="key-badge">1</span> Mobile View</span>
+      <span><span class="key-badge">2</span> Desktop View</span>
+      <span><span class="key-badge">3</span> Direct View</span>
+    </footer>
+
+  </main>
+
+  <!-- Jump to Slide Modal -->
+  <div class="jump-modal-scrim" id="jumpModalScrim">
+    <div class="jump-modal-content">
+      <div class="jump-modal-header">
+        <h3 class="jump-modal-title">Select Slide to Jump</h3>
+        <button class="hdr-btn" id="closeJumpModalBtn">✕ Close</button>
+      </div>
+      <div class="jump-grid" id="jumpGrid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Complete structured slide database covering all visual and functional aspects of Turma
+    const SLIDES = [
+      {
+        id: "overview",
+        num: 1,
+        category: "foundation",
+        categoryName: "Design Vision",
+        title: "Turma — System Architecture & Design Philosophy",
+        eyebrow: "Design Overview · System Architecture",
+        url: "index.html",
+        subtitle: "One Brand (BC Maroon + Gold), Three Specialized Interaction Paradigms",
+        tags: [
+          { text: "Overview Deck", class: "tag-gold" },
+          { text: "3 Section Modes", class: "tag-maroon" },
+          { text: "Mobile 390 + Desktop 1280", class: "tag-blue" },
+          { text: "100% BC Verified", class: "tag-green" }
+        ],
+        details: [
+          {
+            title: "The Problem & Mission",
+            theme: "maroon",
+            body: "Boston College students currently juggle fragmented platforms: GroupMe for club updates, Facebook groups for market deals, and scattered Instagram flyers for campus events. Turma consolidates all campus life into one unified, authenticated platform exclusively for students with <strong>@bc.edu</strong> credentials."
+          },
+          {
+            title: "3 Specialized Interaction Modes",
+            theme: "gold",
+            body: "<ul><li><strong>Events (Posh-inspired):</strong> Visual-first poster flyers with date badges, price pills, and friends-going social proof.</li><li><strong>Home & Clubs (LinkedIn-inspired):</strong> Warm-gray canvas, white cards, unified <code>.club-post</code> component with instant reaction pills.</li><li><strong>Marketplace (FB Marketplace):</strong> Square product tiles, price-first tags, and safe-meetup campus locations.</li></ul>"
+          },
+          {
+            title: "Core Design System Principles",
+            theme: "green",
+            body: "<ul><li><strong>One primary action per screen:</strong> Single dominant maroon pill button eliminates cognitive fatigue.</li><li><strong>Trust is visible:</strong> Verified checkmark beside every student name, zero anonymous accounts.</li><li><strong>Never color alone:</strong> Always pair color statuses with icons and text labels (WCAG AA compliant).</li><li><strong>Quiet by default:</strong> Rate-limited club announcements and instant Off/On notification controls.</li></ul>"
+          }
+        ],
+        speakerNotes: "Turma is not a cookie-cutter clone; it deliberately adopts the strongest UX conventions for each specific student task. When students look for parties or concerts, they want high-energy flyers like Posh. When they check club meetings or academic discussions, they need the structured clarity of LinkedIn. And when buying move-out dorm fridges, they need photo-first tiles with verified safe campus pickup spots."
+      },
+      {
+        id: "onboarding",
+        num: 2,
+        category: "foundation",
+        categoryName: "Auth & Identity",
+        title: "Screen 01: Onboarding & BC Student Verification",
+        eyebrow: "01 Onboarding · Google OAuth & Profile Creation",
+        url: "01-onboarding.html",
+        subtitle: "Single-Sign-On with @bc.edu, Major Selection & Cold-Start Feed Personalization",
+        tags: [
+          { text: "Google OAuth", class: "tag-maroon" },
+          { text: "@bc.edu Required", class: "tag-green" },
+          { text: "Major/Minor Picker", class: "tag-blue" },
+          { text: "Suggested Connections", class: "tag-gold" }
+        ],
+        details: [
+          {
+            title: "Security & Strict BC Verification",
+            theme: "maroon",
+            body: "To guarantee campus safety and eliminate external scammers, onboarding uses <strong>Google OAuth</strong> restricted to official <code>@bc.edu</code> email addresses. Non-BC domains trigger an immediate inline error state, preserving community trust from day one."
+          },
+          {
+            title: "Profile & Academic Specialization",
+            theme: "gold",
+            body: "Students specify their Class Year (e.g., '28, '29), Primary Major (e.g. Computer Science, Finance, Biology), and optional Second Major/Minor. This metadata drives algorithmic suggestions for study groups, relevant clubs, and class connections."
+          },
+          {
+            title: "Solving the Cold-Start Problem",
+            theme: "blue",
+            body: "During onboarding step 3 and 4, students select campus interests (Running, Live Music, CS, Service) and receive an instant curated list of peers and student organizations to connect with, ensuring their Home feed is rich and personalized immediately upon first launch."
+          }
+        ],
+        speakerNotes: "Notice how effortless the onboarding flow is. With Google Single-Sign-On, students don't need to remember another password. By capturing their major and interests in three simple taps, the platform immediately populates their feed with relevant classmates and club flyers, completely eliminating the blank-slate cold start problem."
+      },
+      {
+        id: "home-feed",
+        num: 3,
+        category: "core",
+        categoryName: "Campus Feed",
+        title: "Screen 02: Home Campus Feed",
+        eyebrow: "02 Home · Central Feed & Flyer Strip",
+        url: "02-home.html",
+        subtitle: "Answers 'What's on Tonight?' in 2 Seconds with 3 Feed Modes",
+        tags: [
+          { text: "Unified .club-post", class: "tag-maroon" },
+          { text: "Posh Flyer Strip", class: "tag-gold" },
+          { text: "Market Nearby", class: "tag-green" },
+          { text: "3-Column Desktop", class: "tag-blue" }
+        ],
+        details: [
+          {
+            title: "Instant 'Tonight' Event Horizon",
+            theme: "gold",
+            body: "The top of the Home feed features a horizontal scroll flyer carousel showcasing events happening tonight (e.g., Acoustic Night at The Rat, Mod Social). Students can tap <strong>RSVP</strong> directly on the card in ≤ 2 seconds with instant toast confirmation."
+          },
+          {
+            title: "Unified Post Component (.club-post)",
+            theme: "maroon",
+            body: "All feed updates from students, club officers, and campus groups utilize the standardized <code>.club-post</code> component: circular avatar, verified badge, timestamp, clean copy, optional media asset, and lightweight reaction pill counters."
+          },
+          {
+            title: "Feed Filter Tabs & Responsive Shell",
+            theme: "blue",
+            body: "<ul><li><strong>All:</strong> Comprehensive campus pulse (flyers, posts, market deals).</li><li><strong>Friends & Following:</strong> High-signal feed restricted to classmates and followed clubs.</li><li><strong>Suggested:</strong> Algorithmic discovery based on selected academic and social interests.</li><li><strong>Desktop 1280px:</strong> 3-column layout (Left navigation, Center feed, Right trending rail + persistent message dock).</li></ul>"
+          }
+        ],
+        speakerNotes: "The Home feed is engineered for rapid scanning. A student opening Turma between classes can instantly see what's happening tonight at the Mods or O'Neill, browse officer updates from their photography club, and glance at nearby dorm market listings without having to switch tabs."
+      },
+      {
+        id: "calendar",
+        num: 4,
+        category: "core",
+        categoryName: "Schedule & RSVP",
+        title: "Screen 03 (11): Integrated Student Calendar",
+        eyebrow: "11 Calendar · Synchronized Events & RSVPs",
+        url: "11-calendar.html",
+        subtitle: "Seamless Schedule Management Synced with Event RSVPs and Club Meetings",
+        tags: [
+          { text: "Day / Week View", class: "tag-blue" },
+          { text: "1-Tap RSVP Sync", class: "tag-gold" },
+          { text: "Location Tagging", class: "tag-maroon" },
+          { text: "Schedule Conflicts", class: "tag-green" }
+        ],
+        details: [
+          {
+            title: "Automated RSVP Synchronization",
+            theme: "gold",
+            body: "Every time a student taps <strong>RSVP</strong> on any event flyer or club announcement across Turma, the event automatically populates into their personal Calendar with venue directions (e.g., 'Fulton 310', 'The Rat')."
+          },
+          {
+            title: "Visual Time Blocking & Views",
+            theme: "maroon",
+            body: "Supports Day and Week views with distinct color-coded chips for Academic Workshops, Club Hangouts, Social Gatherings, and Campus Sports games, enabling students to balance study commitments with social life."
+          },
+          {
+            title: "Export & Calendar Integrations",
+            theme: "green",
+            body: "Includes 1-tap export to Google Calendar and Apple iCal, syncing campus social schedules directly to students' mobile device widgets."
+          }
+        ],
+        speakerNotes: "The calendar eliminates the common college problem of RSVPing to an event and forgetting when or where it is. Because RSVPs seamlessly synchronize into their calendar schedule with location badges, students always know their weekly plan at a single glance."
+      },
+      {
+        id: "events",
+        num: 5,
+        category: "features",
+        categoryName: "Nightlife & Events",
+        title: "Screen 04: Events & Campus Nightlife (Posh Style)",
+        eyebrow: "04 Events · Poster-First Discovery & Ticketing",
+        url: "04-events.html",
+        subtitle: "High-Energy Poster Flyers with Date Badges, Price Pills & Friends Going",
+        tags: [
+          { text: "Posh Style", class: "tag-gold" },
+          { text: "Date & Price Pill", class: "tag-green" },
+          { text: "Face Piles (Social Proof)", class: "tag-blue" },
+          { text: "Event Creation Modal", class: "tag-maroon" }
+        ],
+        details: [
+          {
+            title: "Visual-First Nightlife Aesthetic",
+            theme: "gold",
+            body: "Taking cues from Posh, events are rendered as rich 4:5 aspect ratio posters with dark bottom scrims, high-contrast typography, date stamps in the top-left, and pricing pills (e.g., <strong>Free</strong> or <strong>$5</strong>) in the top-right."
+          },
+          {
+            title: "Social Proof & Face Piles",
+            theme: "maroon",
+            body: "Displays overlapping friend avatars ('5 friends going · 42 total RSVPs') to drive student attendance through FOMO and organic social discovery."
+          },
+          {
+            title: "Event Creation with Strict Rules",
+            theme: "purple",
+            body: "Event creation includes mandatory fields: Title, Required Description, Date/Time, Location/Room, and Ticket pricing, ensuring students always have all vital logistics before committing to attend."
+          }
+        ],
+        speakerNotes: "College students don't want to read dense text lists when deciding where to go on a Friday night. By adopting Posh's poster-first visual language combined with friend face piles, Turma makes event discovery engaging, vibrant, and fun."
+      },
+      {
+        id: "clubs",
+        num: 6,
+        category: "features",
+        categoryName: "Clubs & Groups",
+        title: "Screen 05: Clubs & Student Organizations",
+        eyebrow: "05 Clubs · Discovery, Profiles & Officer Tools",
+        url: "05-clubs.html",
+        subtitle: "Hangout-Style Club Homepages, Discovery Directory & Officer Broadcast Hub",
+        tags: [
+          { text: "Club Hangout Page", class: "tag-maroon" },
+          { text: "Officer Broadcasts", class: "tag-gold" },
+          { text: "Group Chat Toggle", class: "tag-blue" },
+          { text: "Rate-Limited Alerts", class: "tag-green" }
+        ],
+        details: [
+          {
+            title: "Club Discovery Directory",
+            theme: "blue",
+            body: "Categorized directory across Academic, Cultural, Arts, Club Sports, and Service groups with membership counts and verified club officer badges."
+          },
+          {
+            title: "Hangout-Style Club Profile",
+            theme: "gold",
+            body: "Features branded cover banner, member count, officer roster, join button, and a dedicated tabbed feed of upcoming club workshops and ticketed socials."
+          },
+          {
+            title: "Officer Dashboard & Group Chats",
+            theme: "maroon",
+            body: "Verified club leaders have access to an Officer Dashboard to broadcast announcements, manage member rosters, and toggle automatic creation of linked group chats for team coordination."
+          }
+        ],
+        speakerNotes: "Clubs are the heartbeat of Boston College student life. Turma gives every student organization a polished digital home. For officers, it solves announcement fatigue by offering rate-limited broadcast tools that ensure important meeting updates actually reach members."
+      },
+      {
+        id: "marketplace",
+        num: 7,
+        category: "features",
+        categoryName: "Dorm Marketplace",
+        title: "Screen 06: Campus Student Marketplace",
+        eyebrow: "06 Market · Photo Tiles & Safe Meetup Spots",
+        url: "06-marketplace.html",
+        subtitle: "Verified Student-to-Student Commerce with Campus Safe Meetup Presets",
+        tags: [
+          { text: "Marketplace Grid", class: "tag-green" },
+          { text: "Safe Meetup Zones", class: "tag-blue" },
+          { text: "Connect to Message", class: "tag-maroon" },
+          { text: "Move-Out Deals", class: "tag-gold" }
+        ],
+        details: [
+          {
+            title: "Photo-First Grid with Upfront Pricing",
+            theme: "green",
+            body: "Clean 2-column square photo tiles with bold price tags ($35, $40), item titles, condition tags, and dorm location markers (e.g., 'Walsh Hall', 'Lower Campus')."
+          },
+          {
+            title: "Designated Safe Campus Meetup Spots",
+            theme: "blue",
+            body: "To eliminate off-campus safety risks, listings integrate recommended verified campus meetup zones: <strong>O'Neill Library 1st Floor Lobby</strong>, <strong>McElroy Student Center</strong>, and the <strong>BC Police Department Safety Zone</strong>."
+          },
+          {
+            title: "Connect to Message Workflow",
+            theme: "maroon",
+            body: "Students click 'Message Seller' or 'Connect to Message', opening a pre-filled safety thread with verified seller ratings and graduation year, keeping transactions within the trusted BC community."
+          }
+        ],
+        speakerNotes: "Campus buy-and-sell currently happens in messy Facebook groups filled with graduated alumni and spam bots. Turma fixes this completely: only authenticated BC students can list or buy, and every listing suggests public campus safe-meetup zones like O'Neill Library."
+      },
+      {
+        id: "messaging",
+        num: 8,
+        category: "flows",
+        categoryName: "Chat & Safety",
+        title: "Screen 07: Messaging & Connections Center",
+        eyebrow: "07 Messaging · Direct Chats & Connections Manager",
+        url: "07-messaging.html",
+        subtitle: "Connections Filter, Meetup Safety Banners & Desktop Floating Dock",
+        tags: [
+          { text: "Connections View", class: "tag-blue" },
+          { text: "Safety Warning Header", class: "tag-green" },
+          { text: "All / Market / Clubs Tabs", class: "tag-gold" },
+          { text: "Desktop Message Dock", class: "tag-maroon" }
+        ],
+        details: [
+          {
+            title: "Dedicated Connections Manager",
+            theme: "blue",
+            body: "Directly fulfills course design requirements with full connection request lifecycle: <strong>Pending Requests Received</strong> (Accept / Decline), <strong>Sent Requests</strong> (Cancel), and <strong>Connected Network</strong> (Remove Connection)."
+          },
+          {
+            title: "Thread Categorization & Filters",
+            theme: "gold",
+            body: "Filter tabs divide conversations into <strong>All</strong>, <strong>Market Inquiries</strong> (with item thumbnails attached), and <strong>Club Group Chats</strong>, keeping social conversations separated from marketplace transactions."
+          },
+          {
+            title: "Meetup Safety Warning & Report Controls",
+            theme: "maroon",
+            body: "Every marketplace thread features a prominent green campus safety badge: <em>'Always meet in public campus locations like O’Neill or McElroy.'</em> Includes instant one-tap report and block options."
+          }
+        ],
+        speakerNotes: "Notice the attention to safety and organization. Marketplace chats are cleanly separated from casual DM chats, and every transaction thread explicitly reminds students to meet in public campus hubs with built-in reporting tools."
+      },
+      {
+        id: "profile",
+        num: 9,
+        category: "features",
+        categoryName: "Identity & Profile",
+        title: "Screen 08: Student Profile & Privacy States",
+        eyebrow: "08 Profile · Verified Identity & Following Network",
+        url: "08-profile.html",
+        subtitle: "Student Credentials, Active Listings, RSVPs & Locked Privacy State",
+        tags: [
+          { text: "Verified Badge", class: "tag-blue" },
+          { text: "Following Network", class: "tag-maroon" },
+          { text: "Locked Profile View", class: "tag-purple" },
+          { text: "RSVP & Market Tabs", class: "tag-gold" }
+        ],
+        details: [
+          {
+            title: "Verified Student Identity Card",
+            theme: "blue",
+            body: "Displays graduation year ('29), declared major/minor (Computer Science & Economics), student bio, and the official blue verified student checkmark."
+          },
+          {
+            title: "Comprehensive Following & Content Tabs",
+            theme: "gold",
+            body: "Tabbed sections allow peers to see: <strong>Upcoming RSVPs</strong> (public events they are attending), <strong>My Clubs</strong> (with officer badges), <strong>Active Listings</strong> (items they are selling), and <strong>Following</strong> (people, clubs, and groups)."
+          },
+          {
+            title: "Locked Privacy State for Non-Connections",
+            theme: "purple",
+            body: "Students who are not connected view a privacy-protected profile showing only name, class year, and a <strong>Connect</strong> button, safeguarding personal schedule details until connection is accepted."
+          }
+        ],
+        speakerNotes: "The profile balances campus networking with student privacy. When connected, friends can coordinate on upcoming events and see what clubs you belong to; for non-connections, private schedules remain locked until mutually approved."
+      },
+      {
+        id: "settings",
+        num: 10,
+        category: "flows",
+        categoryName: "Privacy & Controls",
+        title: "Screen 09: Notifications & Privacy Settings",
+        eyebrow: "09 Settings · Granular Notification & Safety Rules",
+        url: "09-notifications-settings.html",
+        subtitle: "'Quiet by Default' Architecture with Instant Off / On Notification Toggles",
+        tags: [
+          { text: "Quiet by Default", class: "tag-maroon" },
+          { text: "Off / Instant Rules", class: "tag-gold" },
+          { text: "Privacy Controls", class: "tag-blue" },
+          { text: "Blocked Accounts", class: "tag-green" }
+        ],
+        details: [
+          {
+            title: "'Quiet by Default' Architecture",
+            theme: "maroon",
+            body: "Rather than an overwhelming alerts feed, notification settings feature simple segmented switches (<strong>Off</strong> vs <strong>Instant</strong>) for Connection Requests, RSVP Confirmations, Marketplace Offers, and Club Announcements."
+          },
+          {
+            title: "Email & In-App Dual Routing",
+            theme: "gold",
+            body: "Students can choose whether critical updates (like urgent marketplace offers or event time changes) send immediate push notifications, daily email summaries, or stay in-app only."
+          },
+          {
+            title: "Privacy, Verification & Block List",
+            theme: "blue",
+            body: "Complete controls over profile discoverability, verified student status badge visibility, and a managed list of blocked accounts for peace of mind."
+          }
+        ],
+        speakerNotes: "We deliberately avoided notification overload. Turma adheres to a 'quiet by default' philosophy where students have transparent, one-tap control over what interrupts them, ensuring high signal and zero spam."
+      },
+      {
+        id: "flows",
+        num: 11,
+        category: "flows",
+        categoryName: "User Journeys",
+        title: "Screen 10: Core User Flows & Journey Maps",
+        eyebrow: "10 Flows · End-to-End Architectural Journeys",
+        url: "10-flows.html",
+        subtitle: "Step-by-Step Wireframe Flows from First Login to Event RSVP & Market Purchase",
+        tags: [
+          { text: "Journey Maps", class: "tag-gold" },
+          { text: "≤ 3 Taps to Action", class: "tag-green" },
+          { text: "First vs Return Login", class: "tag-blue" },
+          { text: "Error Recovery", class: "tag-maroon" }
+        ],
+        details: [
+          {
+            title: "Flow 1: First-Time Login vs Returning User",
+            theme: "blue",
+            body: "Routes new users through Google OAuth verification, profile completion, and interest selection. Returning users bypass onboarding straight to their curated Home feed in under 1 second."
+          },
+          {
+            title: "Flow 2: Event Discovery to Calendar RSVP",
+            theme: "gold",
+            body: "Student discovers event flyer on Home or Events tab → taps <strong>RSVP</strong> → receives immediate feedback toast → event automatically synchronizes into their Calendar and Profile."
+          },
+          {
+            title: "Flow 3 & 4: Safe Market Purchase & Club Announcements",
+            theme: "green",
+            body: "Covers buyer-seller communication with automated safe meetup zone prompts, and the club officer workflow for broadcasting urgent club announcements to members."
+          }
+        ],
+        speakerNotes: "The flows diagram proves that every critical user task across Turma can be completed in three taps or fewer. Whether RSVPing to a concert or buying a biology textbook, the friction has been systematically engineered away."
+      },
+      {
+        id: "components",
+        num: 12,
+        category: "foundation",
+        categoryName: "Design System",
+        title: "Design System: Components, Color Tokens & Specs",
+        eyebrow: "Design System · Tokens, Buttons & Contrast",
+        url: "index.html",
+        subtitle: "Complete Spec Sheet: 8px Grid, 44px Touch Targets, WCAG AA Accessibility",
+        tags: [
+          { text: "8px Spacing Grid", class: "tag-maroon" },
+          { text: "44px Touch Target", class: "tag-gold" },
+          { text: "4.5:1 Text Contrast", class: "tag-green" },
+          { text: "Pill Buttons", class: "tag-blue" }
+        ],
+        details: [
+          {
+            title: "Curated Boston College Color Palette",
+            theme: "maroon",
+            body: "<ul><li><code>--maroon</code> <strong>#8A1F2F:</strong> Brand identity, primary CTAs, active indicators.</li><li><code>--gold</code> <strong>#E2B13C:</strong> Accent highlights, 'Featured' buttons, unread badges.</li><li><code>--cream</code> <strong>#F3F0EB:</strong> Warm app canvas background.</li><li><code>--blue</code> <strong>#2B5FA8:</strong> Verified checkmark.</li><li><code>--ok</code> <strong>#1E8E4E:</strong> Free badges, safe zones, availability.</li></ul>"
+          },
+          {
+            title: "Standardized Button & Chip Hierarchy",
+            theme: "gold",
+            body: "Pill buttons (min height 44px) ensure effortless mobile tapping: <strong>Primary</strong> (Maroon fill), <strong>Secondary</strong> (Maroon outline), <strong>Featured</strong> (Gold fill), and <strong>Ghost</strong> (Neutral fill). Reaction pills combine icons and counts with active gold-soft highlights."
+          },
+          {
+            title: "Accessibility & Ergonomics",
+            theme: "green",
+            body: "Strict compliance with WCAG AA standards (4.5:1 minimum contrast ratio). Statuses always pair color with text and iconography. Touch targets exceed Apple Human Interface Guidelines minimums."
+          }
+        ],
+        speakerNotes: "Every single component in Turma is built from a cohesive design token system. We adhere strictly to 44px minimum touch targets and guaranteed 4.5:1 contrast ratios so the platform is universally accessible to all students."
+      },
+      {
+        id: "summary",
+        num: 13,
+        category: "flows",
+        categoryName: "Review Summary",
+        title: "Deliverable Summary & Requirements Checklist",
+        eyebrow: "Wrap-Up · Requirements Fulfillment Matrix",
+        url: "index.html",
+        subtitle: "10 Interactive Screen Prototypes, 2 Form Factors (Mobile & Desktop), 100% Complete",
+        tags: [
+          { text: "10 HTML Screens", class: "tag-maroon" },
+          { text: "Mobile 390 + Desktop 1280", class: "tag-gold" },
+          { text: "Fully Functional JS/CSS", class: "tag-green" },
+          { text: "All Criteria Met", class: "tag-blue" }
+        ],
+        details: [
+          {
+            title: "Project Deliverable Coverage",
+            theme: "maroon",
+            body: "<ul><li><strong>01 Onboarding:</strong> Google OAuth, BC email check, major/minor selection.</li><li><strong>02 Home Feed:</strong> Event flyer strip, .club-post feed, All/Friends/Suggested tabs.</li><li><strong>03 (11) Calendar:</strong> Synchronized student schedule with RSVP export.</li><li><strong>04 Events:</strong> Posh-inspired poster flyers, date badges, price pills, RSVP.</li><li><strong>05 Clubs:</strong> Directory discovery, club hangout page, officer tools.</li></ul>"
+          },
+          {
+            title: "Commerce, Messaging & Privacy",
+            theme: "green",
+            body: "<ul><li><strong>06 Market:</strong> Photo tiles, price tags, safe meetup spot selector.</li><li><strong>07 Messaging:</strong> Connections manager (Accept/Decline/Remove), safety banners.</li><li><strong>08 Profile:</strong> Verified status, RSVP history, locked non-connection view.</li><li><strong>09 Settings:</strong> Granular notification frequency rules & privacy controls.</li><li><strong>10 Flows:</strong> 4 complete architectural user journey diagrams.</li></ul>"
+          },
+          {
+            title: "Ready for Demonstration & Testing",
+            theme: "gold",
+            body: "Every prototype screen is fully interactive, accessible directly on <code>http://localhost:3000</code>, and styled with responsive CSS grids, CSS variables, and zero external bloat."
+          }
+        ],
+        speakerNotes: "In summary, the Turma prototype deliverable represents a complete, cohesive design solution tailored to Boston College student life. All course requirements — from connections-only messaging and safe marketplace meetups to verified onboarding and event RSVPs — are fully realized across both mobile and desktop form factors."
+      }
+    ];
+
+    // State
+    let currentSlideIndex = 0;
+    let currentViewMode = 'mobile'; // 'mobile', 'desktop', 'direct'
+    let currentCategory = 'all';
+    let isAutoPlaying = false;
+    let autoPlayTimer = null;
+
+    // DOM Elements
+    const stageSlideNum = document.getElementById('stageSlideNum');
+    const stageSlideEyebrow = document.getElementById('stageSlideEyebrow');
+    const stageOpenExternalBtn = document.getElementById('stageOpenExternalBtn');
+    const frameViewportStage = document.getElementById('frameViewportStage');
+    const slideCounterBadge = document.getElementById('slideCounterBadge');
+    const slideProgressFill = document.getElementById('slideProgressFill');
+    const slideCategoryTag = document.getElementById('slideCategoryTag');
+    
+    const narrativeTitle = document.getElementById('narrativeTitle');
+    const narrativeSubtitle = document.getElementById('narrativeSubtitle');
+    const narrativeModelText = document.getElementById('narrativeModelText');
+    const narrativeTagsCluster = document.getElementById('narrativeTagsCluster');
+    const narrativeDetailsGrid = document.getElementById('narrativeDetailsGrid');
+    const presenterSpeechText = document.getElementById('presenterSpeechText');
+    
+    const prevSlideBtn = document.getElementById('prevSlideBtn');
+    const nextSlideBtn = document.getElementById('nextSlideBtn');
+    const thumbnailsDrawer = document.getElementById('thumbnailsDrawer');
+    const viewModeToggle = document.getElementById('viewModeToggle');
+    const categoryNav = document.getElementById('categoryNav');
+
+    const jumpModalScrim = document.getElementById('jumpModalScrim');
+    const openJumpModalBtn = document.getElementById('openJumpModalBtn');
+    const closeJumpModalBtn = document.getElementById('closeJumpModalBtn');
+    const jumpGrid = document.getElementById('jumpGrid');
+
+    const toggleAutoPlayBtn = document.getElementById('toggleAutoPlayBtn');
+    const playIcon = document.getElementById('playIcon');
+    const playText = document.getElementById('playText');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Initialize Deck
+    function initDeck() {
+      renderThumbnails();
+      renderJumpGrid();
+      loadSlide(0);
+      setupEventListeners();
+    }
+
+    // Render Slide content
+    function loadSlide(index) {
+      if (index < 0 || index >= SLIDES.length) return;
+      currentSlideIndex = index;
+      const slide = SLIDES[index];
+
+      // Update Top Meta
+      stageSlideNum.textContent = `${String(slide.num).padStart(2, '0')} OF ${SLIDES.length}`;
+      stageSlideEyebrow.textContent = slide.eyebrow;
+      stageOpenExternalBtn.href = slide.url;
+
+      // Update Progress
+      slideCounterBadge.textContent = `SLIDE ${String(slide.num).padStart(2, '0')} / ${SLIDES.length}`;
+      const progressPct = ((slide.num) / SLIDES.length) * 100;
+      slideProgressFill.style.width = `${progressPct}%`;
+      slideCategoryTag.textContent = slide.categoryName.toUpperCase();
+
+      // Update Viewport Frame
+      renderViewportFrame(slide.url);
+
+      // Update Narrative Texts Underneath
+      narrativeTitle.textContent = slide.title;
+      narrativeModelText.textContent = slide.subtitle;
+      
+      // Tags
+      narrativeTagsCluster.innerHTML = slide.tags.map(t => 
+        `<span class="spec-tag ${t.class}">${t.text}</span>`
+      ).join('');
+
+      // Details 3-column Grid
+      narrativeDetailsGrid.innerHTML = slide.details.map(d => `
+        <div class="detail-card card-${d.theme}">
+          <div class="detail-heading">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            ${d.title}
+          </div>
+          <div class="detail-body">${d.body}</div>
+        </div>
+      `).join('');
+
+      // Presenter Speech
+      presenterSpeechText.textContent = slide.speakerNotes;
+
+      // Update Prev / Next Button States
+      prevSlideBtn.disabled = (currentSlideIndex === 0);
+      nextSlideBtn.disabled = (currentSlideIndex === SLIDES.length - 1);
+
+      // Update Active Thumbnail
+      document.querySelectorAll('.thumb-card').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === currentSlideIndex);
+      });
+      // Scroll active thumbnail into view
+      const activeThumb = document.querySelector(`.thumb-card[data-index="${currentSlideIndex}"]`);
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    // Render Viewport Frame based on view mode
+    function renderViewportFrame(url) {
+      frameViewportStage.innerHTML = '';
+
+      if (currentViewMode === 'mobile') {
+        frameViewportStage.innerHTML = `
+          <div class="mobile-phone-frame">
+            <div class="phone-camera-island"></div>
+            <iframe class="phone-iframe" src="${url}" title="Mobile Prototype Preview"></iframe>
+          </div>
+        `;
+      } else if (currentViewMode === 'desktop') {
+        frameViewportStage.innerHTML = `
+          <div class="desktop-browser-frame">
+            <div class="browser-toolbar">
+              <div class="browser-dots">
+                <div class="browser-dot dot-red"></div>
+                <div class="browser-dot dot-yellow"></div>
+                <div class="browser-dot dot-green"></div>
+              </div>
+              <div class="browser-url-pill">http://localhost:3000/${url}</div>
+            </div>
+            <iframe class="desktop-iframe" src="${url}" title="Desktop Prototype Preview"></iframe>
+          </div>
+        `;
+      } else {
+        frameViewportStage.innerHTML = `
+          <iframe class="full-interactive-frame" src="${url}" title="Full Prototype Preview"></iframe>
+        `;
+      }
+    }
+
+    // Render Thumbnails in bottom drawer
+    function renderThumbnails() {
+      thumbnailsDrawer.innerHTML = SLIDES.map((s, i) => `
+        <div class="thumb-card ${i === 0 ? 'active' : ''}" data-index="${i}" data-category="${s.category}">
+          <div class="thumb-num">SLIDE ${String(s.num).padStart(2, '0')}</div>
+          <div class="thumb-title">${s.eyebrow.split('·')[0]}</div>
+          <div class="thumb-category">${s.categoryName}</div>
+        </div>
+      `).join('');
+
+      thumbnailsDrawer.querySelectorAll('.thumb-card').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const idx = parseInt(thumb.getAttribute('data-index'), 10);
+          loadSlide(idx);
+        });
+      });
+    }
+
+    // Render Jump to Slide Grid Modal
+    function renderJumpGrid() {
+      jumpGrid.innerHTML = SLIDES.map((s, i) => `
+        <button class="jump-item-btn" data-index="${i}">
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--bc-gold);">SLIDE ${String(s.num).padStart(2, '0')}</span>
+          <strong style="font-size:13px;">${s.title}</strong>
+          <span style="font-size:11px;color:var(--text-muted);">${s.subtitle}</span>
+        </button>
+      `).join('');
+
+      jumpGrid.querySelectorAll('.jump-item-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10);
+          loadSlide(idx);
+          closeJumpModal();
+        });
+      });
+    }
+
+    function openJumpModal() {
+      jumpModalScrim.classList.add('open');
+    }
+
+    function closeJumpModal() {
+      jumpModalScrim.classList.remove('open');
+    }
+
+    // Setup All Event Listeners
+    function setupEventListeners() {
+      // Prev / Next
+      prevSlideBtn.addEventListener('click', () => {
+        if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
+      });
+
+      nextSlideBtn.addEventListener('click', () => {
+        if (currentSlideIndex < SLIDES.length - 1) loadSlide(currentSlideIndex + 1);
+      });
+
+      // View Mode Toggle
+      viewModeToggle.querySelectorAll('.mode-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          viewModeToggle.querySelectorAll('.mode-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentViewMode = btn.getAttribute('data-mode');
+          renderViewportFrame(SLIDES[currentSlideIndex].url);
+        });
+      });
+
+      // Category Nav Filter
+      categoryNav.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryNav.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const cat = btn.getAttribute('data-cat');
+          currentCategory = cat;
+
+          // Find first slide in this category
+          if (cat === 'all') {
+            loadSlide(0);
+          } else {
+            const firstInCat = SLIDES.findIndex(s => s.category === cat);
+            if (firstInCat !== -1) loadSlide(firstInCat);
+          }
+
+          // Filter Thumbnails visibility
+          thumbnailsDrawer.querySelectorAll('.thumb-card').forEach(thumb => {
+            const thumbCat = thumb.getAttribute('data-category');
+            if (cat === 'all' || thumbCat === cat) {
+              thumb.style.display = 'flex';
+            } else {
+              thumb.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Jump Modal Open/Close
+      openJumpModalBtn.addEventListener('click', openJumpModal);
+      closeJumpModalBtn.addEventListener('click', closeJumpModal);
+      jumpModalScrim.addEventListener('click', (e) => {
+        if (e.target === jumpModalScrim) closeJumpModal();
+      });
+
+      // Auto Play
+      toggleAutoPlayBtn.addEventListener('click', toggleAutoPlay);
+
+      // Fullscreen
+      fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+      // Keyboard Shortcuts
+      window.addEventListener('keydown', (e) => {
+        // Do not intercept if typing in an input
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+          e.preventDefault();
+          if (currentSlideIndex < SLIDES.length - 1) loadSlide(currentSlideIndex + 1);
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
+        } else if (e.key === 'f' || e.key === 'F') {
+          toggleFullscreen();
+        } else if (e.key === 't' || e.key === 'T') {
+          openJumpModal();
+        } else if (e.key === 'Escape') {
+          closeJumpModal();
+        } else if (e.key === '1') {
+          document.querySelector('[data-mode="mobile"]').click();
+        } else if (e.key === '2') {
+          document.querySelector('[data-mode="desktop"]').click();
+        } else if (e.key === '3') {
+          document.querySelector('[data-mode="direct"]').click();
+        }
+      });
+    }
+
+    // Auto-Play Feature
+    function toggleAutoPlay() {
+      if (isAutoPlaying) {
+        clearInterval(autoPlayTimer);
+        isAutoPlaying = false;
+        playText.textContent = 'Auto-Play';
+        playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+        toggleAutoPlayBtn.classList.remove('gold-accent');
+      } else {
+        isAutoPlaying = true;
+        playText.textContent = 'Pause';
+        playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+        toggleAutoPlayBtn.classList.add('gold-accent');
+        autoPlayTimer = setInterval(() => {
+          if (currentSlideIndex < SLIDES.length - 1) {
+            loadSlide(currentSlideIndex + 1);
+          } else {
+            loadSlide(0); // loop back
+          }
+        }, 9000); // 9 seconds per slide
+      }
+    }
+
+    // Native Fullscreen Toggle
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn(`Fullscreen error: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Run on ready
+    document.addEventListener('DOMContentLoaded', initDeck);
+  </script>
+</body>
+</html>

@@ -16,7 +16,6 @@
 
 ### Right rail
 - **Privacy card:** “Bio & interests — BC only”; “Major & minor — Everyone”; “Direct messages — Connections”; link to the full Settings page.
-- **Someone you’re not connected to** (card): Dana L. ’28 — “Economics major · Class of 2028”; lock line “Bio, interests, clubs and RSVPs are hidden until you connect.”; `Connect` (primary, small) and a disabled `Message locked` button.
 - The People list under Following now shows 5 connections (Mateo, Amara, Priya, Sarah K., Mike T.).
 
 ## Edit profile modal

@@ -3,72 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Turma — Interactive Design Showcase & Presentation Deck</title>
+  <title>Turma — Design Presentation Deck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bc-maroon: #8A1F2F;
-      --bc-maroon-dark: #5E1220;
-      --bc-maroon-glow: rgba(138, 31, 47, 0.4);
-      --bc-gold: #E2B13C;
-      --bc-gold-soft: #FBF1D6;
+      --bc-maroon-dark: #63121E;
+      --bc-maroon-light: #FBF0F2;
+      --bc-gold: #D49D26;
+      --bc-gold-soft: #FDF6E2;
       --bc-gold-ink: #6B4A00;
-      --bc-cream: #F3F0EB;
-      --dark-bg: #0C0A0D;
-      --dark-surface: #171319;
-      --dark-card: #201A23;
-      --dark-card-hover: #29222C;
-      --dark-border: rgba(255, 255, 255, 0.1);
-      --dark-border-subtle: rgba(255, 255, 255, 0.05);
-      --text-main: #F7F5F8;
-      --text-muted: #A89FA8;
-      --text-dim: #736B73;
-      --accent-blue: #3E80E0;
-      --accent-green: #27B368;
-      --accent-purple: #9D5BD2;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-xl: 32px;
-      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
-      --shadow-glow: 0 0 40px var(--bc-maroon-glow);
+      --page-bg: #F6F4EF;
+      --card-bg: #FFFFFF;
+      --border-color: #E6E0D8;
+      --border-subtle: #EFEBE4;
+      --text-main: #1C1517;
+      --text-muted: #5C5357;
+      --text-dim: #8A8085;
+      --accent-blue: #2463C4;
+      --accent-blue-soft: #EEF4FD;
+      --accent-green: #1B8349;
+      --accent-green-soft: #EDF7F1;
       --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+      --shadow-sm: 0 2px 6px rgba(28, 21, 23, 0.04);
+      --shadow-md: 0 8px 24px rgba(28, 21, 23, 0.06), 0 2px 6px rgba(28, 21, 23, 0.04);
+      --shadow-lg: 0 16px 40px rgba(28, 21, 23, 0.08), 0 4px 12px rgba(28, 21, 23, 0.04);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
-      background-color: var(--dark-bg);
+      background-color: var(--page-bg);
       color: var(--text-main);
       font-family: var(--font-body);
       line-height: 1.5;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 15% 10%, rgba(138, 31, 47, 0.18) 0%, transparent 40%),
-        radial-gradient(circle at 85% 90%, rgba(226, 177, 60, 0.12) 0%, transparent 45%);
-      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: var(--dark-bg); }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.35); }
-
-    /* Top Global Header */
-    .top-deck-header {
-      height: 68px;
-      background: rgba(23, 19, 25, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--dark-border);
+    /* Top Presentation Header */
+    .deck-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      height: 64px;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -76,33 +59,33 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
-      gap: 16px;
+      box-shadow: var(--shadow-sm);
     }
 
-    .brand-cluster {
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      color: inherit;
     }
 
-    .brand-logo-badge {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--bc-maroon), #b82b40);
-      border: 1px solid rgba(226, 177, 60, 0.4);
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      background: var(--bc-maroon);
       color: #fff;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 22px;
-      border-radius: 10px;
+      font-size: 19px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(138, 31, 47, 0.4);
+      box-shadow: 0 2px 8px rgba(138, 31, 47, 0.25);
     }
 
-    .brand-text-block {
+    .brand-title-wrap {
       display: flex;
       flex-direction: column;
     }
@@ -110,708 +93,669 @@
     .brand-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 18px;
-      color: #fff;
+      font-size: 16px;
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .brand-badge-pill {
+    .brand-pill {
       font-size: 10px;
       font-family: var(--font-mono);
       font-weight: 700;
       text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: rgba(226, 177, 60, 0.15);
-      color: var(--bc-gold);
-      border: 1px solid rgba(226, 177, 60, 0.3);
-      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--bc-gold-soft);
+      color: var(--bc-gold-ink);
+      border: 1px solid #EBD79C;
     }
 
-    .brand-sub {
-      font-size: 12px;
+    .brand-subtitle {
+      font-size: 11.5px;
       color: var(--text-muted);
     }
 
-    /* Category Nav Chips */
-    .deck-category-nav {
+    /* Header Controls */
+    .header-controls {
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 4px;
-      border-radius: 12px;
-      border: 1px solid var(--dark-border-subtle);
+      gap: 12px;
     }
 
-    .cat-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cat-btn:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-    }
-
-    .cat-btn.active {
-      background: var(--bc-maroon);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(138, 31, 47, 0.4);
-    }
-
-    /* Action Buttons in Header */
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hdr-btn {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
+    .control-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
       color: var(--text-main);
       font-family: var(--font-body);
       font-size: 13px;
       font-weight: 600;
-      padding: 8px 14px;
+      padding: 7px 14px;
       border-radius: 8px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 7px;
-      transition: all 0.2s ease;
+      gap: 6px;
+      transition: all 0.15s ease;
       text-decoration: none;
     }
 
-    .hdr-btn:hover {
-      background: var(--dark-card-hover);
-      border-color: rgba(255,255,255,0.25);
-      color: #fff;
-      transform: translateY(-1px);
+    .control-btn:hover {
+      background: var(--page-bg);
+      border-color: #D5CFC7;
     }
 
-    .hdr-btn.gold-accent {
-      background: linear-gradient(135deg, rgba(226, 177, 60, 0.2), rgba(226, 177, 60, 0.08));
-      border-color: rgba(226, 177, 60, 0.4);
-      color: var(--bc-gold);
+    .control-btn.maroon-btn {
+      background: var(--bc-maroon);
+      border-color: var(--bc-maroon);
+      color: #FFFFFF;
     }
 
-    .hdr-btn.gold-accent:hover {
-      background: rgba(226, 177, 60, 0.28);
-      border-color: var(--bc-gold);
-      color: #fff;
+    .control-btn.maroon-btn:hover {
+      background: var(--bc-maroon-dark);
+      border-color: var(--bc-maroon-dark);
     }
 
-    /* Main Showcase Stage Layout */
-    .presentation-container {
+    /* Presentation Layout */
+    .deck-container {
       max-width: 1440px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 20px 24px 40px;
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
       flex: 1;
     }
 
-    /* Slide Bar & Progress Controls */
-    .slide-control-bar {
+    /* Slide Navigation & Status Bar */
+    .slide-toolbar {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      border-radius: var(--radius-md);
-      padding: 12px 20px;
-      box-shadow: var(--shadow-subtle);
+      box-shadow: var(--shadow-sm);
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .slide-progress-info {
+    .slide-meta-cluster {
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
-    .slide-counter-badge {
+    .slide-index-badge {
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      color: var(--bc-gold);
-      background: rgba(226, 177, 60, 0.12);
-      padding: 5px 12px;
+      color: var(--bc-maroon);
+      background: var(--bc-maroon-light);
+      padding: 4px 10px;
       border-radius: 6px;
-      border: 1px solid rgba(226, 177, 60, 0.25);
+      border: 1px solid rgba(138, 31, 47, 0.2);
     }
 
-    .slide-progress-track {
-      width: 160px;
+    .slide-track {
+      width: 140px;
       height: 6px;
-      background: rgba(255,255,255,0.08);
+      background: var(--border-subtle);
       border-radius: 3px;
       overflow: hidden;
-      position: relative;
     }
 
-    .slide-progress-fill {
+    .slide-track-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--bc-maroon), var(--bc-gold));
-      width: 8%;
+      background: var(--bc-maroon);
+      width: 9%;
       border-radius: 3px;
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 0.25s ease;
     }
 
-    .slide-nav-cluster {
+    .slide-tag-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* View Switcher */
+    .view-switcher {
+      display: flex;
+      align-items: center;
+      background: var(--page-bg);
+      padding: 3px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .view-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .view-btn:hover {
+      color: var(--text-main);
+    }
+
+    .view-btn.active {
+      background: #FFFFFF;
+      color: var(--bc-maroon);
+      font-weight: 700;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    /* Navigation Prev / Next */
+    .nav-buttons {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .nav-arrow-btn {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
-      color: #fff;
-      font-size: 14px;
+    .nav-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 13px;
       font-weight: 700;
-      padding: 8px 16px;
+      padding: 6px 14px;
       border-radius: 8px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 6px;
+      transition: all 0.15s ease;
     }
 
-    .nav-arrow-btn:hover:not(:disabled) {
+    .nav-btn:hover:not(:disabled) {
       background: var(--bc-maroon);
       border-color: var(--bc-maroon);
-      transform: scale(1.03);
+      color: #FFFFFF;
     }
 
-    .nav-arrow-btn:disabled {
+    .nav-btn:disabled {
       opacity: 0.35;
       cursor: not-allowed;
     }
 
-    .key-shortcut {
+    .kbd-hint {
       font-size: 10px;
       font-family: var(--font-mono);
-      background: rgba(255,255,255,0.12);
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: var(--text-muted);
+      background: rgba(0,0,0,0.06);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--text-dim);
     }
 
-    /* Device / View Mode Switcher */
-    .view-mode-toggle {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(0,0,0,0.35);
-      padding: 3px;
-      border-radius: 8px;
-      border: 1px solid var(--dark-border-subtle);
+    .nav-btn:hover:not(:disabled) .kbd-hint {
+      background: rgba(255,255,255,0.25);
+      color: #FFFFFF;
     }
 
-    .mode-toggle-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .mode-toggle-btn:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-    }
-
-    .mode-toggle-btn.active {
-      background: var(--dark-card-hover);
-      color: #fff;
-      border: 1px solid var(--dark-border);
-    }
-
-    /* Main Showcase Visual Stage (Top) */
-    .stage-card {
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      border-radius: var(--radius-lg);
+    /* MAIN VISUAL STAGE (DUAL PREVIEW: iOS + DESKTOP) */
+    .stage-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
-      position: relative;
-      overflow: hidden;
+      gap: 16px;
     }
 
-    .stage-top-meta {
+    .stage-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 12px;
-      border-bottom: 1px solid var(--dark-border-subtle);
-      flex-wrap: wrap;
-      gap: 10px;
     }
 
-    .slide-badge-title {
+    .stage-title-wrap {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 12px;
     }
 
-    .slide-num-pill {
-      background: var(--bc-maroon);
-      color: #fff;
+    .stage-screen-number {
       font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--bc-maroon);
     }
 
-    .slide-eyebrow {
+    .stage-screen-title {
       font-family: var(--font-display);
       font-size: 20px;
-      font-weight: 700;
-      color: #fff;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
-    .stage-utility-links {
+    .stage-actions {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .stage-link-btn {
-      font-size: 12px;
+    .open-standalone-link {
+      font-size: 12.5px;
       font-weight: 600;
-      color: var(--bc-gold);
-      background: rgba(226, 177, 60, 0.1);
-      border: 1px solid rgba(226, 177, 60, 0.25);
-      padding: 6px 12px;
+      color: var(--bc-maroon);
+      background: var(--bc-maroon-light);
+      border: 1px solid rgba(138, 31, 47, 0.2);
+      padding: 5px 12px;
       border-radius: 6px;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
+      gap: 5px;
+      transition: all 0.15s ease;
     }
 
-    .stage-link-btn:hover {
-      background: var(--bc-gold);
-      color: var(--dark-bg);
+    .open-standalone-link:hover {
+      background: var(--bc-maroon);
+      color: #FFFFFF;
     }
 
-    /* Live Interactive Frame Stage */
-    .frame-viewport-stage {
-      background: #000;
-      border-radius: var(--radius-md);
-      min-height: 520px;
-      height: 600px;
+    /* Dual Display Canvas */
+    .canvas-stage {
+      background: var(--page-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      min-height: 580px;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
-      position: relative;
+      padding: 24px;
+      gap: 24px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 24px 24px;
+      position: relative;
     }
 
-    /* Mobile Phone Mockup */
-    .mobile-phone-frame {
-      width: 390px;
-      height: 560px;
-      background: #111;
-      border-radius: 38px;
-      box-shadow: 0 0 0 10px #242226, 0 20px 50px rgba(0,0,0,0.8), 0 0 40px var(--bc-maroon-glow);
-      overflow: hidden;
-      position: relative;
+    /* Left: iPhone / iOS Container */
+    .mockup-column-mobile {
+      flex: 0 0 380px;
       display: flex;
       flex-direction: column;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      align-items: center;
+      gap: 10px;
     }
 
-    .phone-camera-island {
+    .mockup-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .iphone-shell {
+      width: 360px;
+      height: 580px;
+      background: #17100F;
+      border-radius: 36px;
+      border: 8px solid #201A1B;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .iphone-notch {
       position: absolute;
-      top: 10px;
+      top: 8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 90px;
-      height: 20px;
+      width: 80px;
+      height: 18px;
       background: #000;
       border-radius: 10px;
       z-index: 10;
       pointer-events: none;
     }
 
-    .phone-iframe {
+    .iphone-iframe {
       width: 100%;
       height: 100%;
       border: none;
-      background: var(--bc-cream);
+      background: #FFFFFF;
     }
 
-    /* Desktop Browser Mockup */
-    .desktop-browser-frame {
-      width: 95%;
-      height: 94%;
-      background: #1B171E;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Right: Desktop 1280px Container */
+    .mockup-column-desktop {
+      flex: 1;
+      min-width: 0;
       display: flex;
       flex-direction: column;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 10px;
     }
 
-    .browser-toolbar {
-      height: 38px;
-      background: #252029;
-      border-bottom: 1px solid var(--dark-border);
+    .browser-shell {
+      flex: 1;
+      height: 580px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .browser-topbar {
+      height: 36px;
+      background: #F3EFEA;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       padding: 0 14px;
       gap: 12px;
+      flex-shrink: 0;
     }
 
-    .browser-dots {
+    .browser-window-dots {
       display: flex;
       gap: 6px;
     }
 
-    .browser-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-    .dot-red { background: #FF5F56; }
-    .dot-yellow { background: #FFBD2E; }
-    .dot-green { background: #27C93F; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-close { background: #FF5F56; }
+    .dot-min { background: #FFBD2E; }
+    .dot-max { background: #27C93F; }
 
-    .browser-url-pill {
+    .browser-address-bar {
       flex: 1;
-      max-width: 480px;
+      max-width: 440px;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
       border-radius: 6px;
       font-size: 11px;
       font-family: var(--font-mono);
       color: var(--text-muted);
-      padding: 3px 12px;
+      padding: 2px 10px;
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .desktop-iframe {
+    .browser-iframe {
       width: 100%;
       flex: 1;
       border: none;
-      background: var(--bc-cream);
+      background: #FFFFFF;
     }
 
-    /* Full Direct Frame */
-    .full-interactive-frame {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: var(--bc-cream);
-    }
+    /* Modes adjustments */
+    .canvas-stage.mode-mobile .mockup-column-desktop { display: none; }
+    .canvas-stage.mode-mobile .mockup-column-mobile { flex: 0 0 420px; }
+    .canvas-stage.mode-mobile .iphone-shell { width: 390px; height: 640px; }
 
-    /* Bottom Structured Explanatory Narrative Section ("Texts underneath that helps us understand it too") */
-    .narrative-underneath-card {
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      border-radius: var(--radius-lg);
+    .canvas-stage.mode-desktop .mockup-column-mobile { display: none; }
+    .canvas-stage.mode-desktop .mockup-column-desktop { width: 100%; }
+    .canvas-stage.mode-desktop .browser-shell { height: 640px; }
+
+    .canvas-stage.mode-direct .mockup-column-mobile { display: none; }
+    .canvas-stage.mode-direct .mockup-column-desktop { width: 100%; }
+    .canvas-stage.mode-direct .browser-topbar { display: none; }
+    .canvas-stage.mode-direct .browser-shell { height: 640px; border: none; }
+
+    /* STRUCTURED EXPLANATIONS CARD ("Texts underneath that helps us understand it too") */
+    .info-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
       padding: 28px;
-      box-shadow: var(--shadow-subtle);
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 22px;
     }
 
-    .narrative-header-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
+    .info-header {
+      display: flex;
+      justify-content: space-between;
       align-items: flex-start;
-      border-bottom: 1px solid var(--dark-border-subtle);
-      padding-bottom: 20px;
-    }
-
-    .narrative-main-title {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-    }
-
-    .narrative-subtitle {
-      font-size: 15px;
-      color: var(--bc-gold);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .narrative-tags-cluster {
-      display: flex;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+      gap: 16px;
       flex-wrap: wrap;
-      gap: 8px;
-      justify-content: flex-end;
     }
 
-    .spec-tag {
+    .info-heading {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .info-subheading {
+      font-size: 14.5px;
+      color: var(--bc-maroon);
+      font-weight: 600;
+    }
+
+    .info-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
       font-size: 11px;
       font-family: var(--font-mono);
       font-weight: 700;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 6px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--page-bg);
+      border: 1px solid var(--border-color);
       color: var(--text-main);
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
-    .spec-tag.tag-maroon {
-      background: rgba(138, 31, 47, 0.25);
-      border-color: rgba(138, 31, 47, 0.5);
-      color: #FF9EAB;
+    .badge-pill.maroon {
+      background: var(--bc-maroon-light);
+      border-color: rgba(138, 31, 47, 0.3);
+      color: var(--bc-maroon);
     }
 
-    .spec-tag.tag-gold {
-      background: rgba(226, 177, 60, 0.15);
-      border-color: rgba(226, 177, 60, 0.4);
-      color: var(--bc-gold);
+    .badge-pill.gold {
+      background: var(--bc-gold-soft);
+      border-color: #EBD79C;
+      color: var(--bc-gold-ink);
     }
 
-    .spec-tag.tag-blue {
-      background: rgba(62, 128, 224, 0.15);
-      border-color: rgba(62, 128, 224, 0.4);
-      color: #8EBAFF;
+    .badge-pill.blue {
+      background: var(--accent-blue-soft);
+      border-color: #C9DBF0;
+      color: var(--accent-blue);
     }
 
-    .spec-tag.tag-green {
-      background: rgba(39, 179, 104, 0.15);
-      border-color: rgba(39, 179, 104, 0.4);
-      color: #79E8A9;
+    .badge-pill.green {
+      background: var(--accent-green-soft);
+      border-color: #BBDEC7;
+      color: var(--accent-green);
     }
 
-    /* Structured Breakdown Grid Underneath */
-    .narrative-details-grid {
+    /* 3-Column Structured Information Grid */
+    .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
     }
 
-    .detail-card {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border-subtle);
-      border-radius: var(--radius-md);
-      padding: 20px;
+    .info-col {
+      background: #FAFAF8;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
+      gap: 10px;
     }
 
-    .detail-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--bc-maroon);
-    }
-
-    .detail-card.card-gold::before { background: var(--bc-gold); }
-    .detail-card.card-blue::before { background: var(--accent-blue); }
-    .detail-card.card-green::before { background: var(--accent-green); }
-    .detail-card.card-purple::before { background: var(--accent-purple); }
-
-    .detail-heading {
+    .info-col-title {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
-    .detail-body {
+    .info-col-title.maroon-accent { color: var(--bc-maroon); }
+    .info-col-title.gold-accent { color: var(--bc-gold-ink); }
+    .info-col-title.blue-accent { color: var(--accent-blue); }
+
+    .info-col-content {
       font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    .detail-body ul {
+    .info-col-content ul {
       padding-left: 18px;
-      margin-top: 6px;
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin-top: 4px;
     }
 
-    .detail-body li {
-      color: var(--text-muted);
-    }
-
-    .detail-body strong {
+    .info-col-content strong {
       color: var(--text-main);
       font-weight: 600;
     }
 
-    /* Presenter Talking Points Box */
-    .presenter-callout-box {
-      background: linear-gradient(135deg, rgba(138, 31, 47, 0.2), rgba(226, 177, 60, 0.1));
-      border: 1px solid rgba(226, 177, 60, 0.3);
-      border-radius: var(--radius-md);
-      padding: 18px 22px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .presenter-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--bc-gold);
-      color: var(--bc-gold-ink);
-      border-radius: 8px;
+    /* Executive Highlights Banner */
+    .executive-takeaway {
+      background: var(--bc-gold-soft);
+      border: 1px solid #EBD79C;
+      border-radius: 10px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .presenter-text {
-      flex: 1;
-    }
-
-    .presenter-title {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--bc-gold);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .presenter-speech {
-      font-size: 13.5px;
-      color: #EFECE6;
-      line-height: 1.55;
-    }
-
-    /* Bottom Slide Thumbnails Strip */
-    .thumbnails-drawer {
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      overflow-x: auto;
-      display: flex;
       gap: 12px;
-      box-shadow: var(--shadow-subtle);
+      font-size: 13.5px;
+      color: var(--bc-gold-ink);
+      line-height: 1.5;
     }
 
-    .thumb-card {
-      flex: 0 0 170px;
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border-subtle);
-      border-radius: 10px;
-      padding: 10px 12px;
+    .executive-takeaway strong {
+      color: #4A3300;
+      font-weight: 700;
+    }
+
+    /* Thumbnails Slider */
+    .thumbnail-rail {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .thumb-item {
+      flex: 0 0 150px;
+      background: var(--page-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 10px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 4px;
+      transition: all 0.15s ease;
       text-align: left;
     }
 
-    .thumb-card:hover {
-      background: var(--dark-card-hover);
-      border-color: rgba(255,255,255,0.2);
-      transform: translateY(-2px);
+    .thumb-item:hover {
+      background: #FFFFFF;
+      border-color: #D5CFC7;
+      transform: translateY(-1px);
     }
 
-    .thumb-card.active {
-      background: rgba(138, 31, 47, 0.35);
-      border-color: var(--bc-gold);
-      box-shadow: 0 4px 14px rgba(138, 31, 47, 0.4);
+    .thumb-item.active {
+      background: var(--bc-maroon-light);
+      border-color: var(--bc-maroon);
+      box-shadow: 0 2px 8px rgba(138, 31, 47, 0.15);
     }
 
-    .thumb-num {
+    .thumb-step {
       font-size: 10px;
       font-family: var(--font-mono);
       font-weight: 700;
-      color: var(--bc-gold);
+      color: var(--bc-maroon);
     }
 
-    .thumb-title {
+    .thumb-label {
       font-size: 12px;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
+      color: var(--text-main);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .thumb-category {
-      font-size: 10.5px;
+    /* Keyboard bar */
+    .keyboard-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 11.5px;
       color: var(--text-dim);
+      font-family: var(--font-mono);
+      padding: 4px;
     }
 
-    /* Modal for Quick Jump */
-    .jump-modal-scrim {
+    .kbd {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Jump Modal */
+    .modal-backdrop {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
+      background: rgba(28, 21, 23, 0.6);
+      backdrop-filter: blur(4px);
       z-index: 200;
       display: flex;
       align-items: center;
@@ -821,1027 +765,835 @@
       transition: opacity 0.2s ease;
     }
 
-    .jump-modal-scrim.open {
+    .modal-backdrop.active {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .jump-modal-content {
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      border-radius: var(--radius-lg);
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: 16px;
       width: 90%;
-      max-width: 800px;
+      max-width: 760px;
       max-height: 80vh;
       overflow-y: auto;
       padding: 24px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      box-shadow: var(--shadow-lg);
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .jump-modal-header {
+    .modal-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 12px;
     }
 
-    .jump-modal-title {
+    .modal-title {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
-      color: #fff;
     }
 
-    .jump-grid {
+    .jump-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px;
     }
 
-    .jump-item-btn {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
+    .jump-card {
+      background: var(--page-bg);
+      border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 12px;
+      padding: 10px 12px;
       text-align: left;
       cursor: pointer;
-      color: #fff;
       display: flex;
       flex-direction: column;
       gap: 4px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
-    .jump-item-btn:hover {
-      background: var(--bc-maroon);
-      border-color: var(--bc-gold);
+    .jump-card:hover {
+      background: var(--bc-maroon-light);
+      border-color: var(--bc-maroon);
     }
 
-    /* Keyboard Help Tooltip */
-    .keyboard-help-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      font-size: 11px;
-      color: var(--text-dim);
-      font-family: var(--font-mono);
-      padding: 8px;
-      flex-wrap: wrap;
-    }
-
-    .key-badge {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 4px;
-      padding: 2px 6px;
-      color: var(--text-main);
-      margin-right: 4px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 900px) {
-      .top-deck-header { height: auto; padding: 12px 16px; flex-direction: column; align-items: stretch; gap: 10px; }
-      .deck-category-nav { overflow-x: auto; }
-      .presentation-container { padding: 12px; }
-      .frame-viewport-stage { height: 480px; }
-      .mobile-phone-frame { width: 320px; height: 440px; }
-      .narrative-header-grid { grid-template-columns: 1fr; }
-      .narrative-tags-cluster { justify-content: flex-start; }
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .canvas-stage { flex-direction: column; height: auto; min-height: 0; }
+      .mockup-column-mobile { flex: none; width: 100%; }
+      .iphone-shell { width: 340px; height: 500px; }
+      .browser-shell { height: 480px; }
+      .info-header { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
   <!-- Top Global Deck Header -->
-  <header class="top-deck-header">
-    <a href="index.html" class="brand-cluster" title="Return to Overview">
-      <div class="brand-logo-badge">T</div>
-      <div class="brand-text-block">
+  <header class="deck-header">
+    <a href="index.html" class="brand-group" title="Back to Overview">
+      <div class="brand-mark">T</div>
+      <div class="brand-title-wrap">
         <div class="brand-title">
-          Turma Showcase Deck
-          <span class="brand-badge-pill">BC Deliverable</span>
+          Turma Design Deliverable
+          <span class="brand-pill">BC Verified</span>
         </div>
-        <div class="brand-sub">Boston College Student Platform · Design Review Presentation</div>
+        <div class="brand-subtitle">Interactive Screen-by-Screen Presentation Deck</div>
       </div>
     </a>
 
-    <!-- Category Nav Filter -->
-    <nav class="deck-category-nav" id="categoryNav">
-      <button class="cat-btn active" data-cat="all">All Slides</button>
-      <button class="cat-btn" data-cat="foundation">Foundation</button>
-      <button class="cat-btn" data-cat="core">Core Feeds</button>
-      <button class="cat-btn" data-cat="features">Social & Market</button>
-      <button class="cat-btn" data-cat="flows">Safety & Flows</button>
-    </nav>
-
-    <!-- Header Actions -->
-    <div class="header-actions">
-      <button class="hdr-btn" id="openJumpModalBtn" title="Show all slides matrix (Key: T)">
+    <!-- Controls in Header -->
+    <div class="header-controls">
+      <button class="control-btn" id="openJumpBtn" title="View all 11 screens">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        Slides (13)
+        All Screens (11)
       </button>
-      <button class="hdr-btn" id="toggleAutoPlayBtn" title="Play automatic slideshow">
-        <svg id="playIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span id="playText">Auto-Play</span>
+      <button class="control-btn" id="autoPlayBtn" title="Auto-advance presentation">
+        <svg id="playIcon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span id="playLabel">Auto-Play</span>
       </button>
-      <button class="hdr-btn gold-accent" id="fullscreenBtn" title="Toggle Fullscreen (Key: F)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      <button class="control-btn maroon-btn" id="fullScreenBtn" title="Fullscreen Mode (Key: F)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
         Fullscreen
       </button>
     </div>
   </header>
 
-  <!-- Presentation Stage Container -->
-  <main class="presentation-container">
+  <!-- Presentation Main Container -->
+  <main class="deck-container">
 
-    <!-- Slide Control & Progress Bar -->
-    <div class="slide-control-bar">
-      <div class="slide-progress-info">
-        <div class="slide-counter-badge" id="slideCounterBadge">SLIDE 01 / 13</div>
-        <div class="slide-progress-track">
-          <div class="slide-progress-fill" id="slideProgressFill"></div>
+    <!-- Slide Toolbar & Nav -->
+    <div class="slide-toolbar">
+      <div class="slide-meta-cluster">
+        <span class="slide-index-badge" id="slideBadge">SCREEN 01 / 11</span>
+        <div class="slide-track">
+          <div class="slide-track-fill" id="slideTrackFill"></div>
         </div>
-        <span class="spec-tag tag-gold" id="slideCategoryTag">FOUNDATION</span>
+        <span class="slide-tag-label" id="slideCategoryLabel">ONBOARDING & IDENTITY</span>
       </div>
 
-      <!-- Device Frame Switcher -->
-      <div class="view-mode-toggle" id="viewModeToggle">
-        <button class="mode-toggle-btn active" data-mode="mobile" title="Mobile 390px iPhone View">
+      <!-- View Switcher (Split, Mobile, Desktop, Direct) -->
+      <div class="view-switcher" id="viewSwitcher">
+        <button class="view-btn active" data-view="split" title="Show Mobile and Desktop side-by-side">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="10" y1="3" x2="10" y2="21"/></svg>
+          Dual View (iOS + Desktop)
+        </button>
+        <button class="view-btn" data-view="mobile" title="Focus on iPhone Mobile Preview">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          Mobile (390px)
+          iOS Only (390px)
         </button>
-        <button class="mode-toggle-btn" data-mode="desktop" title="Desktop 1280px Wireframe View">
+        <button class="view-btn" data-view="desktop" title="Focus on 1280px Desktop Browser Preview">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Desktop (1280px)
-        </button>
-        <button class="mode-toggle-btn" data-mode="direct" title="Full Interactive Direct View">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          Interactive
+          Desktop Only (1280px)
         </button>
       </div>
 
-      <!-- Nav Arrows -->
-      <div class="slide-nav-cluster">
-        <button class="nav-arrow-btn" id="prevSlideBtn" title="Previous slide (Left Arrow)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-          Prev <span class="key-shortcut">←</span>
+      <!-- Prev / Next Nav Buttons -->
+      <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" title="Previous screen (Left Arrow)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Prev <span class="kbd-hint">←</span>
         </button>
-        <button class="nav-arrow-btn" id="nextSlideBtn" title="Next slide (Right Arrow or Spacebar)">
-          Next <span class="key-shortcut">→</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <button class="nav-btn" id="nextBtn" title="Next screen (Right Arrow or Spacebar)">
+          Next <span class="kbd-hint">→</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Main Visual Stage (Top Frame) -->
-    <section class="stage-card">
-      <div class="stage-top-meta">
-        <div class="slide-badge-title">
-          <span class="slide-num-pill" id="stageSlideNum">01 OF 13</span>
-          <h2 class="slide-eyebrow" id="stageSlideEyebrow">Turma — Design Overview & Vision</h2>
+    <!-- MAIN VISUAL STAGE (DUAL PREVIEW) -->
+    <section class="stage-box">
+      <div class="stage-header">
+        <div class="stage-title-wrap">
+          <span class="stage-screen-number" id="screenNumberText">01</span>
+          <h2 class="stage-screen-title" id="screenTitleText">Onboarding & Verification</h2>
         </div>
-        <div class="stage-utility-links">
-          <span class="spec-tag" id="stageResolutionBadge">Live Interactive Prototype</span>
-          <a class="stage-link-btn" id="stageOpenExternalBtn" href="index.html" target="_blank" title="Open this screen in a new standalone tab">
-            Open Standalone
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <div class="stage-actions">
+          <a class="open-standalone-link" id="openStandaloneBtn" href="01-onboarding.html" target="_blank" title="Open standalone HTML file">
+            Open Standalone Page
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Interactive Viewport Stage -->
-      <div class="frame-viewport-stage" id="frameViewportStage">
-        <!-- Live container injected via JS -->
+      <!-- Live Dual Canvas Viewport -->
+      <div class="canvas-stage" id="canvasStage">
+        
+        <!-- Left: iPhone Mobile Frame -->
+        <div class="mockup-column-mobile" id="mobileCol">
+          <div class="mockup-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+            Mobile (390 × 800)
+          </div>
+          <div class="iphone-shell">
+            <div class="iphone-notch"></div>
+            <iframe class="iphone-iframe" id="iphoneFrame" src="01-onboarding.html" title="Mobile Frame View"></iframe>
+          </div>
+        </div>
+
+        <!-- Right: Desktop Browser Frame -->
+        <div class="mockup-column-desktop" id="desktopCol">
+          <div class="mockup-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+            Desktop (1280px Responsive Layout)
+          </div>
+          <div class="browser-shell">
+            <div class="browser-topbar">
+              <div class="browser-window-dots">
+                <div class="dot dot-close"></div>
+                <div class="dot dot-min"></div>
+                <div class="dot dot-max"></div>
+              </div>
+              <div class="browser-address-bar" id="browserUrlBar">http://localhost:3000/01-onboarding.html</div>
+            </div>
+            <iframe class="browser-iframe" id="desktopFrame" src="01-onboarding.html" title="Desktop Frame View"></iframe>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Detailed Narrative & Explanatory Texts Underneath -->
-    <article class="narrative-underneath-card">
-      <div class="narrative-header-grid">
+    <!-- STRUCTURED EXPLANATIONS CARD UNDERNEATH -->
+    <article class="info-card">
+      <div class="info-header">
         <div>
-          <h1 class="narrative-main-title" id="narrativeTitle">Turma: The Verified Boston College Student Platform</h1>
-          <div class="narrative-subtitle" id="narrativeSubtitle">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span id="narrativeModelText">3 Interaction Paradigms: Posh (Events) · LinkedIn (Feed & Clubs) · Facebook Marketplace (Market)</span>
-          </div>
+          <h1 class="info-heading" id="infoMainHeading">Screen 01: Onboarding & Student Verification</h1>
+          <div class="info-subheading" id="infoSubHeading">1-Minute BC Verification & Cold-Start Feed Personalization</div>
         </div>
-        <div class="narrative-tags-cluster" id="narrativeTagsCluster">
-          <span class="spec-tag tag-maroon">Maroon #8A1F2F</span>
-          <span class="spec-tag tag-gold">Gold #E2B13C</span>
-          <span class="spec-tag tag-blue">BC Verified</span>
-          <span class="spec-tag tag-green">WCAG 4.5:1</span>
+        <div class="info-pills" id="infoPillsWrap">
+          <span class="badge-pill maroon">Google OAuth</span>
+          <span class="badge-pill gold">@bc.edu Gate</span>
+          <span class="badge-pill blue">Major Selection</span>
+          <span class="badge-pill green">Instant Trust</span>
         </div>
       </div>
 
-      <!-- Structured Explanatory Breakdown Columns -->
-      <div class="narrative-details-grid" id="narrativeDetailsGrid">
-        <!-- Injected via JavaScript -->
-      </div>
-
-      <!-- Presenter Notes Callout -->
-      <div class="presenter-callout-box" id="presenterCalloutBox">
-        <div class="presenter-icon">🎙️</div>
-        <div class="presenter-text">
-          <div class="presenter-title">Presenter Speaking Points & Design Evaluation</div>
-          <div class="presenter-speech" id="presenterSpeechText">
-            "Welcome everyone. Today we are presenting Turma — an all-in-one verified campus social hub tailored specifically for Boston College students. Rather than forcing one generic layout across different student needs, Turma harmonizes three battle-tested interaction models: Posh-style high-energy flyers for nightlife, LinkedIn-style structured feeds for clubs and announcements, and Facebook Marketplace-style listings with built-in safe campus meetup zones."
+      <!-- 3-Column Structured Information Grid -->
+      <div class="info-grid" id="infoGrid">
+        
+        <!-- Column 1: Core Functionality -->
+        <div class="info-col">
+          <div class="info-col-title maroon-accent">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Key Capabilities
+          </div>
+          <div class="info-col-content" id="col1Content">
+            <ul>
+              <li><strong>@bc.edu Google OAuth:</strong> Single-sign-on verification with no password friction. Non-BC accounts are instantly rejected with an inline error state.</li>
+              <li><strong>Academic Profile:</strong> Class year picker ('26–'29, Grad), Primary Major selection, and optional Second Major/Minor.</li>
+              <li><strong>Cold-Start Solution:</strong> Interest chips populate recommended clubs and classmates so Home is never empty on first login.</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Column 2: Design Decisions -->
+        <div class="info-col">
+          <div class="info-col-title gold-accent">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            Design Decisions & UX
+          </div>
+          <div class="info-col-content" id="col2Content">
+            <ul>
+              <li><strong>One Decision Per Step:</strong> Progressive disclosure reduces cognitive load to under 60 seconds total.</li>
+              <li><strong>Chips Over Typing:</strong> Quick pill selectors for year and interests eliminate tedious mobile typing.</li>
+              <li><strong>Skip Safeguards:</strong> Non-essential steps provide skip options to get returning or hurried students into the app quickly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Responsive Adaptations -->
+        <div class="info-col">
+          <div class="info-col-title blue-accent">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+            Mobile vs. Desktop
+          </div>
+          <div class="info-col-content" id="col3Content">
+            <ul>
+              <li><strong>Mobile (390px):</strong> 5-step full-screen wizard with top step indicator pills and sticky bottom action buttons.</li>
+              <li><strong>Desktop (1280px):</strong> Split-screen layout with full-bleed BC maroon brand hero on left and clean step card on right.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Executive Takeaway -->
+      <div class="executive-takeaway">
+        <span>💡</span>
+        <div id="executiveText"><strong>Presenter Takeaway:</strong> Onboarding establishes absolute campus trust from day one by restricting access strictly to authenticated <code>@bc.edu</code> accounts, while solving the cold-start problem through interest tagging.</div>
       </div>
     </article>
 
-    <!-- Bottom Thumbnails Strip -->
-    <div class="thumbnails-drawer" id="thumbnailsDrawer">
+    <!-- Bottom Thumbnail Rail -->
+    <nav class="thumbnail-rail" id="thumbRail">
       <!-- Injected via JS -->
-    </div>
+    </nav>
 
-    <!-- Keyboard Help Bar -->
-    <footer class="keyboard-help-bar">
-      <span><span class="key-badge">←</span><span class="key-badge">→</span> Navigate Slides</span>
-      <span><span class="key-badge">Space</span> Next</span>
-      <span><span class="key-badge">F</span> Fullscreen</span>
-      <span><span class="key-badge">T</span> All Slides Grid</span>
-      <span><span class="key-badge">1</span> Mobile View</span>
-      <span><span class="key-badge">2</span> Desktop View</span>
-      <span><span class="key-badge">3</span> Direct View</span>
+    <!-- Keyboard Navigation Footer -->
+    <footer class="keyboard-nav-bar">
+      <span><span class="kbd">←</span> <span class="kbd">→</span> Navigate</span>
+      <span><span class="kbd">Space</span> Next</span>
+      <span><span class="kbd">F</span> Fullscreen</span>
+      <span><span class="kbd">1</span> Dual View</span>
+      <span><span class="kbd">2</span> Mobile</span>
+      <span><span class="kbd">3</span> Desktop</span>
     </footer>
 
   </main>
 
-  <!-- Jump to Slide Modal -->
-  <div class="jump-modal-scrim" id="jumpModalScrim">
-    <div class="jump-modal-content">
-      <div class="jump-modal-header">
-        <h3 class="jump-modal-title">Select Slide to Jump</h3>
-        <button class="hdr-btn" id="closeJumpModalBtn">✕ Close</button>
+  <!-- Jump to Screen Modal -->
+  <div class="modal-backdrop" id="jumpModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Select Prototype Screen to View</h3>
+        <button class="control-btn" id="closeJumpBtn">✕ Close</button>
       </div>
-      <div class="jump-grid" id="jumpGrid">
+      <div class="jump-list" id="jumpList">
         <!-- Injected via JS -->
       </div>
     </div>
   </div>
 
   <script>
-    // Complete structured slide database covering all visual and functional aspects of Turma
-    const SLIDES = [
+    // Clean, informative, professional presentation data starting directly with 01 Onboarding
+    const SCREENS = [
       {
-        id: "overview",
-        num: 1,
-        category: "foundation",
-        categoryName: "Design Vision",
-        title: "Turma — System Architecture & Design Philosophy",
-        eyebrow: "Design Overview · System Architecture",
-        url: "index.html",
-        subtitle: "One Brand (BC Maroon + Gold), Three Specialized Interaction Paradigms",
-        tags: [
-          { text: "Overview Deck", class: "tag-gold" },
-          { text: "3 Section Modes", class: "tag-maroon" },
-          { text: "Mobile 390 + Desktop 1280", class: "tag-blue" },
-          { text: "100% BC Verified", class: "tag-green" }
-        ],
-        details: [
-          {
-            title: "The Problem & Mission",
-            theme: "maroon",
-            body: "Boston College students currently juggle fragmented platforms: GroupMe for club updates, Facebook groups for market deals, and scattered Instagram flyers for campus events. Turma consolidates all campus life into one unified, authenticated platform exclusively for students with <strong>@bc.edu</strong> credentials."
-          },
-          {
-            title: "3 Specialized Interaction Modes",
-            theme: "gold",
-            body: "<ul><li><strong>Events (Posh-inspired):</strong> Visual-first poster flyers with date badges, price pills, and friends-going social proof.</li><li><strong>Home & Clubs (LinkedIn-inspired):</strong> Warm-gray canvas, white cards, unified <code>.club-post</code> component with instant reaction pills.</li><li><strong>Marketplace (FB Marketplace):</strong> Square product tiles, price-first tags, and safe-meetup campus locations.</li></ul>"
-          },
-          {
-            title: "Core Design System Principles",
-            theme: "green",
-            body: "<ul><li><strong>One primary action per screen:</strong> Single dominant maroon pill button eliminates cognitive fatigue.</li><li><strong>Trust is visible:</strong> Verified checkmark beside every student name, zero anonymous accounts.</li><li><strong>Never color alone:</strong> Always pair color statuses with icons and text labels (WCAG AA compliant).</li><li><strong>Quiet by default:</strong> Rate-limited club announcements and instant Off/On notification controls.</li></ul>"
-          }
-        ],
-        speakerNotes: "Turma is not a cookie-cutter clone; it deliberately adopts the strongest UX conventions for each specific student task. When students look for parties or concerts, they want high-energy flyers like Posh. When they check club meetings or academic discussions, they need the structured clarity of LinkedIn. And when buying move-out dorm fridges, they need photo-first tiles with verified safe campus pickup spots."
-      },
-      {
-        id: "onboarding",
-        num: 2,
-        category: "foundation",
-        categoryName: "Auth & Identity",
-        title: "Screen 01: Onboarding & BC Student Verification",
-        eyebrow: "01 Onboarding · Google OAuth & Profile Creation",
+        num: "01",
+        title: "Onboarding & Student Verification",
+        category: "Auth & Identity",
         url: "01-onboarding.html",
-        subtitle: "Single-Sign-On with @bc.edu, Major Selection & Cold-Start Feed Personalization",
-        tags: [
-          { text: "Google OAuth", class: "tag-maroon" },
-          { text: "@bc.edu Required", class: "tag-green" },
-          { text: "Major/Minor Picker", class: "tag-blue" },
-          { text: "Suggested Connections", class: "tag-gold" }
+        subtitle: "1-Minute BC Google Authentication & Profile Personalization",
+        pills: [
+          { text: "Google OAuth", class: "maroon" },
+          { text: "@bc.edu Gate", class: "gold" },
+          { text: "Major Selection", class: "blue" },
+          { text: "Instant Trust", class: "green" }
         ],
-        details: [
-          {
-            title: "Security & Strict BC Verification",
-            theme: "maroon",
-            body: "To guarantee campus safety and eliminate external scammers, onboarding uses <strong>Google OAuth</strong> restricted to official <code>@bc.edu</code> email addresses. Non-BC domains trigger an immediate inline error state, preserving community trust from day one."
-          },
-          {
-            title: "Profile & Academic Specialization",
-            theme: "gold",
-            body: "Students specify their Class Year (e.g., '28, '29), Primary Major (e.g. Computer Science, Finance, Biology), and optional Second Major/Minor. This metadata drives algorithmic suggestions for study groups, relevant clubs, and class connections."
-          },
-          {
-            title: "Solving the Cold-Start Problem",
-            theme: "blue",
-            body: "During onboarding step 3 and 4, students select campus interests (Running, Live Music, CS, Service) and receive an instant curated list of peers and student organizations to connect with, ensuring their Home feed is rich and personalized immediately upon first launch."
-          }
+        col1: [
+          "<strong>@bc.edu Google OAuth:</strong> Single-sign-on verification with no password friction. Non-BC accounts are instantly rejected with an inline error state.",
+          "<strong>Academic Profile:</strong> Class year picker ('26–'29, Grad), Primary Major selection, and optional Second Major/Minor.",
+          "<strong>Cold-Start Solution:</strong> Interest chips populate recommended clubs and classmates so Home is never empty on first login."
         ],
-        speakerNotes: "Notice how effortless the onboarding flow is. With Google Single-Sign-On, students don't need to remember another password. By capturing their major and interests in three simple taps, the platform immediately populates their feed with relevant classmates and club flyers, completely eliminating the blank-slate cold start problem."
+        col2: [
+          "<strong>One Decision Per Step:</strong> Progressive disclosure reduces cognitive load to under 60 seconds total.",
+          "<strong>Chips Over Typing:</strong> Quick pill selectors for year and interests eliminate tedious mobile typing.",
+          "<strong>Skip Safeguards:</strong> Non-essential steps provide skip options to get returning or hurried students into the app quickly."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> 5-step full-screen wizard with top step indicator pills and sticky bottom action buttons.",
+          "<strong>Desktop (1280px):</strong> Split-screen layout with full-bleed BC maroon brand hero on left and clean step card on right."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Onboarding establishes absolute campus trust from day one by restricting access strictly to authenticated <code>@bc.edu</code> accounts, while solving the cold-start problem through interest tagging."
       },
       {
-        id: "home-feed",
-        num: 3,
-        category: "core",
-        categoryName: "Campus Feed",
-        title: "Screen 02: Home Campus Feed",
-        eyebrow: "02 Home · Central Feed & Flyer Strip",
+        num: "02",
+        title: "Home Feed & Campus Pulse",
+        category: "Campus Feed",
         url: "02-home.html",
-        subtitle: "Answers 'What's on Tonight?' in 2 Seconds with 3 Feed Modes",
-        tags: [
-          { text: "Unified .club-post", class: "tag-maroon" },
-          { text: "Posh Flyer Strip", class: "tag-gold" },
-          { text: "Market Nearby", class: "tag-green" },
-          { text: "3-Column Desktop", class: "tag-blue" }
+        subtitle: "Answers 'What’s on Tonight?' in 2 Seconds with 3 Specialized Feed Tabs",
+        pills: [
+          { text: "Flyer Strip", class: "gold" },
+          { text: "Unified .club-post", class: "maroon" },
+          { text: "All / Friends / Suggested", class: "blue" },
+          { text: "Market Nearby", class: "green" }
         ],
-        details: [
-          {
-            title: "Instant 'Tonight' Event Horizon",
-            theme: "gold",
-            body: "The top of the Home feed features a horizontal scroll flyer carousel showcasing events happening tonight (e.g., Acoustic Night at The Rat, Mod Social). Students can tap <strong>RSVP</strong> directly on the card in ≤ 2 seconds with instant toast confirmation."
-          },
-          {
-            title: "Unified Post Component (.club-post)",
-            theme: "maroon",
-            body: "All feed updates from students, club officers, and campus groups utilize the standardized <code>.club-post</code> component: circular avatar, verified badge, timestamp, clean copy, optional media asset, and lightweight reaction pill counters."
-          },
-          {
-            title: "Feed Filter Tabs & Responsive Shell",
-            theme: "blue",
-            body: "<ul><li><strong>All:</strong> Comprehensive campus pulse (flyers, posts, market deals).</li><li><strong>Friends & Following:</strong> High-signal feed restricted to classmates and followed clubs.</li><li><strong>Suggested:</strong> Algorithmic discovery based on selected academic and social interests.</li><li><strong>Desktop 1280px:</strong> 3-column layout (Left navigation, Center feed, Right trending rail + persistent message dock).</li></ul>"
-          }
+        col1: [
+          "<strong>Tonight Flyer Strip:</strong> High-energy horizontal carousel of tonight's events with 1-tap instant RSVP.",
+          "<strong>Shared Post Component:</strong> Standardized <code>.club-post</code> format for all student, club, and officer updates with reaction pill counters.",
+          "<strong>Marketplace Preview:</strong> 'Near you in Market' widget showcasing local dorm deals directly in the feed stream."
         ],
-        speakerNotes: "The Home feed is engineered for rapid scanning. A student opening Turma between classes can instantly see what's happening tonight at the Mods or O'Neill, browse officer updates from their photography club, and glance at nearby dorm market listings without having to switch tabs."
+        col2: [
+          "<strong>3 High-Signal Feed Tabs:</strong> 'All' (full campus pulse), 'Friends & Following' (close circle), and 'Suggested' (algorithmic interest matches).",
+          "<strong>Notification Sheet / Dropdown:</strong> Contextual bell alerts linking directly into corresponding events, threads, or club posts."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Single-column feed with top search and bottom tab navigation bar.",
+          "<strong>Desktop (1280px):</strong> 3-column architecture (Left navigation sidebar, Center feed stream, Right rail for trending clubs and persistent message dock)."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> The Home feed combines the nightlife energy of Posh flyers with the structured clarity of LinkedIn posts, allowing students to check campus life in seconds."
       },
       {
-        id: "calendar",
-        num: 4,
-        category: "core",
-        categoryName: "Schedule & RSVP",
-        title: "Screen 03 (11): Integrated Student Calendar",
-        eyebrow: "11 Calendar · Synchronized Events & RSVPs",
+        num: "03",
+        title: "Student Calendar & Schedule Sync",
+        category: "Schedule & RSVP",
         url: "11-calendar.html",
-        subtitle: "Seamless Schedule Management Synced with Event RSVPs and Club Meetings",
-        tags: [
-          { text: "Day / Week View", class: "tag-blue" },
-          { text: "1-Tap RSVP Sync", class: "tag-gold" },
-          { text: "Location Tagging", class: "tag-maroon" },
-          { text: "Schedule Conflicts", class: "tag-green" }
+        subtitle: "Automated RSVP Synchronization with Day / Week Time-Blocking Views",
+        pills: [
+          { text: "1-Tap RSVP Sync", class: "gold" },
+          { text: "Day / Week View", class: "blue" },
+          { text: "Location Tagging", class: "maroon" },
+          { text: "Schedule Conflicts", class: "green" }
         ],
-        details: [
-          {
-            title: "Automated RSVP Synchronization",
-            theme: "gold",
-            body: "Every time a student taps <strong>RSVP</strong> on any event flyer or club announcement across Turma, the event automatically populates into their personal Calendar with venue directions (e.g., 'Fulton 310', 'The Rat')."
-          },
-          {
-            title: "Visual Time Blocking & Views",
-            theme: "maroon",
-            body: "Supports Day and Week views with distinct color-coded chips for Academic Workshops, Club Hangouts, Social Gatherings, and Campus Sports games, enabling students to balance study commitments with social life."
-          },
-          {
-            title: "Export & Calendar Integrations",
-            theme: "green",
-            body: "Includes 1-tap export to Google Calendar and Apple iCal, syncing campus social schedules directly to students' mobile device widgets."
-          }
+        col1: [
+          "<strong>Seamless Event Sync:</strong> Tapping RSVP on any flyer across Turma automatically schedules it into the student's personal calendar.",
+          "<strong>Campus Location Badges:</strong> Every entry displays precise venue instructions (e.g. 'Fulton 310', 'The Rat', 'O’Neill Steps').",
+          "<strong>Conflict Detection:</strong> Visual warnings alert students when social events overlap with existing club meetings."
         ],
-        speakerNotes: "The calendar eliminates the common college problem of RSVPing to an event and forgetting when or where it is. Because RSVPs seamlessly synchronize into their calendar schedule with location badges, students always know their weekly plan at a single glance."
+        col2: [
+          "<strong>Categorized Event Colors:</strong> Distinct badges for Academic Workshops, Club Meetings, Socials, and Athletics.",
+          "<strong>1-Tap Export:</strong> Direct export to Apple iCal and Google Calendar."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Reachable directly via 1 tap from the Events header, avoiding bottom tab clutter.",
+          "<strong>Desktop (1280px):</strong> Dedicated sidebar navigation item with spacious multi-column schedule grid."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Eliminates the common student problem of forgotten RSVPs by seamlessly anchoring campus events to an integrated schedule."
       },
       {
-        id: "events",
-        num: 5,
-        category: "features",
-        categoryName: "Nightlife & Events",
-        title: "Screen 04: Events & Campus Nightlife (Posh Style)",
-        eyebrow: "04 Events · Poster-First Discovery & Ticketing",
+        num: "04",
+        title: "Events & Nightlife (Posh-Inspired)",
+        category: "Nightlife & Events",
         url: "04-events.html",
-        subtitle: "High-Energy Poster Flyers with Date Badges, Price Pills & Friends Going",
-        tags: [
-          { text: "Posh Style", class: "tag-gold" },
-          { text: "Date & Price Pill", class: "tag-green" },
-          { text: "Face Piles (Social Proof)", class: "tag-blue" },
-          { text: "Event Creation Modal", class: "tag-maroon" }
+        subtitle: "Poster-First Flyers with Date Badges, Price Pills & Friends-Going Social Proof",
+        pills: [
+          { text: "Posh Poster Style", class: "gold" },
+          { text: "Free / Price Pill", class: "green" },
+          { text: "Friend Face Piles", class: "blue" },
+          { text: "Required Description", class: "maroon" }
         ],
-        details: [
-          {
-            title: "Visual-First Nightlife Aesthetic",
-            theme: "gold",
-            body: "Taking cues from Posh, events are rendered as rich 4:5 aspect ratio posters with dark bottom scrims, high-contrast typography, date stamps in the top-left, and pricing pills (e.g., <strong>Free</strong> or <strong>$5</strong>) in the top-right."
-          },
-          {
-            title: "Social Proof & Face Piles",
-            theme: "maroon",
-            body: "Displays overlapping friend avatars ('5 friends going · 42 total RSVPs') to drive student attendance through FOMO and organic social discovery."
-          },
-          {
-            title: "Event Creation with Strict Rules",
-            theme: "purple",
-            body: "Event creation includes mandatory fields: Title, Required Description, Date/Time, Location/Room, and Ticket pricing, ensuring students always have all vital logistics before committing to attend."
-          }
+        col1: [
+          "<strong>Poster-First Architecture:</strong> 4:5 visual flyers with top-left date badge and top-right pricing pill (e.g., 'Free', '$5').",
+          "<strong>Social Proof Face Piles:</strong> Shows overlapping friend avatars ('5 friends going · 42 RSVPs') to drive student engagement.",
+          "<strong>Filter Chips:</strong> Instant filtering by Tonight, This Weekend, Free, and Campus Categories."
         ],
-        speakerNotes: "College students don't want to read dense text lists when deciding where to go on a Friday night. By adopting Posh's poster-first visual language combined with friend face piles, Turma makes event discovery engaging, vibrant, and fun."
+        col2: [
+          "<strong>Event Creation Guardrails:</strong> Fulfills project requirements with mandatory fields for Title, Required Description, Venue, and Ticket Price.",
+          "<strong>Desktop Event Detail View:</strong> Dedicated web detail page with attendee lists and calendar export."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Infinite vertical flyer feed with sticky bottom RSVP action button.",
+          "<strong>Desktop (1280px):</strong> Multi-column poster matrix with left filter sidebar rail."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> By replacing boring text bullet points with vibrant Posh-inspired visual flyers, student attendance and event excitement increase dramatically."
       },
       {
-        id: "clubs",
-        num: 6,
-        category: "features",
-        categoryName: "Clubs & Groups",
-        title: "Screen 05: Clubs & Student Organizations",
-        eyebrow: "05 Clubs · Discovery, Profiles & Officer Tools",
+        num: "05",
+        title: "Clubs & Student Organizations",
+        category: "Clubs & Groups",
         url: "05-clubs.html",
         subtitle: "Hangout-Style Club Homepages, Discovery Directory & Officer Broadcast Hub",
-        tags: [
-          { text: "Club Hangout Page", class: "tag-maroon" },
-          { text: "Officer Broadcasts", class: "tag-gold" },
-          { text: "Group Chat Toggle", class: "tag-blue" },
-          { text: "Rate-Limited Alerts", class: "tag-green" }
+        pills: [
+          { text: "Hangout Profile", class: "maroon" },
+          { text: "Officer Broadcasts", class: "gold" },
+          { text: "Group Chat Toggle", class: "blue" },
+          { text: "Rate-Limited Alerts", class: "green" }
         ],
-        details: [
-          {
-            title: "Club Discovery Directory",
-            theme: "blue",
-            body: "Categorized directory across Academic, Cultural, Arts, Club Sports, and Service groups with membership counts and verified club officer badges."
-          },
-          {
-            title: "Hangout-Style Club Profile",
-            theme: "gold",
-            body: "Features branded cover banner, member count, officer roster, join button, and a dedicated tabbed feed of upcoming club workshops and ticketed socials."
-          },
-          {
-            title: "Officer Dashboard & Group Chats",
-            theme: "maroon",
-            body: "Verified club leaders have access to an Officer Dashboard to broadcast announcements, manage member rosters, and toggle automatic creation of linked group chats for team coordination."
-          }
+        col1: [
+          "<strong>Club Directory:</strong> Categorized directory across Academic, Cultural, Arts, Sports, and Service organizations.",
+          "<strong>Club Profile Page:</strong> Branded cover banner, member roster, officer badges, and ticket-style upcoming events.",
+          "<strong>Officer Admin Hub:</strong> Verified club leaders can broadcast official announcements and manage member lists."
         ],
-        speakerNotes: "Clubs are the heartbeat of Boston College student life. Turma gives every student organization a polished digital home. For officers, it solves announcement fatigue by offering rate-limited broadcast tools that ensure important meeting updates actually reach members."
+        col2: [
+          "<strong>Group Chat Integration:</strong> Explicit toggle to auto-generate linked team group chats for club members.",
+          "<strong>Anti-Spam Rate Limiting:</strong> Club broadcasts are rate-limited to preserve student feed quality and eliminate notification fatigue."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Tabbed club page with direct +Follow button and bottom action sheet.",
+          "<strong>Desktop (1280px):</strong> Full club dashboard layout with officer tools and multi-column feeds."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Gives student clubs a professional digital home while providing officers with structured communication tools that prevent announcement spam."
       },
       {
-        id: "marketplace",
-        num: 7,
-        category: "features",
-        categoryName: "Dorm Marketplace",
-        title: "Screen 06: Campus Student Marketplace",
-        eyebrow: "06 Market · Photo Tiles & Safe Meetup Spots",
+        num: "06",
+        title: "Campus Dorm Marketplace",
+        category: "Dorm Marketplace",
         url: "06-marketplace.html",
         subtitle: "Verified Student-to-Student Commerce with Campus Safe Meetup Presets",
-        tags: [
-          { text: "Marketplace Grid", class: "tag-green" },
-          { text: "Safe Meetup Zones", class: "tag-blue" },
-          { text: "Connect to Message", class: "tag-maroon" },
-          { text: "Move-Out Deals", class: "tag-gold" }
+        pills: [
+          { text: "Photo Tile Grid", class: "green" },
+          { text: "Safe Meetup Zones", class: "blue" },
+          { text: "Connect to Message", class: "maroon" },
+          { text: "Price Upfront", class: "gold" }
         ],
-        details: [
-          {
-            title: "Photo-First Grid with Upfront Pricing",
-            theme: "green",
-            body: "Clean 2-column square photo tiles with bold price tags ($35, $40), item titles, condition tags, and dorm location markers (e.g., 'Walsh Hall', 'Lower Campus')."
-          },
-          {
-            title: "Designated Safe Campus Meetup Spots",
-            theme: "blue",
-            body: "To eliminate off-campus safety risks, listings integrate recommended verified campus meetup zones: <strong>O'Neill Library 1st Floor Lobby</strong>, <strong>McElroy Student Center</strong>, and the <strong>BC Police Department Safety Zone</strong>."
-          },
-          {
-            title: "Connect to Message Workflow",
-            theme: "maroon",
-            body: "Students click 'Message Seller' or 'Connect to Message', opening a pre-filled safety thread with verified seller ratings and graduation year, keeping transactions within the trusted BC community."
-          }
+        col1: [
+          "<strong>Photo-First Grid:</strong> 2-column square photo tiles with upfront pricing, item conditions, and dorm location markers.",
+          "<strong>Safe Campus Meetup Zones:</strong> Built-in recommendations for secure transaction spots: O'Neill Library, McElroy Lobby, or BC Police Station.",
+          "<strong>Connect to Message:</strong> Students must be connected or initiate a trusted connection request to message sellers."
         ],
-        speakerNotes: "Campus buy-and-sell currently happens in messy Facebook groups filled with graduated alumni and spam bots. Turma fixes this completely: only authenticated BC students can list or buy, and every listing suggests public campus safe-meetup zones like O'Neill Library."
+        col2: [
+          "<strong>Scam Elimination:</strong> Zero anonymous accounts; every listing is tied to a verified BC student profile and class year.",
+          "<strong>Quick Categories:</strong> Textbooks, Dorm Essentials, Mini-Fridges, Electronics, and Move-Out Furniture."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> 2-column card grid with bottom Create Listing action pill.",
+          "<strong>Desktop (1280px):</strong> Left filter rail (Price, Category, Location) with 4-column responsive product matrix."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Replaces unmoderated Facebook groups with an authenticated campus marketplace featuring built-in public safe meetup spots."
       },
       {
-        id: "messaging",
-        num: 8,
-        category: "flows",
-        categoryName: "Chat & Safety",
-        title: "Screen 07: Messaging & Connections Center",
-        eyebrow: "07 Messaging · Direct Chats & Connections Manager",
+        num: "07",
+        title: "Messaging & Safety Center",
+        category: "Chat & Safety",
         url: "07-messaging.html",
-        subtitle: "Connections Filter, Meetup Safety Banners & Desktop Floating Dock",
-        tags: [
-          { text: "Connections View", class: "tag-blue" },
-          { text: "Safety Warning Header", class: "tag-green" },
-          { text: "All / Market / Clubs Tabs", class: "tag-gold" },
-          { text: "Desktop Message Dock", class: "tag-maroon" }
+        subtitle: "Connections Filter, Campus Meetup Safety Banners & Desktop Floating Dock",
+        pills: [
+          { text: "Connections View", class: "blue" },
+          { text: "Safety Warning", class: "green" },
+          { text: "Market / Club Tabs", class: "gold" },
+          { text: "Desktop Dock", class: "maroon" }
         ],
-        details: [
-          {
-            title: "Dedicated Connections Manager",
-            theme: "blue",
-            body: "Directly fulfills course design requirements with full connection request lifecycle: <strong>Pending Requests Received</strong> (Accept / Decline), <strong>Sent Requests</strong> (Cancel), and <strong>Connected Network</strong> (Remove Connection)."
-          },
-          {
-            title: "Thread Categorization & Filters",
-            theme: "gold",
-            body: "Filter tabs divide conversations into <strong>All</strong>, <strong>Market Inquiries</strong> (with item thumbnails attached), and <strong>Club Group Chats</strong>, keeping social conversations separated from marketplace transactions."
-          },
-          {
-            title: "Meetup Safety Warning & Report Controls",
-            theme: "maroon",
-            body: "Every marketplace thread features a prominent green campus safety badge: <em>'Always meet in public campus locations like O’Neill or McElroy.'</em> Includes instant one-tap report and block options."
-          }
+        col1: [
+          "<strong>Connections Management:</strong> Full lifecycle for connection requests: Received (Accept/Decline), Sent (Cancel), and Connected Network.",
+          "<strong>Thread Organization:</strong> Filter tabs separate general DMs from Marketplace item inquiries and Club group chats.",
+          "<strong>Safety Header Banners:</strong> Persistent reminders inside marketplace threads to meet only in public campus areas with 1-tap reporting."
         ],
-        speakerNotes: "Notice the attention to safety and organization. Marketplace chats are cleanly separated from casual DM chats, and every transaction thread explicitly reminds students to meet in public campus hubs with built-in reporting tools."
+        col2: [
+          "<strong>Course Requirement Compliance:</strong> Enforces connections-only messaging privacy to prevent unsolicited contact.",
+          "<strong>Desktop Floating Dock:</strong> Persistent collapsible messaging pill in the bottom-right corner across all desktop screens."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Full-screen conversation thread with media attachments and quick-reply chips.",
+          "<strong>Desktop (1280px):</strong> Two-pane split view (Left thread list, Right active conversation) plus global floating dock."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Separates social chats from commercial inquiries and embeds continuous campus safety warnings directly inside transaction threads."
       },
       {
-        id: "profile",
-        num: 9,
-        category: "features",
-        categoryName: "Identity & Profile",
-        title: "Screen 08: Student Profile & Privacy States",
-        eyebrow: "08 Profile · Verified Identity & Following Network",
+        num: "08",
+        title: "Student Profile & Identity",
+        category: "Identity & Profile",
         url: "08-profile.html",
-        subtitle: "Student Credentials, Active Listings, RSVPs & Locked Privacy State",
-        tags: [
-          { text: "Verified Badge", class: "tag-blue" },
-          { text: "Following Network", class: "tag-maroon" },
-          { text: "Locked Profile View", class: "tag-purple" },
-          { text: "RSVP & Market Tabs", class: "tag-gold" }
+        subtitle: "Verified Student Credentials, Following Network & Locked Privacy State",
+        pills: [
+          { text: "BC Verified Check", class: "blue" },
+          { text: "Following Network", class: "maroon" },
+          { text: "Locked Profile View", class: "gold" },
+          { text: "RSVP & Market Tabs", class: "green" }
         ],
-        details: [
-          {
-            title: "Verified Student Identity Card",
-            theme: "blue",
-            body: "Displays graduation year ('29), declared major/minor (Computer Science & Economics), student bio, and the official blue verified student checkmark."
-          },
-          {
-            title: "Comprehensive Following & Content Tabs",
-            theme: "gold",
-            body: "Tabbed sections allow peers to see: <strong>Upcoming RSVPs</strong> (public events they are attending), <strong>My Clubs</strong> (with officer badges), <strong>Active Listings</strong> (items they are selling), and <strong>Following</strong> (people, clubs, and groups)."
-          },
-          {
-            title: "Locked Privacy State for Non-Connections",
-            theme: "purple",
-            body: "Students who are not connected view a privacy-protected profile showing only name, class year, and a <strong>Connect</strong> button, safeguarding personal schedule details until connection is accepted."
-          }
+        col1: [
+          "<strong>Verified Student Card:</strong> Displays student name, graduation year, major/minor, bio, and the official blue verified badge.",
+          "<strong>Content Showcase:</strong> Tabs for Upcoming RSVPs (social events), My Clubs (with officer status), Active Listings, and Following.",
+          "<strong>Following Network:</strong> Consolidates followed classmates, student organizations, and study groups in one place."
         ],
-        speakerNotes: "The profile balances campus networking with student privacy. When connected, friends can coordinate on upcoming events and see what clubs you belong to; for non-connections, private schedules remain locked until mutually approved."
+        col2: [
+          "<strong>Locked Non-Connection State:</strong> Non-connected users view a privacy-protected card showing only basic info with a 'Connect' button.",
+          "<strong>Settings Shortcut:</strong> Gear icon on profile provides instant access to privacy and notification controls."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Header profile card with segmented horizontal content tabs.",
+          "<strong>Desktop (1280px):</strong> 3-column profile layout with left academic summary, center activity stream, and right network rail."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Protects student privacy through a locked profile state for strangers while enabling classmates to coordinate on events and clubs."
       },
       {
-        id: "settings",
-        num: 10,
-        category: "flows",
-        categoryName: "Privacy & Controls",
-        title: "Screen 09: Notifications & Privacy Settings",
-        eyebrow: "09 Settings · Granular Notification & Safety Rules",
+        num: "09",
+        title: "Notifications & Privacy Settings",
+        category: "Privacy & Controls",
         url: "09-notifications-settings.html",
         subtitle: "'Quiet by Default' Architecture with Instant Off / On Notification Toggles",
-        tags: [
-          { text: "Quiet by Default", class: "tag-maroon" },
-          { text: "Off / Instant Rules", class: "tag-gold" },
-          { text: "Privacy Controls", class: "tag-blue" },
-          { text: "Blocked Accounts", class: "tag-green" }
+        pills: [
+          { text: "Quiet by Default", class: "maroon" },
+          { text: "Off / Instant Rules", class: "gold" },
+          { text: "Privacy Controls", class: "blue" },
+          { text: "Blocked Accounts", class: "green" }
         ],
-        details: [
-          {
-            title: "'Quiet by Default' Architecture",
-            theme: "maroon",
-            body: "Rather than an overwhelming alerts feed, notification settings feature simple segmented switches (<strong>Off</strong> vs <strong>Instant</strong>) for Connection Requests, RSVP Confirmations, Marketplace Offers, and Club Announcements."
-          },
-          {
-            title: "Email & In-App Dual Routing",
-            theme: "gold",
-            body: "Students can choose whether critical updates (like urgent marketplace offers or event time changes) send immediate push notifications, daily email summaries, or stay in-app only."
-          },
-          {
-            title: "Privacy, Verification & Block List",
-            theme: "blue",
-            body: "Complete controls over profile discoverability, verified student status badge visibility, and a managed list of blocked accounts for peace of mind."
-          }
+        col1: [
+          "<strong>'Quiet by Default' Philosophy:</strong> Replaces bloated notification feeds with clean, granular Off / Instant segmented toggles.",
+          "<strong>Per-Category Preferences:</strong> Separate frequency controls for Connection Requests, RSVP Confirmations, Marketplace Offers, and Clubs.",
+          "<strong>Multi-Channel Routing:</strong> Choose between immediate in-app push notifications and daily digest emails."
         ],
-        speakerNotes: "We deliberately avoided notification overload. Turma adheres to a 'quiet by default' philosophy where students have transparent, one-tap control over what interrupts them, ensuring high signal and zero spam."
+        col2: [
+          "<strong>Safety & Block List:</strong> Full management of blocked accounts and campus safe-meetup default settings.",
+          "<strong>Profile Discoverability:</strong> Control whether your profile appears in suggested student searches."
+        ],
+        col3: [
+          "<strong>Mobile (390px):</strong> Accessible via gear icon on profile; clean grouped card list.",
+          "<strong>Desktop (1280px):</strong> Top-bar gear link and full 2-column preference management console."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Eliminates notification fatigue by giving students transparent, one-tap control over every alert channel."
       },
       {
-        id: "flows",
-        num: 11,
-        category: "flows",
-        categoryName: "User Journeys",
-        title: "Screen 10: Core User Flows & Journey Maps",
-        eyebrow: "10 Flows · End-to-End Architectural Journeys",
+        num: "10",
+        title: "Core User Flows & Journey Maps",
+        category: "User Journeys",
         url: "10-flows.html",
-        subtitle: "Step-by-Step Wireframe Flows from First Login to Event RSVP & Market Purchase",
-        tags: [
-          { text: "Journey Maps", class: "tag-gold" },
-          { text: "≤ 3 Taps to Action", class: "tag-green" },
-          { text: "First vs Return Login", class: "tag-blue" },
-          { text: "Error Recovery", class: "tag-maroon" }
+        subtitle: "Architectural Journey Maps: First Login, Event RSVP, Market Purchase & Club Posts",
+        pills: [
+          { text: "Journey Maps", class: "gold" },
+          { text: "≤ 3 Taps to Action", class: "green" },
+          { text: "First vs Return Login", class: "blue" },
+          { text: "Error Recovery", class: "maroon" }
         ],
-        details: [
-          {
-            title: "Flow 1: First-Time Login vs Returning User",
-            theme: "blue",
-            body: "Routes new users through Google OAuth verification, profile completion, and interest selection. Returning users bypass onboarding straight to their curated Home feed in under 1 second."
-          },
-          {
-            title: "Flow 2: Event Discovery to Calendar RSVP",
-            theme: "gold",
-            body: "Student discovers event flyer on Home or Events tab → taps <strong>RSVP</strong> → receives immediate feedback toast → event automatically synchronizes into their Calendar and Profile."
-          },
-          {
-            title: "Flow 3 & 4: Safe Market Purchase & Club Announcements",
-            theme: "green",
-            body: "Covers buyer-seller communication with automated safe meetup zone prompts, and the club officer workflow for broadcasting urgent club announcements to members."
-          }
+        col1: [
+          "<strong>Flow 1: First-Time vs Returning Login:</strong> Seamlessly routes new users through Google OAuth verification and returning users directly to their feed.",
+          "<strong>Flow 2: Event Discovery to Calendar RSVP:</strong> Tap RSVP on flyer → instant confirmation toast → automatic calendar sync in ≤ 2 taps.",
+          "<strong>Flow 3: Safe Marketplace Purchase:</strong> Scan listing → connect to message → automated safe campus meetup prompt."
         ],
-        speakerNotes: "The flows diagram proves that every critical user task across Turma can be completed in three taps or fewer. Whether RSVPing to a concert or buying a biology textbook, the friction has been systematically engineered away."
+        col2: [
+          "<strong>Flow 4: Club Officer Broadcast:</strong> Officer opens dashboard → composes update → broadcast reaches club members with zero spam.",
+          "<strong>Error Recovery:</strong> Clearly handles non-BC email sign-in attempts and marketplace connection requirements."
+        ],
+        col3: [
+          "<strong>Universal Journeys:</strong> Identical logical flows across both mobile app and desktop web interfaces."
+        ],
+        takeaway: "<strong>Presenter Takeaway:</strong> Demonstrates that every critical task on Turma can be completed in three taps or fewer with zero unnecessary friction."
       },
       {
-        id: "components",
-        num: 12,
-        category: "foundation",
-        categoryName: "Design System",
-        title: "Design System: Components, Color Tokens & Specs",
-        eyebrow: "Design System · Tokens, Buttons & Contrast",
+        num: "11",
+        title: "Design System & Requirements Matrix",
+        category: "Design System",
         url: "index.html",
-        subtitle: "Complete Spec Sheet: 8px Grid, 44px Touch Targets, WCAG AA Accessibility",
-        tags: [
-          { text: "8px Spacing Grid", class: "tag-maroon" },
-          { text: "44px Touch Target", class: "tag-gold" },
-          { text: "4.5:1 Text Contrast", class: "tag-green" },
-          { text: "Pill Buttons", class: "tag-blue" }
+        subtitle: "Complete Token Specification: 8px Grid, 44px Touch Targets, WCAG AA Compliance",
+        pills: [
+          { text: "8px Spacing Grid", class: "maroon" },
+          { text: "44px Touch Targets", class: "gold" },
+          { text: "4.5:1 Contrast", class: "green" },
+          { text: "100% Complete", class: "blue" }
         ],
-        details: [
-          {
-            title: "Curated Boston College Color Palette",
-            theme: "maroon",
-            body: "<ul><li><code>--maroon</code> <strong>#8A1F2F:</strong> Brand identity, primary CTAs, active indicators.</li><li><code>--gold</code> <strong>#E2B13C:</strong> Accent highlights, 'Featured' buttons, unread badges.</li><li><code>--cream</code> <strong>#F3F0EB:</strong> Warm app canvas background.</li><li><code>--blue</code> <strong>#2B5FA8:</strong> Verified checkmark.</li><li><code>--ok</code> <strong>#1E8E4E:</strong> Free badges, safe zones, availability.</li></ul>"
-          },
-          {
-            title: "Standardized Button & Chip Hierarchy",
-            theme: "gold",
-            body: "Pill buttons (min height 44px) ensure effortless mobile tapping: <strong>Primary</strong> (Maroon fill), <strong>Secondary</strong> (Maroon outline), <strong>Featured</strong> (Gold fill), and <strong>Ghost</strong> (Neutral fill). Reaction pills combine icons and counts with active gold-soft highlights."
-          },
-          {
-            title: "Accessibility & Ergonomics",
-            theme: "green",
-            body: "Strict compliance with WCAG AA standards (4.5:1 minimum contrast ratio). Statuses always pair color with text and iconography. Touch targets exceed Apple Human Interface Guidelines minimums."
-          }
+        col1: [
+          "<strong>Curated Color Palette:</strong> BC Maroon (#8A1F2F), Gold (#E2B13C), Cream (#F3F0EB), Blue (#2B5FA8), and Green (#1E8E4E).",
+          "<strong>Accessibility Standards:</strong> Strict adherence to WCAG AA 4.5:1 text contrast ratios. Color is never used alone without icons and text.",
+          "<strong>Touch Target Ergonomics:</strong> 44px minimum touch targets on all mobile buttons, tabs, and interactive chips."
         ],
-        speakerNotes: "Every single component in Turma is built from a cohesive design token system. We adhere strictly to 44px minimum touch targets and guaranteed 4.5:1 contrast ratios so the platform is universally accessible to all students."
-      },
-      {
-        id: "summary",
-        num: 13,
-        category: "flows",
-        categoryName: "Review Summary",
-        title: "Deliverable Summary & Requirements Checklist",
-        eyebrow: "Wrap-Up · Requirements Fulfillment Matrix",
-        url: "index.html",
-        subtitle: "10 Interactive Screen Prototypes, 2 Form Factors (Mobile & Desktop), 100% Complete",
-        tags: [
-          { text: "10 HTML Screens", class: "tag-maroon" },
-          { text: "Mobile 390 + Desktop 1280", class: "tag-gold" },
-          { text: "Fully Functional JS/CSS", class: "tag-green" },
-          { text: "All Criteria Met", class: "tag-blue" }
+        col2: [
+          "<strong>Requirements Matrix Fulfillment:</strong> 10 interactive HTML prototypes, 2 form factors (Mobile 390px + Desktop 1280px), 3 specialized interaction styles.",
+          "<strong>Production Code Quality:</strong> Modular Vanilla CSS design tokens, lightweight JavaScript, and zero external bloat."
         ],
-        details: [
-          {
-            title: "Project Deliverable Coverage",
-            theme: "maroon",
-            body: "<ul><li><strong>01 Onboarding:</strong> Google OAuth, BC email check, major/minor selection.</li><li><strong>02 Home Feed:</strong> Event flyer strip, .club-post feed, All/Friends/Suggested tabs.</li><li><strong>03 (11) Calendar:</strong> Synchronized student schedule with RSVP export.</li><li><strong>04 Events:</strong> Posh-inspired poster flyers, date badges, price pills, RSVP.</li><li><strong>05 Clubs:</strong> Directory discovery, club hangout page, officer tools.</li></ul>"
-          },
-          {
-            title: "Commerce, Messaging & Privacy",
-            theme: "green",
-            body: "<ul><li><strong>06 Market:</strong> Photo tiles, price tags, safe meetup spot selector.</li><li><strong>07 Messaging:</strong> Connections manager (Accept/Decline/Remove), safety banners.</li><li><strong>08 Profile:</strong> Verified status, RSVP history, locked non-connection view.</li><li><strong>09 Settings:</strong> Granular notification frequency rules & privacy controls.</li><li><strong>10 Flows:</strong> 4 complete architectural user journey diagrams.</li></ul>"
-          },
-          {
-            title: "Ready for Demonstration & Testing",
-            theme: "gold",
-            body: "Every prototype screen is fully interactive, accessible directly on <code>http://localhost:3000</code>, and styled with responsive CSS grids, CSS variables, and zero external bloat."
-          }
+        col3: [
+          "<strong>Deliverable Scope:</strong> 100% of functional and visual requirements verified and live on http://localhost:3000."
         ],
-        speakerNotes: "In summary, the Turma prototype deliverable represents a complete, cohesive design solution tailored to Boston College student life. All course requirements — from connections-only messaging and safe marketplace meetups to verified onboarding and event RSVPs — are fully realized across both mobile and desktop form factors."
+        takeaway: "<strong>Presenter Takeaway:</strong> Turma represents a complete, cohesive, and battle-tested software design deliverable built specifically for the Boston College student body."
       }
     ];
 
     // State
-    let currentSlideIndex = 0;
-    let currentViewMode = 'mobile'; // 'mobile', 'desktop', 'direct'
-    let currentCategory = 'all';
-    let isAutoPlaying = false;
+    let currentIndex = 0;
+    let currentView = 'split'; // 'split', 'mobile', 'desktop'
+    let isAutoPlay = false;
     let autoPlayTimer = null;
 
-    // DOM Elements
-    const stageSlideNum = document.getElementById('stageSlideNum');
-    const stageSlideEyebrow = document.getElementById('stageSlideEyebrow');
-    const stageOpenExternalBtn = document.getElementById('stageOpenExternalBtn');
-    const frameViewportStage = document.getElementById('frameViewportStage');
-    const slideCounterBadge = document.getElementById('slideCounterBadge');
-    const slideProgressFill = document.getElementById('slideProgressFill');
-    const slideCategoryTag = document.getElementById('slideCategoryTag');
-    
-    const narrativeTitle = document.getElementById('narrativeTitle');
-    const narrativeSubtitle = document.getElementById('narrativeSubtitle');
-    const narrativeModelText = document.getElementById('narrativeModelText');
-    const narrativeTagsCluster = document.getElementById('narrativeTagsCluster');
-    const narrativeDetailsGrid = document.getElementById('narrativeDetailsGrid');
-    const presenterSpeechText = document.getElementById('presenterSpeechText');
-    
-    const prevSlideBtn = document.getElementById('prevSlideBtn');
-    const nextSlideBtn = document.getElementById('nextSlideBtn');
-    const thumbnailsDrawer = document.getElementById('thumbnailsDrawer');
-    const viewModeToggle = document.getElementById('viewModeToggle');
-    const categoryNav = document.getElementById('categoryNav');
+    // Elements
+    const slideBadge = document.getElementById('slideBadge');
+    const slideTrackFill = document.getElementById('slideTrackFill');
+    const slideCategoryLabel = document.getElementById('slideCategoryLabel');
+    const screenNumberText = document.getElementById('screenNumberText');
+    const screenTitleText = document.getElementById('screenTitleText');
+    const openStandaloneBtn = document.getElementById('openStandaloneBtn');
+    const browserUrlBar = document.getElementById('browserUrlBar');
 
-    const jumpModalScrim = document.getElementById('jumpModalScrim');
-    const openJumpModalBtn = document.getElementById('openJumpModalBtn');
-    const closeJumpModalBtn = document.getElementById('closeJumpModalBtn');
-    const jumpGrid = document.getElementById('jumpGrid');
+    const iphoneFrame = document.getElementById('iphoneFrame');
+    const desktopFrame = document.getElementById('desktopFrame');
+    const canvasStage = document.getElementById('canvasStage');
 
-    const toggleAutoPlayBtn = document.getElementById('toggleAutoPlayBtn');
+    const infoMainHeading = document.getElementById('infoMainHeading');
+    const infoSubHeading = document.getElementById('infoSubHeading');
+    const infoPillsWrap = document.getElementById('infoPillsWrap');
+    const col1Content = document.getElementById('col1Content');
+    const col2Content = document.getElementById('col2Content');
+    const col3Content = document.getElementById('col3Content');
+    const executiveText = document.getElementById('executiveText');
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const thumbRail = document.getElementById('thumbRail');
+    const viewSwitcher = document.getElementById('viewSwitcher');
+
+    const openJumpBtn = document.getElementById('openJumpBtn');
+    const closeJumpBtn = document.getElementById('closeJumpBtn');
+    const jumpModal = document.getElementById('jumpModal');
+    const jumpList = document.getElementById('jumpList');
+
+    const autoPlayBtn = document.getElementById('autoPlayBtn');
     const playIcon = document.getElementById('playIcon');
-    const playText = document.getElementById('playText');
-    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const playLabel = document.getElementById('playLabel');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
 
-    // Initialize Deck
-    function initDeck() {
-      renderThumbnails();
-      renderJumpGrid();
-      loadSlide(0);
-      setupEventListeners();
+    // Initialize
+    function init() {
+      buildThumbnails();
+      buildJumpList();
+      loadScreen(0);
+      bindEvents();
     }
 
-    // Render Slide content
-    function loadSlide(index) {
-      if (index < 0 || index >= SLIDES.length) return;
-      currentSlideIndex = index;
-      const slide = SLIDES[index];
+    // Load specific screen
+    function loadScreen(index) {
+      if (index < 0 || index >= SCREENS.length) return;
+      currentIndex = index;
+      const s = SCREENS[index];
 
-      // Update Top Meta
-      stageSlideNum.textContent = `${String(slide.num).padStart(2, '0')} OF ${SLIDES.length}`;
-      stageSlideEyebrow.textContent = slide.eyebrow;
-      stageOpenExternalBtn.href = slide.url;
+      // Top bar
+      slideBadge.textContent = `SCREEN ${s.num} / ${SCREENS.length}`;
+      const progress = ((index + 1) / SCREENS.length) * 100;
+      slideTrackFill.style.width = `${progress}%`;
+      slideCategoryLabel.textContent = s.category.toUpperCase();
 
-      // Update Progress
-      slideCounterBadge.textContent = `SLIDE ${String(slide.num).padStart(2, '0')} / ${SLIDES.length}`;
-      const progressPct = ((slide.num) / SLIDES.length) * 100;
-      slideProgressFill.style.width = `${progressPct}%`;
-      slideCategoryTag.textContent = slide.categoryName.toUpperCase();
+      // Title & Links
+      screenNumberText.textContent = s.num;
+      screenTitleText.textContent = s.title;
+      openStandaloneBtn.href = s.url;
+      browserUrlBar.textContent = `http://localhost:3000/${s.url}`;
 
-      // Update Viewport Frame
-      renderViewportFrame(slide.url);
+      // Update Frames
+      iphoneFrame.src = s.url;
+      desktopFrame.src = s.url;
 
-      // Update Narrative Texts Underneath
-      narrativeTitle.textContent = slide.title;
-      narrativeModelText.textContent = slide.subtitle;
-      
-      // Tags
-      narrativeTagsCluster.innerHTML = slide.tags.map(t => 
-        `<span class="spec-tag ${t.class}">${t.text}</span>`
+      // Update Narrative Cards Underneath
+      infoMainHeading.textContent = `Screen ${s.num}: ${s.title}`;
+      infoSubHeading.textContent = s.subtitle;
+
+      infoPillsWrap.innerHTML = s.pills.map(p => 
+        `<span class="badge-pill ${p.class}">${p.text}</span>`
       ).join('');
 
-      // Details 3-column Grid
-      narrativeDetailsGrid.innerHTML = slide.details.map(d => `
-        <div class="detail-card card-${d.theme}">
-          <div class="detail-heading">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-            ${d.title}
-          </div>
-          <div class="detail-body">${d.body}</div>
-        </div>
-      `).join('');
+      col1Content.innerHTML = `<ul>${s.col1.map(item => `<li>${item}</li>`).join('')}</ul>`;
+      col2Content.innerHTML = `<ul>${s.col2.map(item => `<li>${item}</li>`).join('')}</ul>`;
+      col3Content.innerHTML = `<ul>${s.col3.map(item => `<li>${item}</li>`).join('')}</ul>`;
+      executiveText.innerHTML = s.takeaway;
 
-      // Presenter Speech
-      presenterSpeechText.textContent = slide.speakerNotes;
+      // Update Nav Buttons
+      prevBtn.disabled = (currentIndex === 0);
+      nextBtn.disabled = (currentIndex === SCREENS.length - 1);
 
-      // Update Prev / Next Button States
-      prevSlideBtn.disabled = (currentSlideIndex === 0);
-      nextSlideBtn.disabled = (currentSlideIndex === SLIDES.length - 1);
-
-      // Update Active Thumbnail
-      document.querySelectorAll('.thumb-card').forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === currentSlideIndex);
+      // Active Thumbnail
+      document.querySelectorAll('.thumb-item').forEach((t, i) => {
+        t.classList.toggle('active', i === currentIndex);
       });
-      // Scroll active thumbnail into view
-      const activeThumb = document.querySelector(`.thumb-card[data-index="${currentSlideIndex}"]`);
+      const activeThumb = document.querySelector(`.thumb-item[data-idx="${currentIndex}"]`);
       if (activeThumb) {
         activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
     }
 
-    // Render Viewport Frame based on view mode
-    function renderViewportFrame(url) {
-      frameViewportStage.innerHTML = '';
-
-      if (currentViewMode === 'mobile') {
-        frameViewportStage.innerHTML = `
-          <div class="mobile-phone-frame">
-            <div class="phone-camera-island"></div>
-            <iframe class="phone-iframe" src="${url}" title="Mobile Prototype Preview"></iframe>
-          </div>
-        `;
-      } else if (currentViewMode === 'desktop') {
-        frameViewportStage.innerHTML = `
-          <div class="desktop-browser-frame">
-            <div class="browser-toolbar">
-              <div class="browser-dots">
-                <div class="browser-dot dot-red"></div>
-                <div class="browser-dot dot-yellow"></div>
-                <div class="browser-dot dot-green"></div>
-              </div>
-              <div class="browser-url-pill">http://localhost:3000/${url}</div>
-            </div>
-            <iframe class="desktop-iframe" src="${url}" title="Desktop Prototype Preview"></iframe>
-          </div>
-        `;
-      } else {
-        frameViewportStage.innerHTML = `
-          <iframe class="full-interactive-frame" src="${url}" title="Full Prototype Preview"></iframe>
-        `;
-      }
-    }
-
-    // Render Thumbnails in bottom drawer
-    function renderThumbnails() {
-      thumbnailsDrawer.innerHTML = SLIDES.map((s, i) => `
-        <div class="thumb-card ${i === 0 ? 'active' : ''}" data-index="${i}" data-category="${s.category}">
-          <div class="thumb-num">SLIDE ${String(s.num).padStart(2, '0')}</div>
-          <div class="thumb-title">${s.eyebrow.split('·')[0]}</div>
-          <div class="thumb-category">${s.categoryName}</div>
+    // Build Thumbnail Navigation
+    function buildThumbnails() {
+      thumbRail.innerHTML = SCREENS.map((s, i) => `
+        <div class="thumb-item ${i === 0 ? 'active' : ''}" data-idx="${i}">
+          <div class="thumb-step">SCREEN ${s.num}</div>
+          <div class="thumb-label">${s.title}</div>
         </div>
       `).join('');
 
-      thumbnailsDrawer.querySelectorAll('.thumb-card').forEach(thumb => {
-        thumb.addEventListener('click', () => {
-          const idx = parseInt(thumb.getAttribute('data-index'), 10);
-          loadSlide(idx);
+      thumbRail.querySelectorAll('.thumb-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const idx = parseInt(item.getAttribute('data-idx'), 10);
+          loadScreen(idx);
         });
       });
     }
 
-    // Render Jump to Slide Grid Modal
-    function renderJumpGrid() {
-      jumpGrid.innerHTML = SLIDES.map((s, i) => `
-        <button class="jump-item-btn" data-index="${i}">
-          <span style="font-family:var(--font-mono);font-size:11px;color:var(--bc-gold);">SLIDE ${String(s.num).padStart(2, '0')}</span>
-          <strong style="font-size:13px;">${s.title}</strong>
-          <span style="font-size:11px;color:var(--text-muted);">${s.subtitle}</span>
+    // Build Jump Modal List
+    function buildJumpList() {
+      jumpList.innerHTML = SCREENS.map((s, i) => `
+        <button class="jump-card" data-idx="${i}">
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--bc-maroon)">SCREEN ${s.num}</span>
+          <strong style="font-size:13px;color:var(--text-main)">${s.title}</strong>
+          <span style="font-size:11.5px;color:var(--text-muted)">${s.category}</span>
         </button>
       `).join('');
 
-      jumpGrid.querySelectorAll('.jump-item-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const idx = parseInt(btn.getAttribute('data-index'), 10);
-          loadSlide(idx);
+      jumpList.querySelectorAll('.jump-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = parseInt(card.getAttribute('data-idx'), 10);
+          loadScreen(idx);
           closeJumpModal();
         });
       });
     }
 
-    function openJumpModal() {
-      jumpModalScrim.classList.add('open');
-    }
+    function openJumpModal() { jumpModal.classList.add('active'); }
+    function closeJumpModal() { jumpModal.classList.remove('active'); }
 
-    function closeJumpModal() {
-      jumpModalScrim.classList.remove('open');
-    }
-
-    // Setup All Event Listeners
-    function setupEventListeners() {
+    // Bind Event Listeners
+    function bindEvents() {
       // Prev / Next
-      prevSlideBtn.addEventListener('click', () => {
-        if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) loadScreen(currentIndex - 1);
       });
 
-      nextSlideBtn.addEventListener('click', () => {
-        if (currentSlideIndex < SLIDES.length - 1) loadSlide(currentSlideIndex + 1);
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < SCREENS.length - 1) loadScreen(currentIndex + 1);
       });
 
-      // View Mode Toggle
-      viewModeToggle.querySelectorAll('.mode-toggle-btn').forEach(btn => {
+      // View Switcher (Dual / Mobile / Desktop)
+      viewSwitcher.querySelectorAll('.view-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          viewModeToggle.querySelectorAll('.mode-toggle-btn').forEach(b => b.classList.remove('active'));
+          viewSwitcher.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          currentViewMode = btn.getAttribute('data-mode');
-          renderViewportFrame(SLIDES[currentSlideIndex].url);
+          const view = btn.getAttribute('data-view');
+          currentView = view;
+          canvasStage.className = `canvas-stage mode-${view}`;
         });
       });
 
-      // Category Nav Filter
-      categoryNav.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          categoryNav.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const cat = btn.getAttribute('data-cat');
-          currentCategory = cat;
-
-          // Find first slide in this category
-          if (cat === 'all') {
-            loadSlide(0);
-          } else {
-            const firstInCat = SLIDES.findIndex(s => s.category === cat);
-            if (firstInCat !== -1) loadSlide(firstInCat);
-          }
-
-          // Filter Thumbnails visibility
-          thumbnailsDrawer.querySelectorAll('.thumb-card').forEach(thumb => {
-            const thumbCat = thumb.getAttribute('data-category');
-            if (cat === 'all' || thumbCat === cat) {
-              thumb.style.display = 'flex';
-            } else {
-              thumb.style.display = 'none';
-            }
-          });
-        });
+      // Jump Modal
+      openJumpBtn.addEventListener('click', openJumpModal);
+      closeJumpBtn.addEventListener('click', closeJumpModal);
+      jumpModal.addEventListener('click', (e) => {
+        if (e.target === jumpModal) closeJumpModal();
       });
 
-      // Jump Modal Open/Close
-      openJumpModalBtn.addEventListener('click', openJumpModal);
-      closeJumpModalBtn.addEventListener('click', closeJumpModal);
-      jumpModalScrim.addEventListener('click', (e) => {
-        if (e.target === jumpModalScrim) closeJumpModal();
-      });
-
-      // Auto Play
-      toggleAutoPlayBtn.addEventListener('click', toggleAutoPlay);
+      // Auto-Play
+      autoPlayBtn.addEventListener('click', toggleAutoPlay);
 
       // Fullscreen
-      fullscreenBtn.addEventListener('click', toggleFullscreen);
+      fullScreenBtn.addEventListener('click', toggleFullscreen);
 
-      // Keyboard Shortcuts
+      // Keyboard Controls
       window.addEventListener('keydown', (e) => {
-        // Do not intercept if typing in an input
         if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
 
         if (e.key === 'ArrowRight' || e.key === ' ') {
           e.preventDefault();
-          if (currentSlideIndex < SLIDES.length - 1) loadSlide(currentSlideIndex + 1);
+          if (currentIndex < SCREENS.length - 1) loadScreen(currentIndex + 1);
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
-          if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
-        } else if (e.key === 'f' || e.key === 'F') {
+          if (currentIndex > 0) loadScreen(currentIndex - 1);
+        } else if (e.key.toLowerCase() === 'f') {
           toggleFullscreen();
-        } else if (e.key === 't' || e.key === 'T') {
+        } else if (e.key.toLowerCase() === 't') {
           openJumpModal();
         } else if (e.key === 'Escape') {
           closeJumpModal();
         } else if (e.key === '1') {
-          document.querySelector('[data-mode="mobile"]').click();
+          document.querySelector('[data-view="split"]').click();
         } else if (e.key === '2') {
-          document.querySelector('[data-mode="desktop"]').click();
+          document.querySelector('[data-view="mobile"]').click();
         } else if (e.key === '3') {
-          document.querySelector('[data-mode="direct"]').click();
+          document.querySelector('[data-view="desktop"]').click();
         }
       });
     }
 
-    // Auto-Play Feature
+    // Toggle Auto Play
     function toggleAutoPlay() {
-      if (isAutoPlaying) {
+      if (isAutoPlay) {
         clearInterval(autoPlayTimer);
-        isAutoPlaying = false;
-        playText.textContent = 'Auto-Play';
+        isAutoPlay = false;
+        playLabel.textContent = 'Auto-Play';
         playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
-        toggleAutoPlayBtn.classList.remove('gold-accent');
+        autoPlayBtn.classList.remove('maroon-btn');
       } else {
-        isAutoPlaying = true;
-        playText.textContent = 'Pause';
+        isAutoPlay = true;
+        playLabel.textContent = 'Pause';
         playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
-        toggleAutoPlayBtn.classList.add('gold-accent');
+        autoPlayBtn.classList.add('maroon-btn');
         autoPlayTimer = setInterval(() => {
-          if (currentSlideIndex < SLIDES.length - 1) {
-            loadSlide(currentSlideIndex + 1);
+          if (currentIndex < SCREENS.length - 1) {
+            loadScreen(currentIndex + 1);
           } else {
-            loadSlide(0); // loop back
+            loadScreen(0);
           }
-        }, 9000); // 9 seconds per slide
+        }, 8000);
       }
     }
 
-    // Native Fullscreen Toggle
+    // Toggle Native Fullscreen
     function toggleFullscreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(err => {
           console.warn(`Fullscreen error: ${err.message}`);
         });
       } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
+        if (document.exitFullscreen) document.exitFullscreen();
       }
     }
 
-    // Run on ready
-    document.addEventListener('DOMContentLoaded', initDeck);
+    document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>

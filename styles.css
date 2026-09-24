@@ -244,3 +244,6 @@ label.f input,label.f select,label.f textarea{font-weight:400}
 .club-post{border-radius:20px}.club-post .cp-meta{margin-top:-6px}
 .cp-react .chip.react{min-height:44px}.cp-react .chip.liked{background:var(--gold-soft);color:var(--maroon);border-color:var(--gold)}
 .cp-react .iconbtn{width:44px;min-width:44px;min-height:44px}.club-post .btn.sm{min-height:44px}
+
+.seg a{flex:1;min-height:38px;display:grid;place-items:center;border-radius:9px;font-weight:700;font-size:13px;color:var(--muted)}
+.seg a.on{background:var(--card);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.15)}

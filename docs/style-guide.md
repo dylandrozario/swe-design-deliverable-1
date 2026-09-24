@@ -107,6 +107,7 @@ Modifiers: `.sm` (34px high; 44px inside `.club-post` and `.club-page`), `.block
 
 ### Tabs
 - **Underline tabs** (`.tabs`): 44px, active = maroon text + 3px maroon underline. Content filters (Home's All/Friends & following/Suggested) and profile sections (RSVPs/Clubs/Listings/Following) — these now actually swap content via `data-show`/`data-for` (see below), not just restyle the active button.
+- **One panel at a time:** a tab or segment button with `data-show="x" data-for="id"` shows the `[data-state="x"]` panel and hides its siblings. Only panels whose nearest `id` ancestor is the target are toggled, so a tab set nested inside another panel (e.g. Requests / Sent / Connected inside the Connections view) has its own `id` and stays independent of the outer Messages / Connections switch.
 - **Segmented** (`.seg`): tinted track, active segment is a raised white pill. View switches (List/Calendar/Map, New chat's DM/Group) and notification frequency.
 
 ### Dropdowns and modals (new)

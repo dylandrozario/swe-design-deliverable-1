@@ -16,7 +16,7 @@
 - **Composer:** chips `Insert safe spot` (pin) and `Suggest another time`; text input + `Send` (send icon).
 
 ## Connections view (desktop)
-Where a student handles connection requests on desktop. The wireframe page shows it **two ways**: as a switchable state of the inbox frame (`#msgdesk`) and as its own always-visible frame (`#conns-d`, “Desktop · 1280 · Connections”), so it can be reviewed without clicking.
+Where a student handles connection requests on desktop. The wireframe page shows it **two ways**: as a switchable state of the inbox frame (`#msgdesk`) and as its own always-visible frame (`#conns-d`, “Desktop · 1280 · Connections”, opened on the Requests tab), so it can be reviewed without clicking. Each frame shows one tab at a time.
 
 **Ways in**
 - The **Messages | Connections · 2** switch in the left-pane header (`data-show`/`data-for="msgdesk"`).
@@ -26,12 +26,11 @@ Where a student handles connection requests on desktop. The wireframe page shows
 
 **Layout** (`260px | 1fr`, same as the inbox)
 - **Left pane:** the switch (Connections selected), then a summary list: Requests (2 waiting, gold badge), Sent (1 pending), Connected (5 people).
-- **Right pane:** H2 “Connections” with a “Find people at BC” search on the right, then four cards:
-  - **Requests received · 2:** Dana L. ’28 (Economics · 2 mutual friends) and Theo B. ’29 (Running · also in BC Running Club), each with `Accept` (primary, small) and `Decline` (ghost, small).
-  - **Sent · 1:** Nora W. ’27, “Pending · sent 2d ago”, `Cancel`.
-  - **Connected · 5:** Mateo J., Amara K., Priya S., Sarah K., Mike T., each with `Message` and a remove (x) icon button.
-  - **People you may know:** Kai R. ’28 (3 mutual clubs), Lena P. ’27 (also in Photography Club), Omar S. ’29 (Running · 2 mutual friends), each with `+ Connect` — this is how a desktop student sends a request.
-  - Rule line (shield): “Only accepted connections can message each other or see connection-only profile details.”
+- **Right pane:** H2 “Connections” with a “Find people at BC” search on the right, then **underline tabs, one section at a time, exactly like the mobile Connections screen**: **Requests · 2** (default) · Sent · 1 · Connected · 5 (`data-show`/`data-for`, own target id).
+  - **Requests:** a card “Requests received · 2” with Dana L. ’28 (Economics · 2 mutual friends) and Theo B. ’29 (Running · also in BC Running Club), each with `Accept` (primary, small) and `Decline` (ghost, small).
+  - **Sent:** a card “Sent · 1” with Nora W. ’27, “Pending · sent 2d ago”, `Cancel`; below it **People you may know** — Kai R. ’28 (3 mutual clubs), Lena P. ’27 (also in Photography Club), Omar S. ’29 (Running · 2 mutual friends), each with `+ Connect`. This is how a desktop student sends a request.
+  - **Connected:** a card “Connected · 5” with Mateo J., Amara K., Priya S., Sarah K., Mike T., each with `Message` and a remove (x) icon button.
+  - Rule line (shield) under the tabs: “Only accepted connections can message each other or see connection-only profile details.”
 
 **Outcomes:** Accept adds the person to Connected and unlocks Message and connection-only profile details; Decline removes the request silently; Cancel withdraws a sent request; Connect adds the person to Sent; Remove ends the connection and closes the DM. New requests notify the recipient in-app and by email.
 

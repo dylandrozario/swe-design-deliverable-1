@@ -110,9 +110,9 @@ document.addEventListener('click',e=>{
   if(t=g('.switch'))t.classList.toggle('on');
   if(t=g('.save'))t.classList.toggle('on');
   if(t=g('[data-like]')){t.classList.toggle('liked');const n=t.querySelector('b');if(n)n.textContent=(+n.textContent||0)+(t.classList.contains('liked')?1:-1);}
-  if(t=g('[data-dock]')){const p=t.closest('.dock').querySelector('.dock-panel');p.hidden=!p.hidden;}
+  if(t=g('button[data-dock]')){const p=t.closest('.dock').querySelector('.dock-panel');p.hidden=!p.hidden;}
   if(t=g('[data-f]')){const sc=t.closest('[data-fscope]');sc.querySelectorAll('[data-k]').forEach(e=>{if(e.closest('[data-fscope]')===sc)e.hidden=t.dataset.f!=='all'&&e.dataset.k!==t.dataset.f;});}
-  if(t=g('[data-show]')){const box=document.getElementById(t.dataset.for);box.querySelectorAll('[data-state]').forEach(p=>p.hidden=p.dataset.state!==t.dataset.show);}
+  if(t=g('[data-show]')){const box=document.getElementById(t.dataset.for);box.querySelectorAll('[data-state]').forEach(p=>{if(p.parentElement.closest('[id]')===box)p.hidden=p.dataset.state!==t.dataset.show;});}
 });
 
 /* Events: infinite feed (IntersectionObserver appends batches) */

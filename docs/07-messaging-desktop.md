@@ -20,7 +20,7 @@ Where a student handles connection requests on desktop. The wireframe page shows
 
 **Ways in**
 - The **Messages | Connections · 2** switch in the left-pane header (`data-show`/`data-for="msgdesk"`).
-- A gold **Connection requests · 2** banner (“Dana L. and Theo B. want to connect”, arrow) at the top of the inbox list; it stays visible under every All / Market / Clubs filter.
+- A gold **Requests · 2** banner (“Dana L. and Theo B.”, arrow) at the top of the inbox list; it stays visible under every All / Market / Clubs filter.
 - The gold **Connection requests · 2** row at the top of the Messages dock on every other desktop page (see below), which links to the Connections frame.
 - The bell dropdown’s “Dana L. sent you a connection request” row.
 
